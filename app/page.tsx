@@ -6,6 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Smartphone, BarChart3, ShoppingBag, ArrowRight, Star } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
+import DynamicFeatureLayout from "@/components/DynamicFeatureLayout"
+import DeviceShowcase from "@/components/DeviceShowcase"
+import QuickStartSteps from "@/components/QuickStartSteps"
 
 export default function Home() {
   return (
@@ -17,8 +20,19 @@ export default function Home() {
 
       <main className="flex-1">
         <Hero />
+        
+        <DynamicFeatureLayout
+          title="Más ventas, menos dudas."
+          subtitle="Tu negocio crece y Tillia te ayuda a llevar control de lo que vendes, lo que tienes en stock y lo que necesitas ajustar."
+          imageUrl="/photos/bicycle.jpg" // Asegúrate de tener una imagen grande aquí
+        />
+
+        <QuickStartSteps />
+
+        <DeviceShowcase/>
+        
         {/* Trusted By Section */}
-        <section className="py-12 bg-gray-50">
+        {/* <section className="py-12 bg-gray-50">
           <div className="container">
             <div className="text-center mb-8">
               <p className="text-gray-600 font-medium">Trusted by hundreds of retail businesses across Latin America</p>
@@ -31,7 +45,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* How It Works Section */}
         <section id="how-it-works" className="py-20 bg-white">
