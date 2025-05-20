@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Smartphone, BarChart3, ShoppingBag, ArrowRight, Star } from "lucide-react"
 import Navbar from "@/components/Navbar"
+import Hero from "@/components/Hero"
 
 export default function Home() {
   return (
@@ -12,48 +13,10 @@ export default function Home() {
       {/* Navigation */}
       <Navbar />
 
-      <main className="flex-1">
-        {/* Hero Section */}
-        <header className="relative overflow-hidden bg-[#FFFDF9] py-12 md:py-24">
-          <div className="absolute inset-0 bg-[#FFFDF9] z-0"></div>
-          <div className="container relative z-10">
-            <div className="flex flex-col items-center gap-12 text-center">
-              <div className="flex flex-col items-center gap-6 max-w-3xl">
-                {/* <Badge className="bg-[#BAFFFC] text-[#6A03CB] hover:bg-[#BAFFFC]/80">
-                  AI-Powered Retail Solution
-                </Badge> */}
-                <h1 className="text-5xl md:text-7xl lg:text-12xl font-bold tracking-tight text-[#4BA5C5]">
-                  Run your business from your phone
-                </h1>
-                <p className="text-lg text-gray-600">
-                  Tillia turns any smartphone into a smart Point-of-Sale. Manage your shop, track your sales, and get
-                  business insights to grow, without hiring a tech team.
-                </p>
-                <div className="flex flex-col-reverse sm:flex-row gap-4 mt-4">
-                  <Button size="lg" variant="ghost">
-                    See How It Works
-                  </Button>
-                  <Button size="lg" className="text-white">
-                    Start Free
-                    <ArrowRight/>
-                  </Button>
-                </div>
-              </div>
-              <div className="relative w-full max-w-6xl">
-                <div className="relative w-full" style={{ paddingBottom: '64%' }}>
-                  <Image
-                    src="/market.png?height=800"
-                    alt="Tillia app on smartphone showing point-of-sale interface"
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 1024px) 100vw, 1024px"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
+      
 
+      <main className="flex-1">
+        <Hero />
         {/* Trusted By Section */}
         <section className="py-12 bg-gray-50">
           <div className="container">
@@ -311,7 +274,7 @@ export default function Home() {
         </section>
 
         {/* Closing CTA Section */}
-        <section className="py-64 bg-[#6A03CB]">
+        <section className="py-64 bg-[#FF4894]">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-5xl md:text-5xl font-bold mb-6 text-white">
@@ -320,7 +283,7 @@ export default function Home() {
               <p className="text-xl text-white/80 mb-8">
                 Start free today and see how Tillia can transform your retail business
               </p>
-              <Button size="lg" className="bg-white text-[#6A03CB] hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-[#FF3086] hover:bg-gray-100">
                 Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
