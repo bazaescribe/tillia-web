@@ -12,7 +12,8 @@ import QuickStartSteps from "@/components/QuickStartSteps"
 import BusinessCategories from "@/components/BusinessCategories"
 import Pricing from "@/components/Pricing"
 import TilliaVision from "@/components/TilliaVision"
-import TilliaFeatures from "@/components/TilliaFeatures" // Import the new component
+import TilliaFeatures from "@/components/TilliaFeatures"
+import Footer from "@/components/Footer" // Importar el nuevo componente Footer
 
 export default function Home() {
   return (
@@ -119,71 +120,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                  <span className="text-[#6A03CB] font-bold">T</span>
-                </div>
-                <span className="font-bold text-xl text-white">Tillia</span>
-              </div>
-              <p className="text-gray-400 mb-4">AI-powered retail solutions for growing businesses</p>
-              <div className="flex gap-4">
-                {["Twitter", "Facebook", "Instagram", "LinkedIn"].map((social, index) => (
-                  <Link key={index} href="#" className="text-gray-400 hover:text-white">
-                    {social}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {[
-              {
-                title: "Product",
-                links: ["Features", "Pricing", "Integrations", "Updates", "Roadmap"],
-              },
-              {
-                title: "Resources",
-                links: ["Help Center", "Guides", "API Docs", "Community", "Partners"],
-              },
-              {
-                title: "Company",
-                links: ["About Us", "Careers", "Blog", "Press", "Contact"],
-              },
-            ].map((column, index) => (
-              <div key={index}>
-                <h3 className="font-bold mb-4">{column.title}</h3>
-                <ul className="space-y-2">
-                  {column.links.map((link, i) => (
-                    <li key={i}>
-                      <Link href="#" className="text-gray-400 hover:text-white">
-                        {link}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">© 2025 Tillia. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <Link href="#" className="text-gray-400 hover:text-white text-sm">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm">
-                Terms of Service
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm">
-                Cookie Policy
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
