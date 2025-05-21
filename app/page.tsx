@@ -10,8 +10,9 @@ import DynamicFeatureLayout from "@/components/DynamicFeatureLayout"
 import DeviceShowcase from "@/components/DeviceShowcase"
 import QuickStartSteps from "@/components/QuickStartSteps"
 import BusinessCategories from "@/components/BusinessCategories"
-import Pricing from "@/components/Pricing" // Import the Pricing component
+import Pricing from "@/components/Pricing"
 import TilliaVision from "@/components/TilliaVision"
+import TilliaFeatures from "@/components/TilliaFeatures" // Import the new component
 
 export default function Home() {
   return (
@@ -96,8 +97,8 @@ export default function Home() {
         {/* Pricing Section - Now using the Pricing component */}
         <Pricing />
 
-        {/* Camera Feature Section - Added below Pricing */}
-        
+        {/* Spanish Features Section - Added below Pricing */}
+        <TilliaFeatures />
 
         {/* Closing CTA Section */}
         <section className="py-64 bg-[#FF4894]">

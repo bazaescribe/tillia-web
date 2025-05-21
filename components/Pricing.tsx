@@ -72,7 +72,7 @@ export default function Pricing() {
   ]
   
   return (
-    <section id="pricing" className="py-20 bg-white">
+    <section id="pricing" className="py-20 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-[#BAFFFC] text-[#6A03CB] hover:bg-[#BAFFFC]/80">Simple Pricing</Badge>
