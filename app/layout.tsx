@@ -4,7 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Tillia',
   description: 'Run your business from your phone',
-  themeColor: '#FFFDFA',
+  themeColor: '#FFFFFF',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.ico',
