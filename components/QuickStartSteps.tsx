@@ -9,7 +9,7 @@ export default function QuickStartSteps() {
         <div className="flex flex-col items-center mb-12 text-center">
           <div className="flex items-center gap-2 mb-4">
             <Image
-              src="/illustrations/clock.png"
+              src="/illustrations/till.png"
               alt="Quick Start Steps"
               width={200}
               height={115}

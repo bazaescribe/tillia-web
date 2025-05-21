@@ -14,7 +14,7 @@ interface DeviceShowcaseProps {
 }
 
 export default function TilliaVision({
-  title = "Visión que transforma tus ventas.",
+  title = "Visión que transforma tus ventas",
   subtitle = "Detecta artículos en un instante, cobra con fluidez y actualiza tu inventario desde la cámara de tus dispositivos. Como por arte de magia.",
   ctaText = "Crear cuenta",
   ctaLink = "#",
@@ -25,17 +25,17 @@ export default function TilliaVision({
   return (
     <section className="pt-40 bg-[#0C0F12] text-white" ref={sectionRef}>
       <div className="container mx-auto px-4 overflow-hidden">
-        <div className="max-w-3xl mx-auto text-center mb-32">
+        <div className="max-w-3xl mx-auto text-center mb-40">
           
-          <p className="text-lg mb-8 bg-gradient-to-r from-[#FF4894] to-cyan-100 bg-clip-text text-transparent">
+          <p className="text-lg text-[#FF4894] mb-2">
             Tillia Vision
           </p>
           <h2 className="text-5xl md:text-5xl font-bold mb-4">{title}</h2>
           <p className="text-xl text-gray-400 mb-12">{subtitle}</p>
           
-          <Badge className="mb-4 bg-white/10 text-white/50 hover:bg-white/10 px-4 py-1 text-sm">
-            Disponible en otoño 2025 para usuarios del Plan Pro
-          </Badge>
+          <p className="text-sm text-gray-600">
+          Disponible en otoño 2025 para usuarios del Plan Pro
+          </p>
         </div>
         
         <div className="relative mt-16 max-w-4xl mx-auto">

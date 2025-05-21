@@ -105,13 +105,13 @@ export default function Home() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-5xl md:text-5xl font-bold mb-6 text-white">
-                Join hundreds of stores already growing smarter with Tillia
+                Toma el control total de tu negocio
               </h2>
               <p className="text-xl text-white/80 mb-8">
-                Start free today and see how Tillia can transform your retail business
+                Únete a cientos de emprendedores que ya usan Tillia para vender más, preocuparse menos y crecer mejor.
               </p>
               <Button size="lg" className="bg-white text-[#FF3086] hover:bg-gray-100">
-                Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
+                Crea una cuenta ahora <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>

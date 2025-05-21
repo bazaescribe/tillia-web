@@ -11,12 +11,12 @@ export default function TilliaFeatures() {
     {
       title: "Compras más inteligentes",
       description: "Te diremos qué productos necesitas resurtir, cuándo y en qué cantidad, con base en tus ventas reales y temporadas.",
-      icon: "/illustrations/fruits.png"
+      icon: "/illustrations/sweets.png"
     },
     {
       title: "Reportes más claros y personalizados",
       description: "Visualiza tus ventas por producto, horario, local o canal. Y entiende qué funciona y qué no con explicaciones fáciles de leer.",
-      icon: "/illustrations/fruits.png"
+      icon: "/illustrations/macbook.png"
     },
     {
       title: "App móvil más robusta",
@@ -26,18 +26,18 @@ export default function TilliaFeatures() {
     {
       title: "Administra tu equipo",
       description: "Define permisos para que tus vendedores solo vean lo que necesitan. Seguridad sin enredos.",
-      icon: "/illustrations/fruits.png"
+      icon: "/illustrations/id.png"
     },
     {
       title: "Integración con WhatsApp, TikTok y más",
       description: "Responde a tus clientes, comparte productos y recibe pedidos directo desde las apps donde ya estás vendiendo.",
-      icon: "/illustrations/fruits.png"
+      icon: "/illustrations/tiktok.png"
     }
   ];
 
   return (
     <section className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4">Esto apenas comienza</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
