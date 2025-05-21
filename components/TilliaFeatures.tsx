@@ -19,26 +19,36 @@ export default function TilliaFeatures() {
       icon: "/illustrations/macbook.png"
     },
     {
-      title: "App móvil más robusta",
-      description: "Visualiza tus ventas por producto, horario, local o canal. Y entiende qué funciona y qué no con explicaciones fáciles de leer.",
-      icon: "/illustrations/fruits.png"
+      title: "Conecta con apps de entrega",
+      description: "Integra tu negocio con Uber Eats, Rappi, DiDi Food y otros servicios de entrega. Gestiona todos tus pedidos desde un solo lugar.",
+      icon: "/illustrations/delivery.png"
     },
     {
-      title: "Administra tu equipo",
-      description: "Define permisos para que tus vendedores solo vean lo que necesitan. Seguridad sin enredos.",
+      title: "Maneja a tu equipo",
+      description: "Define roles para tus colaboradores, establece objetivos claros y evalúa su rendimiento en relación con tus ventas.",
       icon: "/illustrations/id.png"
     },
     {
       title: "Integración con WhatsApp, TikTok y más",
       description: "Responde a tus clientes, comparte productos y recibe pedidos directo desde las apps donde ya estás vendiendo.",
       icon: "/illustrations/tiktok.png"
+    },
+    {
+      title: "Gestión de restaurantes",
+      description: "Administra mesas, órdenes y reservaciones. Optimiza tus tiempos de servicio y mejora la experiencia de tus comensales.",
+      icon: "/illustrations/tacos.png"
+    },
+    {
+      title: "Reabastece con un clic",
+      description: "Genera órdenes de compra automáticas con tus proveedores preferidos cuando tu inventario esté bajo, ahorrándote tiempo y esfuerzo.",
+      icon: "/illustrations/basket.png"
     }
   ];
 
   return (
     <section className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container mx-auto px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-5xl font-bold mb-4">Esto apenas comienza</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Crecemos junto con tu negocio. Aquí te contamos lo que viene para que te emociones con nosotros.
