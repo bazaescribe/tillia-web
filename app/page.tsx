@@ -9,14 +9,15 @@ import Hero from "@/components/Hero"
 import DynamicFeatureLayout from "@/components/DynamicFeatureLayout"
 import DeviceShowcase from "@/components/DeviceShowcase"
 import QuickStartSteps from "@/components/QuickStartSteps"
+import BusinessCategories from "@/components/BusinessCategories"
+import Pricing from "@/components/Pricing" // Import the Pricing component
+import TilliaVision from "@/components/TilliaVision"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Navigation */}
       <Navbar />
-
-      
 
       <main className="flex-1">
         <Hero />
@@ -30,126 +31,11 @@ export default function Home() {
         <QuickStartSteps />
 
         <DeviceShowcase/>
+
+        <TilliaVision />
         
-        {/* Trusted By Section */}
-        {/* <section className="py-12 bg-gray-50">
-          <div className="container">
-            <div className="text-center mb-8">
-              <p className="text-gray-600 font-medium">Trusted by hundreds of retail businesses across Latin America</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
-              {["Brand 1", "Brand 2", "Brand 3", "Brand 4", "Brand 5"].map((brand, index) => (
-                <div key={index} className="h-8 flex items-center">
-                  <span className="text-gray-400 font-bold text-xl">{brand}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
-        {/* How It Works Section */}
-        <section id="how-it-works" className="py-20 bg-white">
-          <div className="container">
-            <div className="text-center mb-16">
-              <Badge className="mb-4 bg-[#BAFFFC] text-[#6A03CB] hover:bg-[#BAFFFC]/80">Simple & Powerful</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">How Tillia Works</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Three simple steps to transform your retail business with AI-powered insights
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Smartphone className="h-10 w-10 text-[#6A03CB]" />,
-                  title: "Create an account",
-                  description: "For free, no credit card requred, no need to buy any hardware.",
-                },
-                {
-                  icon: <ShoppingBag className="h-10 w-10 text-[#6A03CB]" />,
-                  title: "Add your products",
-                  description:
-                    "Quickly add your inventory with our camera-based scanning system or import from spreadsheets.",
-                },
-                {
-                  icon: <BarChart3 className="h-10 w-10 text-[#6A03CB]" />,
-                  title: "Start selling & growing",
-                  description:
-                    "Process sales, track inventory, and receive AI-powered insights to boost your business.",
-                },
-              ].map((step, index) => (
-                <Card
-                  key={index}
-                  className="p-8 border border-gray-200 hover:border-[#6A03CB]/30 hover:shadow-md transition-all"
-                >
-                  <div className="mb-6 p-4 bg-[#BAFFFC]/20 rounded-full w-fit">{step.icon}</div>
-                  <p className="text-xl font-bold mb-3">{step.title}</p>
-                  <p className="text-gray-600">{step.description}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* AI Benefits Section */}
-        <section id="benefits" className="py-20 bg-gradient-to-b from-white to-gray-50">
-          <div className="container">
-            <div className="text-center mb-16">
-              <Badge className="mb-4 bg-[#BAFFFC] text-[#6A03CB] hover:bg-[#BAFFFC]/80">AI-Powered Insights</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Smart Tools for Growing Businesses</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Tillia's AI analyzes your sales data to help you make smarter business decisions
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
-                <div className="space-y-6">
-                  {[
-                    {
-                      title: "Smart Pricing Suggestions",
-                      description:
-                        "Get AI-powered recommendations on optimal pricing based on your sales history, local market, and customer behavior.",
-                    },
-                    {
-                      title: "Inventory Predictions",
-                      description:
-                        "Anticipate stock needs before they happen with AI that learns your business patterns and seasonal trends.",
-                    },
-                    {
-                      title: "Customer Insights",
-                      description:
-                        "Understand what drives your customers' purchases and create targeted promotions that actually work.",
-                    },
-                    {
-                      title: "Growth Opportunities",
-                      description:
-                        "Identify untapped revenue streams and optimization opportunities specific to your business.",
-                    },
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex gap-4">
-                      <CheckCircle className="h-6 w-6 text-[#6A03CB] flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="text-lg font-bold mb-1">{benefit.title}</h3>
-                        <p className="text-gray-600">{benefit.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="order-1 md:order-2 relative h-[400px] rounded-xl overflow-hidden shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#6A03CB]/10 to-[#BAFFFC]/20 z-10 rounded-xl"></div>
-                <Image
-                  src="/placeholder.svg?height=800&width=600"
-                  alt="Tillia app showing analytics dashboard with AI insights"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <BusinessCategories />
+        
         {/* Testimonials Section */}
         <section id="testimonials" className="py-20 bg-gray-50">
           <div className="container">
@@ -207,85 +93,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section id="pricing" className="py-20 bg-white">
-          <div className="container">
-            <div className="text-center mb-16">
-              <Badge className="mb-4 bg-[#BAFFFC] text-[#6A03CB] hover:bg-[#BAFFFC]/80">Simple Pricing</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Plans That Grow With You</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">Affordable options for businesses of all sizes</p>
-            </div>
+        {/* Pricing Section - Now using the Pricing component */}
+        <Pricing />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Starter",
-                  price: "Free",
-                  description: "Perfect for new businesses just getting started",
-                  features: ["1 device", "Basic sales tracking", "Up to 100 products", "Standard support"],
-                  cta: "Start Free",
-                  popular: false,
-                },
-                {
-                  name: "Growth",
-                  price: "$29",
-                  period: "/month",
-                  description: "For established businesses ready to optimize",
-                  features: [
-                    "Up to 3 devices",
-                    "Advanced analytics",
-                    "Unlimited products",
-                    "AI pricing suggestions",
-                    "Priority support",
-                  ],
-                  cta: "Start 14-Day Trial",
-                  popular: true,
-                },
-                {
-                  name: "Scale",
-                  price: "$79",
-                  period: "/month",
-                  description: "For multi-location businesses",
-                  features: [
-                    "Up to 10 devices",
-                    "Multi-location management",
-                    "Advanced AI insights",
-                    "Custom reports",
-                    "Dedicated support",
-                  ],
-                  cta: "Contact Sales",
-                  popular: false,
-                },
-              ].map((plan, index) => (
-                <Card
-                  key={index}
-                  className={`p-8 border ${plan.popular ? "border-[#6A03CB] ring-1 ring-[#6A03CB]" : "border-gray-200"} relative`}
-                >
-                  {plan.popular && <Badge className="absolute top-4 right-4 bg-[#6A03CB]">Most Popular</Badge>}
-                  <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-3xl font-bold">{plan.price}</span>
-                    {plan.period && <span className="text-gray-600">{plan.period}</span>}
-                  </div>
-                  <p className="text-gray-600 mb-6">{plan.description}</p>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-[#6A03CB]" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    className={`w-full ${plan.popular ? "bg-[#6A03CB] hover:bg-[#5502a3]" : "bg-white text-[#6A03CB] border border-[#6A03CB] hover:bg-[#6A03CB]/10"}`}
-                  >
-                    {plan.cta}
-                  </Button>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Camera Feature Section - Added below Pricing */}
+        
 
         {/* Closing CTA Section */}
         <section className="py-64 bg-[#FF4894]">

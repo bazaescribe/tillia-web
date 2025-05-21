@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 export default function Hero() {
   return (
-    <header className="relative overflow-hidden bg-white py-12 md:py-24">
+    <header className="relative overflow-hidden bg-white pt-12 md:pt-24">
       <div className="absolute inset-0 bg-white z-0"></div>
       <div className="container relative z-10">
         <div className="flex flex-col gap-12 text-left">

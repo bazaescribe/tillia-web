@@ -100,10 +100,10 @@ const DynamicFeatureLayout = ({ title, subtitle, imageUrl }: { title: string; su
 
   return (
     <div className='bg-gradient-to-b from-white to-[#FAFAFA]'>
-      <div ref={containerRef} className="container">
+      <div ref={containerRef} className="container py-40">
         <div className=""> {/* Contenedor de Tailwind */}
           {/* Título y Subtítulo */}
-          <div ref={headerRef} className="text-center py-16">
+          <div ref={headerRef} className="text-center pb-24">
             <h1 className="text-5xl font-bold mb-4">{title}</h1>
             <p className="text-xl text-gray-600">{subtitle}</p>
           </div>
@@ -119,7 +119,7 @@ const DynamicFeatureLayout = ({ title, subtitle, imageUrl }: { title: string; su
               className="md:flex-shrink-0 md:w-1/2 h-auto mb-8 md:mb-0"
             >
               <motion.div 
-                className='bg-[#f00] md:sticky md:top-[80px] overflow-hidden' 
+                className='md:sticky md:top-[80px] overflow-hidden' 
                 style={{
                   height: imageContainerHeight
                 }}
@@ -127,7 +127,7 @@ const DynamicFeatureLayout = ({ title, subtitle, imageUrl }: { title: string; su
                 <img
                   src={imageUrl}
                   alt="Feature Illustration"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg shadow-xl"
                 />
               </motion.div>
               

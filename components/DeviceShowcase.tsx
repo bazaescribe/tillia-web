@@ -22,7 +22,7 @@ export default function DeviceShowcase({
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 })
   
   return (
-    <section className="pt-48 bg-gradient-to-b from-white to-[#FAFAFA]" ref={sectionRef}>
+    <section className="pt-40 bg-gradient-to-b from-white to-[#FAFAFA]" ref={sectionRef}>
       <div className="container mx-auto px-4 overflow-hidden">
         <div className="max-w-3xl mx-auto text-center mb-32">
           <h2 className="text-5xl md:text-5xl font-bold mb-4">{title}</h2>
