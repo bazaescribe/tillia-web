@@ -13,7 +13,7 @@ interface DeviceShowcaseProps {
 }
 
 export default function DeviceShowcase({
-  title = "Usa lo que ya tienes, sin gastar de más",
+  title = "Vende desde cualquier dispositivo",
   subtitle = "Tillia funciona con tu computadora, tablet o celular. Empieza a vender hoy con una cuenta gratis sin invertir en lectores, cajas o licencias costosas.",
   ctaText = "Crear cuenta",
   ctaLink = "#",

@@ -14,6 +14,7 @@ import Pricing from "@/components/Pricing"
 import TilliaVision from "@/components/TilliaVision"
 import TilliaFeatures from "@/components/TilliaFeatures"
 import Footer from "@/components/Footer" // Importar el nuevo componente Footer
+import FeatureGrid from "@/components/FeatureGrid"
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
         <Hero />
         
         <DynamicFeatureLayout
-          title="Más ventas, menos dudas."
+          title="La forma más fácil de administrar tus ventas."
           subtitle="Tu negocio crece y Tillia te ayuda a llevar control de lo que vendes, lo que tienes en stock y lo que necesitas ajustar."
           imageUrl="/photos/bicycle.jpg" // Asegúrate de tener una imagen grande aquí
         />
@@ -35,6 +36,34 @@ export default function Home() {
         <DeviceShowcase/>
 
         <TilliaVision />
+
+        <FeatureGrid
+          title="Simplifica tu día a día con Tillia"
+          subtitle="Olvídate de complicaciones. Tillia automatiza y optimiza tus ventas, inventario y promociones, para que puedas enfocarte en crecer tu negocio."
+          features={[
+            {
+              title: "Cobra sin complicaciones",
+              description: "Tillia identifica automáticamente tus productos y acelera el proceso de venta. Menos filas, clientes más felices y ventas más rápidas.",
+              image: "/photos/tianguis.jpg",
+              link: "#"
+            },
+            {
+              title: "Reportes claros, decisiones fáciles",
+              description: "Accede a información clara sobre qué vendes, qué no, y recibe recomendaciones prácticas para mejorar tu negocio.",
+              image: "/photos/tianguis.jpg"
+            },
+            {
+              title: "Control total de tu inventario",
+              description: "Mantén el inventario al día de manera automática, evita errores humanos y optimiza tu flujo de mercancía.",
+              image: "/photos/tianguis.jpg"
+            },
+            {
+              title: "Promociones que sí funcionan",
+              description: "Crea promociones inteligentes basadas en el comportamiento de tus clientes, impulsando tus ventas en los momentos clave.",
+              image: "/photos/tianguis.jpg"
+            }
+          ]}
+        />
         
         <BusinessCategories />
         

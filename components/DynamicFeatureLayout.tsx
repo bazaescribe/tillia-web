@@ -22,26 +22,10 @@ import {
   Eye, 
   RefreshCw 
 } from 'lucide-react';
+import { useIsMobile } from '../hooks/use-mobile';
+import { useInView } from 'framer-motion';
 
 const featuresData = [
-  {
-    id: 'feature-1',
-    title: 'Tillia es cool',
-    description: 'Super cool.',
-    bulletPoints: [
-      { icon: ShoppingCart, text: 'Ventas rápidas y sencillas' },
-      { icon: BarChart, text: 'Análisis de rendimiento' },
-    ]
-  },
-  {
-    id: 'feature-2',
-    title: 'POS CON AI',
-    description: 'Yes it is!!.',
-    bulletPoints: [
-      { icon: Package, text: 'Gestión inteligente de inventario' },
-      { icon: Tag, text: 'Recomendaciones personalizadas' },
-    ]
-  },
   {
     id: 'feature-3',
     title: 'Administra tu inventario sin enredos',
@@ -80,28 +64,20 @@ const featuresData = [
 const DynamicFeatureLayout = ({ title, subtitle, imageUrl }: { title: string; subtitle: string; imageUrl: string }) => {
   const containerRef = useRef(null);
   const headerRef = useRef(null);
+  const isMobile = useIsMobile();
+
+  // Desktop: animaciones y sticky
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start start', 'end end'], // Monitorea el scroll desde el inicio hasta el final del componente
+    offset: ['start start', 'end end'],
   });
-
-  // Animación de la imagen: tamaño y posición
-  // La imagen reduce su tamaño y se mueve a la izquierda en el primer 50% del scroll.
   const imageWidth = useTransform(scrollYProgress, [0, 0.5], ['100%', '50%']);
-  // const imageTranslateX = useTransform(scrollYProgress, [0, 0.5], ['0%', '-25%']); 
-
-  // Controla la visibilidad de las features basándose en el progreso del scroll.
-  // Las features se hacen visibles solo cuando el scrollYProgress supera el 0.5 (imagen en posición).
-  const featuresOpacity = useTransform(scrollYProgress, [0.45, 0.55], [0, 1]); // Fade in de 0.5 a 0.55
-  const featuresDisplay = useTransform(scrollYProgress, (pos) => (pos > 0.5 ? 'block' : 'hidden')); // Muestra/oculta
-
-  // Animación para la altura del contenedor de la imagen
   const imageContainerHeight = useTransform(scrollYProgress, [0, 0.5], ['calc(100vh - 6rem)', 'calc(100vh - 6em)']);
 
   return (
     <div className='bg-gradient-to-b from-white to-[#FAFAFA]'>
       <div ref={containerRef} className="container py-40">
-        <div className=""> {/* Contenedor de Tailwind */}
+        <div className="">
           {/* Título y Subtítulo */}
           <div ref={headerRef} className="text-center pb-24">
             <h1 className="text-5xl font-bold mb-4">{title}</h1>
@@ -110,41 +86,45 @@ const DynamicFeatureLayout = ({ title, subtitle, imageUrl }: { title: string; su
 
           {/* Contenedor principal para la imagen y las features */}
           <div className="relative flex flex-col md:flex-row min-h-[150vh] py-4">
-            {/* Columna de la Imagen */}
-            <motion.div
-              style={{
-                width: imageWidth,
-                // x: imageTranslateX,
-              }}
-              className="md:flex-shrink-0 md:w-1/2 h-auto mb-8 md:mb-0"
-            >
-              <motion.div 
-                className='md:sticky md:top-[80px] overflow-hidden' 
-                style={{
-                  height: imageContainerHeight
-                }}
+            {/* Imagen */}
+            {isMobile ? (
+              <div className="w-full h-auto mb-8">
+                <div className='overflow-hidden'>
+                  <img
+                    src={imageUrl}
+                    alt="Feature Illustration"
+                    className="w-full h-full object-cover rounded-lg shadow-xl"
+                  />
+                </div>
+              </div>
+            ) : (
+              <motion.div
+                style={{ width: imageWidth }}
+                className="md:flex-shrink-0 md:w-1/2 h-auto mb-8 md:mb-0"
               >
-                <img
-                  src={imageUrl}
-                  alt="Feature Illustration"
-                  className="w-full h-full object-cover rounded-lg shadow-xl"
-                />
+                <motion.div
+                  className='md:sticky md:top-[80px] overflow-hidden'
+                  style={{ height: imageContainerHeight }}
+                >
+                  <img
+                    src={imageUrl}
+                    alt="Feature Illustration"
+                    className="w-full h-full object-cover rounded-lg shadow-xl"
+                  />
+                </motion.div>
               </motion.div>
-              
-            </motion.div>
+            )}
 
-            {/* Columna de las Features (Scrollable) */}
-            <motion.div
-              style={{
-                opacity: featuresOpacity,
-                display: featuresDisplay,
-              }}
-              className="md:flex-grow md:w-1/2 md:pl-8 space-y-24"
-            >
-              {featuresData.map((feature) => (
-                <FeatureBlock key={feature.id} feature={feature} />
+            {/* Features */}
+            <div className="md:flex-grow md:w-1/2 md:pl-8 space-y-24" style={!isMobile ? { paddingTop: '100vh' } : {}}>
+              {featuresData.map((feature, idx) => (
+                isMobile ? (
+                  <FeatureBlock key={feature.id} feature={feature} />
+                ) : (
+                  <FeatureInView key={feature.id} feature={feature} idx={idx} />
+                )
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -207,6 +187,22 @@ const FeatureBlock = ({ feature }: { feature: { id: string; title: string; descr
         </div>
       </motion.div>
     </div>
+  );
+};
+
+// Nuevo: FeatureInView para animar cada feature individualmente en desktop
+const FeatureInView = ({ feature, idx }: { feature: any; idx: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once: true });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.5, delay: isInView ? idx * 0.15 : 0 }}
+    >
+      <FeatureBlock feature={feature} />
+    </motion.div>
   );
 };
 

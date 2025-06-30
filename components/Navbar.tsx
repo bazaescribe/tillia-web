@@ -28,14 +28,14 @@ export default function Navbar() {
   }, [scrolled])
 
   return (
-    <nav className={`sticky top-0 z-40 w-full bg-white transition-all duration-200 ${scrolled ? 'border-b' : ''}`}>
-      <div className="container flex h-16 items-center justify-between">
+    <nav className={`sticky top-0 z-40 w-full bg-white transition-all duration-200 ${scrolled ? 'shadow-sm' : ''}`}>
+      <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href='/'>
             <Image 
               src="/logo.svg?height=24"
               alt="Tillia logo"
-              width={58}
+              width={68}
               height={22}
             />
           </Link>
