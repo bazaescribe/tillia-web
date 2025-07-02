@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import DynamicFeatureLayout from "@/components/DynamicFeatureLayout"
 import DeviceShowcase from "@/components/DeviceShowcase"
+import AnimatedShowcase, { AnimatedElement } from "@/components/AnimatedShowcase"
 import QuickStartSteps from "@/components/QuickStartSteps"
 import BusinessCategories from "@/components/BusinessCategories"
 import Pricing from "@/components/Pricing"
@@ -15,6 +16,8 @@ import TilliaVision from "@/components/TilliaVision"
 import TilliaFeatures from "@/components/TilliaFeatures"
 import Footer from "@/components/Footer" // Importar el nuevo componente Footer
 import FeatureGrid from "@/components/FeatureGrid"
+import SocialProof from "@/components/SocialProof"
+import Testimonials from "@/components/Testimonials"
 
 export default function Home() {
   return (
@@ -25,15 +28,197 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         
-        <DynamicFeatureLayout
+        <SocialProof />
+        
+        {/* <DynamicFeatureLayout
           title="La forma más fácil de administrar tus ventas."
           subtitle="Tu negocio crece y Tillia te ayuda a llevar control de lo que vendes, lo que tienes en stock y lo que necesitas ajustar."
           imageUrl="/photos/bicycle.jpg" // Asegúrate de tener una imagen grande aquí
-        />
+        /> */}
 
-        <QuickStartSteps />
+        {/* Example of AnimatedShowcase with device images */}
+        <AnimatedShowcase
+          title="Administra tus productos"
+          subtitle="Todo tu inventario en orden, sin hojas de Excel ni dolores de cabeza. Crea, edita, y organiza tus productos en segundos. Control total, sin complicaciones.."
+          // ctaText="Crear cuenta"
+          // ctaLink="#"
+        >
+          <div className="relative h-[400px] md:h-[500px]">
+            {/* Tablet device */}
+            <AnimatedElement
+              className="absolute left-0 bottom-0 w-[85%] z-10"
+              duration={0.8}
+            >
+              <Image
+                src="/shoots/products.png"
+                alt="Tillia en tablet"
+                width={800}
+                height={575}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+            
+            {/* Mobile device */}
+            <AnimatedElement
+              className="absolute right-0 bottom-0 w-[25%] z-20"
+              duration={1.2}
+              delay={0.4}
+            >
+              <Image
+                src="/assets/iphone.png"
+                alt="Tillia en celular"
+                width={300}
+                height={600}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+          </div>
+        </AnimatedShowcase>
 
-        <DeviceShowcase/>
+        <AnimatedShowcase
+          title="Vende sin fricción"
+          subtitle="Tu punto de venta, pero sin las partes molestas. Registra ventas al instante, sin errores, sin equipo extra. Solo abre Tillia y empieza a vender."
+          // ctaText="Crear cuenta"
+          // ctaLink="#"
+        >
+          <div className="relative h-[400px] md:h-[500px]">
+            {/* Tablet device */}
+            <AnimatedElement
+              className="absolute left-0 bottom-0 w-[85%] z-10"
+              duration={0.8}
+            >
+              <Image
+                src="/shoots/pos.png"
+                alt="Tillia en tablet"
+                width={800}
+                height={575}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+            
+            {/* Mobile device */}
+            <AnimatedElement
+              className="absolute right-0 bottom-0 w-[25%] z-20"
+              duration={1.2}
+              delay={0.4}
+            >
+              <Image
+                src="/assets/iphone.png"
+                alt="Tillia en celular"
+                width={300}
+                height={600}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+          </div>
+        </AnimatedShowcase>
+
+        <AnimatedShowcase
+          title="Toma mejores decisiones"
+          subtitle="No más tratar de adivinar qué está funcionando. Tillia analiza tus ventas y productos para mostrarte qué hacer y cuándo. Decisiones fáciles, claras y accionables."
+          // ctaText="Crear cuenta"
+          // ctaLink="#"
+        >
+          <div className="relative h-[400px] md:h-[500px]">
+            {/* Tablet device */}
+            <AnimatedElement
+              className="absolute left-0 bottom-0 w-[85%] z-10"
+              duration={0.8}
+            >
+              <Image
+                src="/shoots/products.png"
+                alt="Tillia en tablet"
+                width={800}
+                height={575}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+            
+            {/* Mobile device */}
+            <AnimatedElement
+              className="absolute right-0 bottom-0 w-[25%] z-20"
+              duration={1.2}
+              delay={0.4}
+            >
+              <Image
+                src="/assets/iphone.png"
+                alt="Tillia en celular"
+                width={300}
+                height={600}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+          </div>
+        </AnimatedShowcase>
+
+        <AnimatedShowcase
+          title="Tu tienda en línea en un clic"
+          subtitle="Crea tu tienda online gratis y empieza a vender en minutos. Sin configuraciones complicadas, sin comisiones ocultas. Comparte tu catálogo y recibe pedidos desde cualquier lugar."
+          ctaText="Crea tu tienda gratis"
+          ctaLink="#"
+        >
+          <div className="relative h-[400px] md:h-[500px]">
+            {/* Laptop device */}
+            <AnimatedElement
+              className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[80%] z-10"
+              duration={0.8}
+            >
+              <Image
+                src="/assets/laptop-shop.png"
+                alt="Tienda en línea Tillia"
+                width={900}
+                height={600}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+            {/* Mobile shop preview */}
+            <AnimatedElement
+              className="absolute right-0 bottom-0 w-[28%] z-20"
+              duration={1.1}
+              delay={0.4}
+            >
+              <Image
+                src="/assets/iphone-shop.png"
+                alt="Tienda en línea Tillia en celular"
+                width={300}
+                height={600}
+                className="object-contain"
+                style={{
+                  WebkitFilter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                  filter: "drop-shadow(0px 4px 48px rgba(0, 0, 0, 0.12))",
+                }}
+              />
+            </AnimatedElement>
+          </div>
+        </AnimatedShowcase>
 
         <TilliaVision />
 
@@ -42,87 +227,47 @@ export default function Home() {
           subtitle="Olvídate de complicaciones. Tillia automatiza y optimiza tus ventas, inventario y promociones, para que puedas enfocarte en crecer tu negocio."
           features={[
             {
-              title: "Cobra sin complicaciones",
-              description: "Tillia identifica automáticamente tus productos y acelera el proceso de venta. Menos filas, clientes más felices y ventas más rápidas.",
+              title: "Ultra simple de usar",
+              description: "Tillia fue diseñado para entenderse al primer clic. No necesitas capacitación, cursos ni tutoriales. Entras, lo usas y punto.",
               image: "/photos/tianguis.jpg",
               link: "#"
             },
             {
-              title: "Reportes claros, decisiones fáciles",
-              description: "Accede a información clara sobre qué vendes, qué no, y recibe recomendaciones prácticas para mejorar tu negocio.",
+              title: "Funciona en cualquier dispositivo",
+              description: "Desde tu celular, tableta o computadora. No importa dónde estés, tu operación siempre está a la mano.",
               image: "/photos/tianguis.jpg"
             },
             {
-              title: "Control total de tu inventario",
-              description: "Mantén el inventario al día de manera automática, evita errores humanos y optimiza tu flujo de mercancía.",
+              title: "Usuarios ilimitados sin caos",
+              description: "Agrega a tu equipo fácilmente. Cada quien tiene su cuenta, y tú puedes ver quién hizo qué sin complicaciones.",
               image: "/photos/tianguis.jpg"
             },
             {
-              title: "Promociones que sí funcionan",
-              description: "Crea promociones inteligentes basadas en el comportamiento de tus clientes, impulsando tus ventas en los momentos clave.",
+              title: "Promociones que no se te salen de control",
+              description: "Crea descuentos, combos o precios especiales de forma clara. Sin afectar tus ganancias ni perder el rastro de lo vendido.",
+              image: "/photos/tianguis.jpg"
+            },
+            {
+              title: "Historial completo de cada cambio",
+              description: "Todo queda registrado: productos modificados, ventas realizadas, precios ajustados. Transparencia total, sin esfuerzo.",
+              image: "/photos/tianguis.jpg"
+            },
+            {
+              title: "Preparado para lo que sigue",
+              description: "Hoy gestionas ventas e inventario. Pronto podrás controlar compras, gastos y mucho más desde el mismo lugar.",
               image: "/photos/tianguis.jpg"
             }
           ]}
         />
+
+        <QuickStartSteps />
         
-        <BusinessCategories />
+        
         
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-20 bg-gray-50">
-          <div className="container">
-            <div className="text-center mb-16">
-              <Badge className="mb-4 bg-[#BAFFFC] text-[#6A03CB] hover:bg-[#BAFFFC]/80">Success Stories</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">From Our Community</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                See how retail businesses like yours are growing with Tillia
-              </p>
-            </div>
+        <Testimonials />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Maria Gonzalez",
-                  business: "Boutique Bella, Mexico City",
-                  quote:
-                    "Since using Tillia, we've increased our average transaction value by 22%. The pricing suggestions are like having a retail expert on staff.",
-                  stars: 5,
-                },
-                {
-                  name: "Carlos Mendoza",
-                  business: "Electro Shop, Bogotá",
-                  quote:
-                    "We expanded from 1 to 3 locations in just 8 months with Tillia helping us manage inventory across stores. The AI insights are game-changing.",
-                  stars: 5,
-                },
-                {
-                  name: "Luisa Vargas",
-                  business: "Moda Express, Lima",
-                  quote:
-                    "As a non-tech person, I was worried about adopting new software. Tillia is so intuitive that my entire team was comfortable using it on day one.",
-                  stars: 4,
-                },
-              ].map((testimonial, index) => (
-                <Card key={index} className="p-8 border border-gray-200">
-                  <div className="flex gap-1 mb-4">
-                    {Array(testimonial.stars)
-                      .fill(0)
-                      .map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-[#6A03CB] text-[#6A03CB]" />
-                      ))}
-                  </div>
-                  <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-300 flex-shrink-0"></div>
-                    <div>
-                      <p className="font-bold">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.business}</p>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        <BusinessCategories />
 
         {/* Pricing Section - Now using the Pricing component */}
         <Pricing />

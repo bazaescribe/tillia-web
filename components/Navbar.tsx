@@ -35,7 +35,7 @@ export default function Navbar() {
             <Image 
               src="/logo.svg?height=24"
               alt="Tillia logo"
-              width={68}
+              width={91}
               height={22}
             />
           </Link>

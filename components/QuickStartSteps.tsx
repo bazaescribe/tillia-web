@@ -29,14 +29,6 @@ export default function QuickStartSteps() {
     <section className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container max-w-5xl mx-auto">
         <div className="flex flex-col items-center mb-12 text-center">
-          <div className="flex items-center gap-2 mb-4">
-            <Image
-              src="/illustrations/till.png"
-              alt="Quick Start Steps"
-              width={200}
-              height={115}
-            />
-          </div>
           <h2 className="text-5xl md:text-5xl font-bold mb-4">Comienza a vender en minutos</h2>
           <p className="text-lg text-gray-600 max-w-2xl">
             Pon tu negocio en marcha en minutos. No necesitas técnicos, cursos ni nuevas

@@ -44,9 +44,9 @@ export default function Hero() {
     <header className="relative overflow-hidden bg-white pt-12 md:pt-24">
       <div className="absolute inset-0 bg-white z-0"></div>
       <div className="container relative z-10">
-        <div className="flex flex-col text-left">
-          <div className="flex flex-col gap-8 max-w-5xl">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
+        <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col gap-8 max-w-5xl items-center">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap justify-center">
               <div className="flex -space-x-2">
                 {["a", "b", "c", "d", "e"].map((letter, i) => (
                   <div
@@ -67,14 +67,14 @@ export default function Hero() {
               <span>Con la confianza de +100 emprendedores</span>
             </div>
 
-            <h1 className="text-4xl md:text-8xl lg:text-14xl font-black"> 
+            <h1 className="text-4xl md:text-8xl lg:text-14xl font-black text-center"> 
               La forma más simple de operar tu negocio
             </h1>
-            <p className="text-lg">
+            <p className="text-lg text-center">
               Organiza tus productos, ventas e inventario para que tomes mejores decisiones todos los días.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <div className="flex flex-col sm:flex-row gap-4 mt-4 justify-center">
               <Button size="lg" className="text-white" asChild>
                 <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank">
                   Comienza gratis
