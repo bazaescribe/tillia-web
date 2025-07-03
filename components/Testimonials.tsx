@@ -7,22 +7,22 @@ import { cn } from "@/lib/utils"
 
 const TESTIMONIALS = [
   {
-    name: "Sofía Ramírez",
+    name: "Iván Ramírez",
     business: "Panadería La Espiga, Guadalajara",
     quote:
       "Tillia nos ayudó a entender qué productos se venden más por horario y ajustar nuestros precios. Ahora vendemos más pan antes del mediodía que nunca.",
     stars: 5,
-    photo: "/photos/bakery-owner-smiling.jpg",
-    logo: "/logos/google-for-startups.png",
+    photo: "/photos/bakery.png",
+    logo: "/logos/espiga.png",
   },
   {
-    name: "Iván Torres",
+    name: "Sofía Torres",
     business: "Verde Vivo, CDMX",
     quote:
       "Con Tillia puedo ver qué plantas tienen más rotación y cuáles no se están vendiendo. Me ayudó a decidir qué dejar de pedir y qué promocionar.",
     stars: 5,
-    photo: "/photos/plant-shop-owner-standing.jpg",
-    logo: "/logos/microsoft-for-startups.png",
+    photo: "/photos/garden.png",
+    logo: "/logos/verde.png",
   },
   {
     name: "Renata Cordero",
@@ -30,9 +30,18 @@ const TESTIMONIALS = [
     quote:
       "No soy experta en tecnología, pero Tillia es facilísima de usar. Mis ventas subieron desde que empecé a seguir sus sugerencias de precio y stock.",
     stars: 4,
-    photo: "/photos/fashion-store-owner-holding-clothes.jpg",
-    logo: "/logo.svg",
+    photo: "/photos/clothing.png",
+    logo: "/logos/aurora.png",
   },
+  {
+    name: "Susana Salazar",
+    business: "Monkis Chop, Monterrey",
+    quote:
+      "Con Tillia ya no tengo que estar anotando en la libreta qué se vende y qué no. Ahora todo se actualiza solo y me dice qué modelos pedir. Parece que tengo un gerente en mi celular.",
+    stars: 5,
+    photo: "/photos/bicycle.jpg",
+    logo: "/logos/monkis.png",
+  }  
 ]
 
 export default function Testimonials() {
@@ -42,13 +51,13 @@ export default function Testimonials() {
   useEffect(() => {
     const timer = setInterval(() => {
       setSelected((prev) => (prev + 1) % TESTIMONIALS.length)
-    }, 6000)
+    }, 9000)
     return () => clearInterval(timer)
   }, [])
 
   return (
     <section id="testimonials" className="py-20 bg-gray-50">
-      <div className="container max-w-5xl mx-auto">
+      <div className="container mx-auto">
         <div className="text-center mb-10">
           <div className="flex justify-center gap-6 mb-8">
             {TESTIMONIALS.map((t, idx) => (
@@ -57,7 +66,7 @@ export default function Testimonials() {
                 className={cn(
                   "transition-all border-2 rounded-full p-1 bg-white hover:scale-110",
                   selected === idx
-                    ? "border-[#6A03CB] shadow-lg"
+                    ? "border-[#FF5499] shadow-lg"
                     : "border-transparent opacity-60"
                 )}
                 onClick={() => setSelected(idx)}
@@ -66,8 +75,8 @@ export default function Testimonials() {
                 <Image
                   src={t.logo}
                   alt={t.business + " logo"}
-                  width={56}
-                  height={56}
+                  width={80}
+                  height={80}
                   className="rounded-full object-contain"
                 />
               </button>
@@ -78,7 +87,7 @@ export default function Testimonials() {
           <CarouselContent>
             {TESTIMONIALS.map((t, idx) => (
               <CarouselItem key={t.name} className={cn("duration-500 transition-all", selected === idx ? "opacity-100" : "opacity-0 pointer-events-none absolute top-0 left-0 w-full")}> 
-                <div className="relative h-[420px] md:h-[500px] rounded-3xl overflow-hidden flex items-end shadow-xl">
+                <div className="relative h-[640px] md:h-[700px] rounded-3xl overflow-hidden flex items-end shadow-xl">
                   <Image
                     src={t.photo}
                     alt={t.name}
@@ -97,9 +106,9 @@ export default function Testimonials() {
                     </div>
                     <p className="text-2xl md:text-3xl font-bold mb-2 drop-shadow-lg">{t.quote}</p>
                     <div className="flex items-center gap-4 mt-4">
-                      <div className="w-14 h-14 rounded-full border-4 border-white overflow-hidden">
+                      {/* <div className="w-14 h-14 rounded-full border-4 border-white overflow-hidden">
                         <Image src={t.photo} alt={t.name} width={56} height={56} className="object-cover w-full h-full" />
-                      </div>
+                      </div> */}
                       <div>
                         <p className="font-bold text-lg">{t.name}</p>
                         <p className="text-md text-white/80">{t.business}</p>

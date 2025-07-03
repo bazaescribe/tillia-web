@@ -142,7 +142,7 @@ export default function Home() {
               duration={0.8}
             >
               <Image
-                src="/shoots/products.png"
+                src="/shoots/home.png"
                 alt="Tillia en tablet"
                 width={800}
                 height={575}
@@ -175,14 +175,13 @@ export default function Home() {
           </div>
         </AnimatedShowcase>
 
-        <AnimatedShowcase
+        {/* <AnimatedShowcase
           title="Tu tienda en línea en un clic"
           subtitle="Crea tu tienda online gratis y empieza a vender en minutos. Sin configuraciones complicadas, sin comisiones ocultas. Comparte tu catálogo y recibe pedidos desde cualquier lugar."
           ctaText="Crea tu tienda gratis"
           ctaLink="#"
         >
           <div className="relative h-[400px] md:h-[500px]">
-            {/* Laptop device */}
             <AnimatedElement
               className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[80%] z-10"
               duration={0.8}
@@ -199,7 +198,6 @@ export default function Home() {
                 }}
               />
             </AnimatedElement>
-            {/* Mobile shop preview */}
             <AnimatedElement
               className="absolute right-0 bottom-0 w-[28%] z-20"
               duration={1.1}
@@ -218,11 +216,11 @@ export default function Home() {
               />
             </AnimatedElement>
           </div>
-        </AnimatedShowcase>
+        </AnimatedShowcase> */}
 
         <TilliaVision />
 
-        <FeatureGrid
+        {/* <FeatureGrid
           title="Simplifica tu día a día con Tillia"
           subtitle="Olvídate de complicaciones. Tillia automatiza y optimiza tus ventas, inventario y promociones, para que puedas enfocarte en crecer tu negocio."
           features={[
@@ -258,13 +256,10 @@ export default function Home() {
               image: "/photos/tianguis.jpg"
             }
           ]}
-        />
+        /> */}
 
         <QuickStartSteps />
         
-        
-        
-        {/* Testimonials Section */}
         <Testimonials />
 
         <BusinessCategories />
