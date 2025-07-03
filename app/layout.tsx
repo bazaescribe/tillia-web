@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Tillia',
-  description: 'Run your business from your phone',
+  title: 'Plandir',
+  description: 'La forma más fácil de administrar tu negocio',
   themeColor: '#FFFFFF',
   icons: {
     icon: '/favicon.png',
