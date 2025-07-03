@@ -43,6 +43,7 @@ export default function Home() {
           subtitle="Todo tu inventario en orden, sin hojas de Excel ni dolores de cabeza. Crea, edita, y organiza tus productos en segundos. Control total, sin complicaciones.."
           // ctaText="Crear cuenta"
           // ctaLink="#"
+          id="features"
         >
           <div className="relative h-[200px] md:h-[500px]">
             {/* Tablet device */}

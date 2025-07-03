@@ -20,6 +20,7 @@ interface AnimatedShowcaseProps {
   children: ReactNode
   className?: string
   containerClassName?: string
+  id?: string
 }
 
 export default function AnimatedShowcase({
@@ -30,13 +31,14 @@ export default function AnimatedShowcase({
   children,
   className = "pt-40 bg-gradient-to-b from-white to-[#FAFAFA]",
   containerClassName = "relative mt-32 max-w-4xl mx-auto",
+  id,
 }: AnimatedShowcaseProps) {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.6 })
   
   return (
     <AnimationContext.Provider value={isInView}>
-      <section className={className} ref={sectionRef}>
+      <section className={className} ref={sectionRef} id={id}>
         <div className="container mx-auto px-4 overflow-hidden">
           {(title || subtitle) && (
             <SectionTitle

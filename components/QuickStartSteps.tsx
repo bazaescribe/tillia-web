@@ -63,7 +63,7 @@ export default function QuickStartSteps() {
   }
 
   return (
-    <section className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
+    <section className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]" id="how-it-works">
       <div className="container max-w-8xl mx-auto">
         <SectionTitle
           overtext="¿Cómo funciona?"

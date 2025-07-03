@@ -28,7 +28,7 @@ export default function Navbar() {
   }, [scrolled])
 
   return (
-    <nav className={`sticky top-0 z-40 w-full bg-white transition-all duration-200 ${scrolled ? 'shadow-sm' : ''}`}>
+    <nav className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-white/80 shadow-sm backdrop-blur-lg' : ''}`}>
       <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href='/'>
@@ -41,17 +41,18 @@ export default function Navbar() {
           </Link>
         </div>
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="#how-it-works" className="text-sm font-medium hover:text-[#6A03CB] transition-colors">
-            How It Works
+          <Link href="#features" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
+            Beneficios
           </Link>
-          <Link href="#benefits" className="text-sm font-medium hover:text-[#6A03CB] transition-colors">
-            Benefits
+          <Link href="#how-it-works" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
+            ¿Cómo funciona?
           </Link>
-          <Link href="#testimonials" className="text-sm font-medium hover:text-[#6A03CB] transition-colors">
-            Success Stories
+          
+          <Link href="#testimonials" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
+            Historias de éxito
           </Link>
-          <Link href="#pricing" className="text-sm font-medium hover:text-[#6A03CB] transition-colors">
-            Pricing
+          <Link href="#pricing" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
+            Precios
           </Link>
         </nav>
         <div className="flex items-center gap-4">

@@ -101,11 +101,11 @@ body {
 }
 
 ::selection {
-  background-color: #DBF9F4;
+  background-color: #FFE4EF;
   color: hsl(var(--primary));
 }
 
 ::-moz-selection {
-  background-color: #DBF9F4;
+  background-color: #FFE4EF;
   color: hsl(var(--primary));
 }

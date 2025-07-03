@@ -26,7 +26,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
           {overtext}
         </span>
       )}
-      <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+      <h2 className="text-3xl md:text-5xl font-bold text-foreground max-w-2xl">
         {title}
       </h2>
       {subtitle && (
