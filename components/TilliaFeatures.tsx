@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import SectionTitle from "./SectionTitle";
 
 export default function TilliaFeatures() {
   const features = [
@@ -48,14 +49,13 @@ export default function TilliaFeatures() {
   return (
     <section className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container mx-auto px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-4">Esto apenas comienza</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Crecemos junto con tu negocio. Aquí te contamos lo que viene para que te emociones con nosotros.
-          </p>
-        </div>
+        <SectionTitle
+          overtext="Roadmap"
+          title="Esto apenas comienza"
+          subtitle="Estamos construyendo más herramientas para ayudarte a vender mejor. Explora lo que viene y cuéntanos que es lo que tu negocio realmente necesita."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid mt-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {features.map((feature, index) => (
             <div key={index} className="flex gap-4">
               <div className="flex-shrink-0">

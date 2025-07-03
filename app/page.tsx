@@ -18,6 +18,7 @@ import Footer from "@/components/Footer" // Importar el nuevo componente Footer
 import FeatureGrid from "@/components/FeatureGrid"
 import SocialProof from "@/components/SocialProof"
 import Testimonials from "@/components/Testimonials"
+import SectionTitle from "@/components/SectionTitle"
 
 export default function Home() {
   return (
@@ -270,18 +271,46 @@ export default function Home() {
         <TilliaFeatures />
 
         {/* Closing CTA Section */}
-        <section className="py-64 bg-[#FF4894]">
+        <section className="py-64 bg-gradient-to-b from-white to-[#FAFAFA]">
           <div className="container">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-5xl font-bold mb-6 text-white">
-                Toma el control total de tu negocio
-              </h2>
-              <p className="text-xl text-white/80 mb-8">
-                Únete a cientos de emprendedores que ya usan Tillia para vender más, preocuparse menos y crecer mejor.
-              </p>
-              <Button size="lg" className="bg-white text-[#FF3086] hover:bg-gray-100">
-                Crea una cuenta ahora <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+            <div
+              className="text-center rounded-3xl min flex flex-col justify-center items-center relative overflow-hidden"
+              style={{
+                backgroundColor: "#000",
+                backgroundImage: "url('/photos/barber.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat"
+              }}
+            >
+              {/* Responsive aspect ratio: 4/5 on mobile, 2/3 on md+ */}
+              <style>
+                {`
+                  .closing-cta-aspect {
+                    aspect-ratio: 16/9;
+                  }
+                  @media (max-width: 768px) {
+                    .closing-cta-aspect {
+                      aspect-ratio: 2/3;
+                    }
+                  }
+                `}
+              </style>
+              <div className="closing-cta-aspect w-full h-auto"></div>
+              <div className="absolute inset-0 bg-black/20 z-0" />
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
+                <h2 className="text-5xl md:text-5xl font-bold mb-2 text-white">
+                  Toma el control total de tu negocio
+                </h2>
+                <p className="text-xl text-white/80 mb-8">
+                  Únete a cientos de emprendedores que ya usan Tillia para vender más, preocuparse menos y crecer mejor.
+                </p>
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100"> 
+                  <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank">
+                    Comienza gratis
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>

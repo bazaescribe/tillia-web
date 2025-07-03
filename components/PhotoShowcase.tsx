@@ -35,9 +35,9 @@ export default function PhotoShowcase() {
   const height = width * 0.5625 // 16:9 aspect ratio
 
   return (
-    <div className="w-full mt-36 overflow-hidden">
+    <div className="w-full mt-36 overflow-hidden px-4">
       <div
-        className="relative mx-auto transition-all duration-300 ease-out overflow-hidden"
+        className="relative mx-auto transition-all duration-400 ease-out overflow-hidden"
         style={{
           width: `${width}px`,
           height: `${height}px`,

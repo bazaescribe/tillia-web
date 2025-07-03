@@ -4,7 +4,7 @@ import { Facebook, Twitter, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-[#fafafa] text-gray-900 py-12">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -13,12 +13,12 @@ export default function Footer() {
                 <Image 
                   src="/logo.svg?height=24"
                   alt="Tillia logo"
-                  width={58}
+                  width={91}
                   height={22}
                 />
               </Link>
             </div>
-            <p className="text-gray-400 mb-4">Soluciones de retail potenciadas por Inteligencia Artificial para negocios en crecimiento</p>
+            <p className="text-gray-600 mb-4">Todo lo que necesitas para vender mejor: cobros, control y decisiones con IA.</p>
             <div className="flex gap-4">
               {[
                 { name: "Twitter", url: "https://x.com/mithrandir_ai", icon: <Twitter className="w-5 h-5" /> },
@@ -30,7 +30,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-white"
+                  className="text-gray-600 hover:text-gray-900"
                 >
                   {social.icon}
                 </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {column.links.map((link, i) => (
                   <li key={i}>
-                    <Link href="#" className="text-gray-400 hover:text-white">
+                    <Link href="#" className="text-gray-600 hover:text-gray-900">
                       {link}
                     </Link>
                   </li>
@@ -67,43 +67,18 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Startup Programs Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8 mb-8">
-          <div className="text-center mb-4">
-            <p className="text-gray-400 text-sm">Parte de los programas</p>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="flex items-center rounded-lg p-4">
-              <Image 
-                src="/logos/google-for-startups.png" 
-                alt="Google for Startups" 
-                width={120} 
-                height={40}
-                className="h-8 w-auto"
-              />
-            </div>
-            <div className="flex items-center">
-              <Image 
-                src="/logos/microsoft-for-startups.png" 
-                alt="Microsoft for Startups" 
-                width={120} 
-                height={40}
-                className="h-8 w-auto"
-              />
-            </div>
-          </div>
-        </div>
+        {/* Removed Startup Programs Section */}
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2025 Tillia. Todos los derechos reservados.</p>
+        <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center mt-12">
+          <p className="text-gray-600 text-sm">© 2025 Tillia. Todos los derechos reservados.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="text-gray-400 hover:text-white text-sm">
+            <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
               Política de Privacidad
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-white text-sm">
+            <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
               Términos de Servicio
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-white text-sm">
+            <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
               Política de Cookies
             </Link>
           </div>

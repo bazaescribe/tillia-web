@@ -3,20 +3,23 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, Asterisk } from "lucide-react"
 import { useState } from "react"
 import { Switch } from "@/components/ui/switch"
+import Image from "next/image"
+import SectionTitle from "./SectionTitle"
 
 export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly")
   
   const plans = [
     {
-      name: "Gratis",
+      name: "Abre",
       monthlyPrice: "$0",
       yearlyPrice: "$0",
-      period: billingPeriod === "monthly" ? "/ para siempre" : "/ para siempre",
+      period: billingPeriod === "monthly" ? " para siempre" : " para siempre",
       description: "Ideal para empezar a organizar tu negocio sin gastar de más",
+      icon: '/illustrations/cart.png',
       features: [
         "1 usuario",
         "Registro de ventas básico",
@@ -27,11 +30,12 @@ export default function Pricing() {
       popular: false,
     },
     {
-      name: "Starter",
-      monthlyPrice: "$139",
-      yearlyPrice: "$1,390",
-      period: billingPeriod === "monthly" ? "/ mes" : "/ año",
+      name: "Crece",
+      monthlyPrice: "$189",
+      yearlyPrice: "$1,890",
+      period: billingPeriod === "monthly" ? " mes" : " año",
       description: "Para negocios que ya venden y quieren dar el siguiente paso",
+      icon: '/illustrations/stand.png',
       features: [
         "1 usuario",
         "Hasta 500 productos",
@@ -43,13 +47,14 @@ export default function Pricing() {
       popular: true,
     },
     {
-      name: "Pro",
-      monthlyPrice: "$479",
-      yearlyPrice: "$4,790",
-      period: billingPeriod === "monthly" ? "/ mes" : "/ año",
+      name: "Lidera",
+      monthlyPrice: "$579",
+      yearlyPrice: "$5,790",
+      period: billingPeriod === "monthly" ? " mes" : " año",
       description: "Para negocios que quieren vender más y estar en todos lados",
+      icon: '/illustrations/store.png',
       features: [
-        "Desde cinco usuarios",
+        "Cuatro usuarios",
         "Soporte multisucursal",
         "Productos ilimitados",
         "Conecta tu tienda en línea",
@@ -68,6 +73,7 @@ export default function Pricing() {
       yearlyPrice: "A medida",
       period: "",
       description: "Para cadenas, franquicias o negocios con necesidades específicas",
+      icon: '/illustrations/till.png',
       features: [
         "Dispositivos y sucursales ilimitadas",
         "Capacitación personalizada",
@@ -85,11 +91,14 @@ export default function Pricing() {
     <section id="pricing" className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Empieza gratis, escala al infinito</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Tillia crece contigo. Comienza sin costo, sin compromisos, y mejora tu plan sólo cuando tu negocio lo necesite.</p>
+          <SectionTitle
+            overtext="Precios"
+            title="Empieza gratis, escala al infinito"
+            subtitle="Plantir crece con tu negocio. Comienza con una cuenta gratuita, sin compromisos, y mejora tu plan sólo cuando lo necesites."
+          />
           
           {/* Billing period toggle */}
-          <div className="flex items-center justify-center mt-8 space-x-4">
+          <div className="flex items-center mt-3 space-x-4">
             <span className={`text-sm font-medium ${billingPeriod === "monthly" ? "text-black" : "text-gray-500"}`}>Mensual</span>
             <Switch 
               checked={billingPeriod === "yearly"} 
@@ -107,32 +116,39 @@ export default function Pricing() {
           {plans.slice(0, 3).map((plan, index) => (
             <Card
               key={index}
-              className={`p-8 border flex flex-col justify-between ${plan.popular ? "border-gray-200" : "border-gray-200"} relative`}
-              style={{ 
-                boxShadow: plan.popular ? "0px 4px 32px rgba(255, 72, 158, 0.16)" : "none"
-              }}
+              className={`p-8 flex flex-col justify-between relative border-gray-200 ${plan.popular ? "bg-black text-white border-black" : "bg-white text-black"}`}
             >
               <div>
-                {plan.popular && <Badge className="absolute top-4 right-4 bg-[#e8e8e8]">🔥</Badge>}
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                <Image
+                  src={plan.icon}
+                  alt={plan.name + " icon"}
+                  width={128}
+                  height={128}
+                  className="mb-4 object-contain"
+                  style={{ display: 'block' }}
+                  loading="lazy"
+                />
+                {/* {plan.popular && <Badge className="absolute top-4 right-4 bg-white text-black">🔥</Badge>} */}
+                <h3 className={`text-xl font-bold mb-2 ${plan.popular ? "text-white" : "text-black"}`}>{plan.name}</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-bold mr-1">
+                  <p className={`text-4xl font-black mr-1 md:text-6xl  ${plan.popular ? "text-white" : "text-black"}`}>
                     {billingPeriod === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
-                  </span>
-                  {plan.period && <span className="text-gray-600">{plan.period}</span>}
+                  </p>
+                  {plan.period && <span className={`ml-1 ${plan.popular ? "text-gray-200" : "text-gray-600"}`}>{plan.period}</span>}
                 </div>
-                <p className="text-gray-600 mb-6">{plan.description}</p>
+                <p className={`mb-6 ${plan.popular ? "text-gray-200" : "text-gray-600"}`}>{plan.description}</p>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-black/20" />
-                      <span>{feature}</span>
+                      <Asterisk className={`h-5 w-5 ${plan.popular ? "text-white/80" : "text-black/20"}`} />
+                      <span className={plan.popular ? "text-white" : undefined}>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <Button
                 variant={plan.popular ? "default" : "outline"}
+                className={plan.popular ? "bg-white text-black hover:bg-gray-200" : undefined}
               >
                 {plan.cta}
               </Button>
@@ -141,7 +157,7 @@ export default function Pricing() {
         </div>
         
         {/* Enterprise plan on second row with full width */}
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <Card
             className="p-8 border border-gray-200 relative md:max-w-none"
           >
@@ -177,7 +193,7 @@ export default function Pricing() {
               </div>
             </div>
           </Card>
-        </div>
+        </div> */}
       </div>
     </section>
   )

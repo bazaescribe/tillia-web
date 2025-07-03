@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import SectionTitle from "./SectionTitle"
 
 export default function QuickStartSteps() {
   const containerRef = useRef(null)
@@ -64,22 +65,16 @@ export default function QuickStartSteps() {
   return (
     <section className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container max-w-8xl mx-auto">
-        <motion.div 
-          className="flex flex-col items-center mb-32 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h2 className="text-5xl md:text-5xl font-bold mb-4">Comienza a vender en minutos</h2>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            Pon tu negocio en marcha en minutos. No necesitas técnicos, cursos ni nuevas
-            inversiones. Solo sigue tres pasos y deja que la herramienta trabaje por ti.
-          </p>
-        </motion.div>
+        <SectionTitle
+          overtext="¿Cómo funciona?"
+          title="Configura tu tienda en minutos"
+          subtitle="Pon tu negocio en marcha en minutos. No necesitas técnicos, cursos ni nuevas
+            inversiones. Solo sigue tres pasos y deja que la herramienta trabaje por ti."
+        />
 
         <motion.div 
           ref={containerRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          className="grid mt-14 grid-cols-1 md:grid-cols-3 gap-12"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -87,12 +82,12 @@ export default function QuickStartSteps() {
           {steps.map((step, index) => (
             <motion.div 
               key={index} 
-              className="flex flex-col items-center text-center"
+              className="flex flex-col"
               variants={stepVariants}
             >
               <div className="mb-6 rounded-3xl overflow-hidden shadow-sm w-full relative"
                 style={{
-                  aspectRatio: '2/3'
+                  aspectRatio: '10/14'
                 }}
               >
                 <Image
@@ -104,8 +99,10 @@ export default function QuickStartSteps() {
                   priority={index === 0}
                 />
               </div>
-              <h3 className="text-xl font-bold mb-2 mt-2">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
+              <h3 className="text-lg text-gray-800">
+                <span className="font bold mr-1 text-black-100 font-bold">{step.title}</span>
+                {step.description}
+              </h3>
             </motion.div>
           ))}
         </motion.div>

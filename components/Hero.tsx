@@ -69,7 +69,7 @@ export default function Hero() {
             </div>
 
             <h1 className="text-5xl md:text-8xl lg:text-12xl font-bold text-center"> 
-              La forma más fácil de operar tu negocio
+              La forma inteligente 😎 de operar tu negocio
             </h1>
             <p className="text-lg text-center">
               Organiza tus productos, ventas e inventario para que tomes mejores decisiones todos los días.
