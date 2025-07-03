@@ -55,10 +55,14 @@ export default function Navbar() {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Link href="#" className="text-sm font-medium hover:text-[#6A03CB] hidden md:block">
+          {/* <Link href="#" className="text-sm font-medium hover:text-[#6A03CB] hidden md:block">
             Log in
-          </Link>
-          <Button className="text-white">Start Free</Button>
+          </Link> */}
+          <Button className="text-white">
+            <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank">
+              Comienza gratis
+            </a>
+          </Button>
         </div>
       </div>
     </nav>

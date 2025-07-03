@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { motion, useInView } from "framer-motion"
 import { useRef, ReactNode, createContext, useContext } from "react"
+import SectionTitle from "./SectionTitle"
 
 // Create context for sharing isInView state
 const AnimationContext = createContext<boolean>(false)
@@ -28,7 +29,7 @@ export default function AnimatedShowcase({
   ctaLink,
   children,
   className = "pt-40 bg-gradient-to-b from-white to-[#FAFAFA]",
-  containerClassName = "relative mt-16 max-w-4xl mx-auto",
+  containerClassName = "relative mt-32 max-w-4xl mx-auto",
 }: AnimatedShowcaseProps) {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.6 })
@@ -38,24 +39,29 @@ export default function AnimatedShowcase({
       <section className={className} ref={sectionRef}>
         <div className="container mx-auto px-4 overflow-hidden">
           {(title || subtitle) && (
-            <div className="max-w-3xl mx-auto text-center mb-32">
-              {title && (
-                <h2 className="text-5xl md:text-5xl font-bold mb-4">{title}</h2>
-              )}
-              {subtitle && (
-                <p className="text-xl text-gray-600">{subtitle}</p>
-              )}
+            <SectionTitle
+              // overtext="Roadmap"
+              title={title ?? ""}
+              subtitle={subtitle ?? ""}
+              align="center"
+            />
+            // <div className="max-w-3xl mx-auto text-center mb-32">
+            //   {title && (
+            //     <h2 className="text-5xl md:text-5xl font-bold mb-4">{title}</h2>
+            //   )}
+            //   {subtitle && (
+            //     <p className="text-xl text-gray-600">{subtitle}</p>
+            //   )}
               
-              {ctaText && (
-                <div className="mt-8">
-                  <Button asChild>
-                    <a href={ctaLink}>{ctaText}</a>
-                  </Button>
-                </div>
-              )}
-            </div>
+            //   {ctaText && (
+            //     <div className="mt-8">
+            //       <Button asChild>
+            //         <a href={ctaLink}>{ctaText}</a>
+            //       </Button>
+            //     </div>
+            //   )}
+            // </div>
           )}
-          
           <div className={containerClassName}>
             {children}
           </div>

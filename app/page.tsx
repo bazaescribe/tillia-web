@@ -44,7 +44,7 @@ export default function Home() {
           // ctaText="Crear cuenta"
           // ctaLink="#"
         >
-          <div className="relative h-[400px] md:h-[500px]">
+          <div className="relative h-[200px] md:h-[500px]">
             {/* Tablet device */}
             <AnimatedElement
               className="absolute left-0 bottom-0 w-[85%] z-10"
@@ -90,7 +90,7 @@ export default function Home() {
           // ctaText="Crear cuenta"
           // ctaLink="#"
         >
-          <div className="relative h-[400px] md:h-[500px]">
+          <div className="relative h-[200px] md:h-[500px]">
             {/* Tablet device */}
             <AnimatedElement
               className="absolute left-0 bottom-0 w-[85%] z-10"
@@ -136,7 +136,7 @@ export default function Home() {
           // ctaText="Crear cuenta"
           // ctaLink="#"
         >
-          <div className="relative h-[400px] md:h-[500px]">
+          <div className="relative h-[200px] md:h-[500px]">
             {/* Tablet device */}
             <AnimatedElement
               className="absolute left-0 bottom-0 w-[85%] z-10"

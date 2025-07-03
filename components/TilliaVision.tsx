@@ -40,7 +40,7 @@ export default function TilliaVision({
         
         <div className="relative mt-16 max-w-4xl mx-auto">
           {/* Device mockups */}
-          <div className="relative h-[400px] md:h-[500px]">
+          <div className="relative h-[200px] md:h-[500px]">
             {/* Tablet device */}
             <motion.div 
               className="absolute bottom-0 w-[100%] z-10 flex justify-center"
