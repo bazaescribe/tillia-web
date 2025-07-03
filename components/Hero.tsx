@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import PhotoShowcase from "./PhotoShowcase"
 
 export default function Hero() {
   const imageRef = useRef<HTMLDivElement>(null)
@@ -41,7 +42,7 @@ export default function Hero() {
   const imageHeight = baseHeight - heightReduction
 
   return (
-    <header className="relative overflow-hidden bg-white pt-12 md:pt-24">
+    <header className="relative overflow-hidden bg-white pt-24 md:pt-36">
       <div className="absolute inset-0 bg-white z-0"></div>
       <div className="container relative z-10">
         <div className="flex flex-col items-center text-center">
@@ -67,7 +68,7 @@ export default function Hero() {
               <span>Con la confianza de +100 emprendedores</span>
             </div>
 
-            <h1 className="text-5xl md:text-8xl lg:text-14xl font-black text-center"> 
+            <h1 className="text-5xl md:text-8xl lg:text-12xl font-bold text-center"> 
               La forma más fácil de operar tu negocio
             </h1>
             <p className="text-lg text-center">
@@ -90,25 +91,7 @@ export default function Hero() {
       </div>
 
       {/* Imagen con animación progresiva */}
-      <div className="w-full mt-32 overflow-hidden">
-        <div 
-          ref={imageRef}
-          className="relative mx-auto transition-all duration-300 ease-out overflow-hidden"
-          style={{
-            width: `${imageWidth}px`,
-            height: `${imageHeight}px`,
-            borderRadius: `${borderRadius}px`
-          }}
-        >
-          <Image 
-            src="/photos/store.jpg" 
-            alt="Business showcase" 
-            fill 
-            className="object-cover"
-            priority
-          />
-        </div>
-      </div>
+      <PhotoShowcase />
     </header>
   )
 }

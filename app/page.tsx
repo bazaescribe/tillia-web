@@ -262,10 +262,9 @@ export default function Home() {
         
         <Testimonials />
 
-        <BusinessCategories />
-
-        {/* Pricing Section - Now using the Pricing component */}
         <Pricing />
+
+        <BusinessCategories />
 
         {/* Spanish Features Section - Added below Pricing */}
         <TilliaFeatures />
