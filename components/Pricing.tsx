@@ -8,11 +8,14 @@ import { useState } from "react"
 import { Switch } from "@/components/ui/switch"
 import Image from "next/image"
 import SectionTitle from "./SectionTitle"
+import { useGeolocation } from "@/hooks/use-geolocation"
 
 export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly")
+  const { isInMexico, isLoading } = useGeolocation()
   
-  const plans = [
+  // Pricing data for Mexico (MXN)
+  const mexicoPlans = [
     {
       name: "Abre",
       monthlyPrice: "$0",
@@ -86,30 +89,134 @@ export default function Pricing() {
       popular: false,
     }
   ]
+
+  // Pricing data for US/International (USD)
+  const usPlans = [
+    {
+      name: "Abre",
+      monthlyPrice: "$0",
+      yearlyPrice: "$0",
+      period: billingPeriod === "monthly" ? " forever" : " forever",
+      description: "Perfect for starting to organize your business without overspending",
+      icon: '/illustrations/cart.png',
+      features: [
+        "1 user",
+        "Basic sales tracking",
+        "Up to 50 products",
+        "Email support"
+      ],
+      cta: "Start free",
+      popular: false,
+    },
+    {
+      name: "Crece",
+      monthlyPrice: "$11",
+      yearlyPrice: "$110",
+      period: billingPeriod === "monthly" ? " month" : " year",
+      description: "For businesses that already sell and want to take the next step",
+      icon: '/illustrations/stand.png',
+      features: [
+        "1 user",
+        "Up to 500 products",
+        "Access to preloaded catalogs",
+        "Packages and promotions",
+        "Simple sales reports"
+      ],
+      cta: "Try Starter",
+      popular: true,
+    },
+    {
+      name: "Lidera",
+      monthlyPrice: "$34",
+      yearlyPrice: "$340",
+      period: billingPeriod === "monthly" ? " month" : " year",
+      description: "For businesses that want to sell more and be everywhere",
+      icon: '/illustrations/store.png',
+      features: [
+        "Four users",
+        "Multi-location support",
+        "Unlimited products",
+        "Connect your online store",
+        "Connect with delivery apps",
+        "Smart inventory control",
+        "Tillia Vision",
+        "Sales projections",
+        "Priority support via WhatsApp and email"
+      ],
+      cta: "Try Pro",
+      popular: false,
+    },    
+    {
+      name: "Empresas",
+      monthlyPrice: "Custom",
+      yearlyPrice: "Custom",
+      period: "",
+      description: "For chains, franchises or businesses with specific needs",
+      icon: '/illustrations/till.png',
+      features: [
+        "Unlimited devices and locations",
+        "Custom training",
+        "Hardware and installations",
+        "Continuous updates and improvements",
+        "Dedicated support",
+        "Multi-location control panel"
+      ],
+      cta: "Talk to sales",
+      popular: false,
+    }
+  ]
+
+  // Use appropriate pricing based on location
+  const plans = isInMexico ? mexicoPlans : usPlans
+  const currency = isInMexico ? "MXN" : "USD"
+  const savingsText = isInMexico ? "Ahorra 15%" : "Save 15%"
+  const monthlyText = isInMexico ? "Mensual" : "Monthly"
+  const yearlyText = isInMexico ? "Anual" : "Yearly"
   
+  // Show loading state while detecting location
+  if (isLoading) {
+    return (
+      <section id="pricing" className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
+        <div className="container">
+          <div className="text-center">
+            <div className="animate-pulse">
+              <div className="h-8 bg-gray-200 rounded w-32 mx-auto mb-4"></div>
+              <div className="h-12 bg-gray-200 rounded w-96 mx-auto mb-4"></div>
+              <div className="h-6 bg-gray-200 rounded w-2/3 mx-auto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section id="pricing" className="py-40 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container">
         <div className="text-center mb-16">
           <SectionTitle
-            overtext="Precios"
-            title="Empieza gratis, escala al infinito"
-            subtitle="Plantir crece con tu negocio. Comienza con una cuenta gratuita, sin compromisos, y mejora tu plan sólo cuando lo necesites."
+            overtext={isInMexico ? "Precios" : "Pricing"}
+            title={isInMexico ? "Empieza gratis, escala al infinito" : "Start free, scale to infinity"}
+            subtitle={isInMexico 
+              ? "Plantir crece con tu negocio. Comienza con una cuenta gratuita, sin compromisos, y mejora tu plan sólo cuando lo necesites."
+              : "Plantir grows with your business. Start with a free account, no commitments, and upgrade your plan only when you need it."
+            }
           />
           
           {/* Billing period toggle */}
           <div className="flex items-center mt-3 space-x-4">
-            <span className={`text-sm font-medium ${billingPeriod === "monthly" ? "text-black" : "text-gray-500"}`}>Mensual</span>
+            <span className={`text-sm font-medium ${billingPeriod === "monthly" ? "text-black" : "text-gray-500"}`}>{monthlyText}</span>
             <Switch 
               checked={billingPeriod === "yearly"} 
               onCheckedChange={(checked) => setBillingPeriod(checked ? "yearly" : "monthly")}
               className="data-[state=checked]:bg-[#000]"
             />
             <div className="flex items-center">
-              <span className={`text-sm font-medium ${billingPeriod === "yearly" ? "text-black" : "text-gray-500"}`}>Anual</span>
-              <Badge className="ml-2 bg-green-100 text-green-800 text-xs">Ahorra 15%</Badge>
+              <span className={`text-sm font-medium ${billingPeriod === "yearly" ? "text-black" : "text-gray-500"}`}>{yearlyText}</span>
+              <Badge className="ml-2 bg-green-100 text-green-800 text-xs">{savingsText}</Badge>
             </div>
           </div>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -154,6 +261,13 @@ export default function Pricing() {
               </Button>
             </Card>
           ))}
+        </div>
+
+        {/* Currency indicator */}
+        <div className="mt-4">
+          <p className="text-xs">
+            Precios en {currency} • {isInMexico ? "México" : "International"}
+          </p>
         </div>
         
         {/* Enterprise plan on second row with full width */}
