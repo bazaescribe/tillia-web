@@ -41,7 +41,7 @@ export default function Pricing() {
       icon: '/illustrations/stand.png',
       features: [
         "1 usuario",
-        "Hasta 500 productos",
+        "Hasta 300 productos",
         "Acceso a catálogo precargados",
         "Paquetes y promociones",
         "Reportes simples de ventas"
@@ -96,72 +96,72 @@ export default function Pricing() {
       name: "Abre",
       monthlyPrice: "$0",
       yearlyPrice: "$0",
-      period: billingPeriod === "monthly" ? " forever" : " forever",
-      description: "Perfect for starting to organize your business without overspending",
+      period: billingPeriod === "monthly" ? " para siempre" : " para siempre",
+      description: "Ideal para empezar a organizar tu negocio sin gastar de más",
       icon: '/illustrations/cart.png',
       features: [
-        "1 user",
-        "Basic sales tracking",
-        "Up to 50 products",
-        "Email support"
+        "1 usuario",
+        "Registro de ventas básico",
+        "Hasta 50 productos",
+        "Soporte por email"
       ],
-      cta: "Start free",
+      cta: "Empieza gratis",
       popular: false,
     },
     {
       name: "Crece",
       monthlyPrice: "$11",
       yearlyPrice: "$110",
-      period: billingPeriod === "monthly" ? " month" : " year",
-      description: "For businesses that already sell and want to take the next step",
+      period: billingPeriod === "monthly" ? " mes" : " año",
+      description: "Para negocios que ya venden y quieren dar el siguiente paso",
       icon: '/illustrations/stand.png',
       features: [
-        "1 user",
-        "Up to 500 products",
-        "Access to preloaded catalogs",
-        "Packages and promotions",
-        "Simple sales reports"
+        "1 usuario",
+        "Hasta 300 productos",
+        "Acceso a catálogo precargados",
+        "Paquetes y promociones",
+        "Reportes simples de ventas"
       ],
-      cta: "Try Starter",
+      cta: "Probar Starter",
       popular: true,
     },
     {
       name: "Lidera",
       monthlyPrice: "$34",
       yearlyPrice: "$340",
-      period: billingPeriod === "monthly" ? " month" : " year",
-      description: "For businesses that want to sell more and be everywhere",
+      period: billingPeriod === "monthly" ? " mes" : " año",
+      description: "Para negocios que quieren vender más y estar en todos lados",
       icon: '/illustrations/store.png',
       features: [
-        "Four users",
-        "Multi-location support",
-        "Unlimited products",
-        "Connect your online store",
-        "Connect with delivery apps",
-        "Smart inventory control",
+        "Cuatro usuarios",
+        "Soporte multisucursal",
+        "Productos ilimitados",
+        "Conecta tu tienda en línea",
+        "Conecta con apps de delivery",
+        "Control de inventario inteligente",
         "Tillia Vision",
-        "Sales projections",
-        "Priority support via WhatsApp and email"
+        "Proyecciones de ventas",
+        "Soporte prioritario por WhatsApp y correo"
       ],
-      cta: "Try Pro",
+      cta: "Probar Pro",
       popular: false,
     },    
     {
       name: "Empresas",
-      monthlyPrice: "Custom",
-      yearlyPrice: "Custom",
+      monthlyPrice: "A medida",
+      yearlyPrice: "A medida",
       period: "",
-      description: "For chains, franchises or businesses with specific needs",
+      description: "Para cadenas, franquicias o negocios con necesidades específicas",
       icon: '/illustrations/till.png',
       features: [
-        "Unlimited devices and locations",
-        "Custom training",
-        "Hardware and installations",
-        "Continuous updates and improvements",
-        "Dedicated support",
-        "Multi-location control panel"
+        "Dispositivos y sucursales ilimitadas",
+        "Capacitación personalizada",
+        "Hardware e instalaciones",
+        "Actualizaciones y mejoras continuas",
+        "Soporte dedicado",
+        "Panel de control multi-sucursal"
       ],
-      cta: "Talk to sales",
+      cta: "Habla con ventas",
       popular: false,
     }
   ]
@@ -169,9 +169,9 @@ export default function Pricing() {
   // Use appropriate pricing based on location
   const plans = isInMexico ? mexicoPlans : usPlans
   const currency = isInMexico ? "MXN" : "USD"
-  const savingsText = isInMexico ? "Ahorra 15%" : "Save 15%"
-  const monthlyText = isInMexico ? "Mensual" : "Monthly"
-  const yearlyText = isInMexico ? "Anual" : "Yearly"
+  const savingsText = "Ahorra 15%"
+  const monthlyText = "Mensual"
+  const yearlyText = "Anual"
   
   // Show loading state while detecting location
   if (isLoading) {
