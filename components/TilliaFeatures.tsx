@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import SectionTitle from "./SectionTitle";
 
-export default function TilliaFeatures() {
+export default function WoriboFeatures() {
   const features = [
     {
       title: "Conecta tus tiendas en línea",
-      description: "Gestiona tu inventario y catálogo desde Tillia y publícalo automáticamente en Shopify, WooCommerce, Mercado Libre, Amazon y más.",
+      description: "Gestiona tu inventario y catálogo desde Woribo y publícalo automáticamente en Shopify, WooCommerce, Mercado Libre, Amazon y más.",
       icon: "/illustrations/online.png"
     },
     {
@@ -79,7 +79,7 @@ export default function TilliaFeatures() {
         <div className="mt-20 text-center">
           <h3 className="text-3xl font-bold mb-4">¿Tienes ideas o necesidades?</h3>
           <p className="text-xl text-gray-600 mb-8">
-            Esto lo construimos contigo. Escríbenos y cuéntanos qué te gustaría ver en Tillia.
+            Esto lo construimos contigo. Escríbenos y cuéntanos qué te gustaría ver en Woribo.
           </p>
           <Button variant='outline'>
             Tengo una idea ✨

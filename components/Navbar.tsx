@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Link href='/'>
             <Image 
-              src="/logo.svg?height=24"
+              src="/logo.png?height=24"
               alt="Tillia logo"
               width={91}
               height={22}

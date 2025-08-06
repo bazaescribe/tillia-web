@@ -11,14 +11,14 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Link href='/'>
                 <Image 
-                  src="/logo.svg?height=24"
-                  alt="Tillia logo"
+                  src="/logo.png?height=24"
+                  alt="Woribo logo"
                   width={91}
                   height={22}
                 />
               </Link>
             </div>
-            <p className="text-gray-600 mb-4">Todo lo que necesitas para vender mejor: cobros, control y decisiones con IA.</p>
+            <p className="text-gray-600 mb-4">Todo lo que tu negocio necesita para vender mejor, tomar decisiones con datos y crecer.</p>
             <div className="flex gap-4">
               {[
                 { name: "Twitter", url: "https://x.com/mithrandir_ai", icon: <Twitter className="w-5 h-5" /> },
@@ -70,7 +70,7 @@ export default function Footer() {
         {/* Removed Startup Programs Section */}
 
         <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center mt-12">
-          <p className="text-gray-600 text-sm">© 2025 Tillia. Todos los derechos reservados.</p>
+          <p className="text-gray-600 text-sm">© 2025 RB Technologies. Todos los derechos reservados.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
               Política de Privacidad

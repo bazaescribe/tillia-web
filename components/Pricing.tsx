@@ -63,7 +63,7 @@ export default function Pricing() {
         "Conecta tu tienda en línea",
         "Conecta con apps de delivery",
         "Control de inventario inteligente",
-        "Tillia Vision",
+        "Woribo Vision",
         "Proyecciones de ventas",
         "Soporte prioritario por WhatsApp y correo"
       ],
@@ -139,7 +139,7 @@ export default function Pricing() {
         "Conecta tu tienda en línea",
         "Conecta con apps de delivery",
         "Control de inventario inteligente",
-        "Tillia Vision",
+        "Woribo Vision",
         "Proyecciones de ventas",
         "Soporte prioritario por WhatsApp y correo"
       ],

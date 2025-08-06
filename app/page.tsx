@@ -1,9 +1,3 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Smartphone, BarChart3, ShoppingBag, ArrowRight, Star } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import DynamicFeatureLayout from "@/components/DynamicFeatureLayout"
@@ -19,6 +13,8 @@ import FeatureGrid from "@/components/FeatureGrid"
 import SocialProof from "@/components/SocialProof"
 import Testimonials from "@/components/Testimonials"
 import SectionTitle from "@/components/SectionTitle"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
@@ -33,7 +29,7 @@ export default function Home() {
         
         {/* <DynamicFeatureLayout
           title="La forma más fácil de administrar tus ventas."
-          subtitle="Tu negocio crece y Tillia te ayuda a llevar control de lo que vendes, lo que tienes en stock y lo que necesitas ajustar."
+          subtitle="Tu negocio crece y woribo te ayuda a llevar control de lo que vendes, lo que tienes en stock y lo que necesitas ajustar."
           imageUrl="/photos/bicycle.jpg" // Asegúrate de tener una imagen grande aquí
         /> */}
 
@@ -53,7 +49,7 @@ export default function Home() {
             >
               <Image
                 src="/shoots/products.png"
-                alt="Tillia en tablet"
+                alt="woribo en tablet"
                 width={800}
                 height={575}
                 className="object-contain"
@@ -72,7 +68,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone.png"
-                alt="Tillia en celular"
+                alt="woribo en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -87,7 +83,7 @@ export default function Home() {
 
         <AnimatedShowcase
           title="Vende sin fricción"
-          subtitle="Tu punto de venta, pero sin las partes molestas. Registra ventas al instante, sin errores, sin equipo extra. Solo abre Tillia y empieza a vender."
+          subtitle="Tu punto de venta, pero sin las partes molestas. Registra ventas al instante, sin errores, sin equipo extra. Solo abre woribo y empieza a vender."
           // ctaText="Crear cuenta"
           // ctaLink="#"
         >
@@ -99,7 +95,7 @@ export default function Home() {
             >
               <Image
                 src="/shoots/pos.png"
-                alt="Tillia en tablet"
+                alt="woribo en tablet"
                 width={800}
                 height={575}
                 className="object-contain"
@@ -118,7 +114,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone.png"
-                alt="Tillia en celular"
+                alt="woribo en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -133,7 +129,7 @@ export default function Home() {
 
         <AnimatedShowcase
           title="Toma mejores decisiones"
-          subtitle="No más tratar de adivinar qué está funcionando. Tillia analiza tus ventas y productos para mostrarte qué hacer y cuándo. Decisiones fáciles, claras y accionables."
+          subtitle="No más tratar de adivinar qué está funcionando. woribo analiza tus ventas y productos para mostrarte qué hacer y cuándo. Decisiones fáciles, claras y accionables."
           // ctaText="Crear cuenta"
           // ctaLink="#"
         >
@@ -145,7 +141,7 @@ export default function Home() {
             >
               <Image
                 src="/shoots/home.png"
-                alt="Tillia en tablet"
+                alt="woribo en tablet"
                 width={800}
                 height={575}
                 className="object-contain"
@@ -164,7 +160,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone.png"
-                alt="Tillia en celular"
+                alt="woribo en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -190,7 +186,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/laptop-shop.png"
-                alt="Tienda en línea Tillia"
+                alt="Tienda en línea woribo"
                 width={900}
                 height={600}
                 className="object-contain"
@@ -207,7 +203,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone-shop.png"
-                alt="Tienda en línea Tillia en celular"
+                alt="Tienda en línea woribo en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -223,12 +219,12 @@ export default function Home() {
         <TilliaVision />
 
         {/* <FeatureGrid
-          title="Simplifica tu día a día con Tillia"
-          subtitle="Olvídate de complicaciones. Tillia automatiza y optimiza tus ventas, inventario y promociones, para que puedas enfocarte en crecer tu negocio."
+          title="Simplifica tu día a día con woribo"
+          subtitle="Olvídate de complicaciones. woribo automatiza y optimiza tus ventas, inventario y promociones, para que puedas enfocarte en crecer tu negocio."
           features={[
             {
               title: "Ultra simple de usar",
-              description: "Tillia fue diseñado para entenderse al primer clic. No necesitas capacitación, cursos ni tutoriales. Entras, lo usas y punto.",
+              description: "woribo fue diseñado para entenderse al primer clic. No necesitas capacitación, cursos ni tutoriales. Entras, lo usas y punto.",
               image: "/photos/tianguis.jpg",
               link: "#"
             },
@@ -304,7 +300,7 @@ export default function Home() {
                   Toma el control total de tu negocio
                 </h2>
                 <p className="text-xl text-white/80 mb-8">
-                  Únete a cientos de emprendedores que ya usan Tillia para vender más, preocuparse menos y crecer mejor.
+                  Únete a cientos de emprendedores que ya usan woribo para vender más, preocuparse menos y crecer mejor.
                 </p>
                 <Button size="lg" className="bg-white text-black hover:bg-gray-100"> 
                   <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank">

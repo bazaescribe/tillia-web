@@ -28,7 +28,7 @@ export default function TilliaVision({
         <div className="max-w-3xl mx-auto text-center mb-40">
           
           <p className="text-lg text-[#FF4894] mb-2">
-            Tillia Vision
+            Woribo Vision
           </p>
           <h2 className="text-5xl md:text-5xl font-bold mb-4">{title}</h2>
           <p className="text-xl text-gray-400 mb-12">{subtitle}</p>

@@ -11,7 +11,7 @@ const TESTIMONIALS = [
     name: "Iván Ramírez",
     business: "Panadería La Espiga, Guadalajara",
     quote:
-      "Tillia nos ayudó a entender qué productos se venden más por horario y ajustar nuestros precios. Ahora vendemos más pan antes del mediodía que nunca.",
+      "woribo nos ayudó a entender qué productos se venden más por horario y ajustar nuestros precios. Ahora vendemos más pan antes del mediodía que nunca.",
     stars: 5,
     photo: "/photos/bakery.png",
     logo: "/logos/espiga.png",
@@ -20,7 +20,7 @@ const TESTIMONIALS = [
     name: "Sofía Torres",
     business: "Verde Vivo, CDMX",
     quote:
-      "Con Tillia puedo ver qué plantas tienen más rotación y cuáles no se están vendiendo. Me ayudó a decidir qué dejar de pedir y qué promocionar.",
+      "Con woribo puedo ver qué plantas tienen más rotación y cuáles no se están vendiendo. Me ayudó a decidir qué dejar de pedir y qué promocionar.",
     stars: 5,
     photo: "/photos/garden.png",
     logo: "/logos/verde.png",
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
     name: "Renata Cordero",
     business: "Boutique Aurora, Mérida",
     quote:
-      "No soy experta en tecnología, pero Tillia es facilísima de usar. Mis ventas subieron desde que empecé a seguir sus sugerencias de precio y stock.",
+      "No soy experta en tecnología, pero woribo es facilísima de usar. Mis ventas subieron desde que empecé a seguir sus sugerencias de precio y stock.",
     stars: 4,
     photo: "/photos/clothing.png",
     logo: "/logos/aurora.png",
@@ -38,7 +38,7 @@ const TESTIMONIALS = [
     name: "Susana Salazar",
     business: "Monkis Chop, Monterrey",
     quote:
-      "Con Tillia ya no tengo que estar anotando en la libreta qué se vende y qué no. Ahora todo se actualiza solo y me dice qué modelos pedir. Parece que tengo un gerente en mi celular.",
+      "Con woribo ya no tengo que estar anotando en la libreta qué se vende y qué no. Ahora todo se actualiza solo y me dice qué modelos pedir. Parece que tengo un gerente en mi celular.",
     stars: 5,
     photo: "/photos/bicycle.jpg",
     logo: "/logos/monkis.png",
@@ -65,7 +65,7 @@ export default function Testimonials() {
         <SectionTitle
           overtext="Historias de éxito"
           title="Menos estrés. Más claridad. Mejor negocio."
-          subtitle="Conoce cómo Tillia está transformando tiendas, cafés y negocios de todo tipo, uno a uno."
+          subtitle="Conoce cómo woribo está transformando tiendas, cafés y negocios de todo tipo, uno a uno."
         />
         <Carousel opts={{ loop: true }}>
           <CarouselContent>
