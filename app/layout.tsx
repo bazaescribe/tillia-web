@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Plandir',
-  description: 'La forma más fácil de administrar tu negocio',
+  title: 'Woribo',
+  description: 'La forma inteligente de operar tu negocio',
   themeColor: '#FFFFFF',
   icons: {
     icon: '/favicon.png',
-    shortcut: '/favicon.ico',
+    shortcut: '/favicon.png',
     apple: '/apple-touch-icon.png',
   },
 }
