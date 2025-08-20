@@ -28,7 +28,7 @@ export default function Navbar() {
   }, [scrolled])
 
   return (
-    <nav className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-white/80 shadow-sm backdrop-blur-lg' : ''}`}>
+    <nav className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-[#FF0095] shadow-lg backdrop-blur-lg' : ''}`}>
       <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href='/'>
@@ -37,6 +37,14 @@ export default function Navbar() {
               alt="Tillia logo"
               width={91}
               height={22}
+              className={`${!scrolled ? 'block' : 'hidden'}`}
+            />
+            <Image 
+              src="/logo-white.png?height=24"
+              alt="Tillia logo"
+              width={91}
+              height={22}
+              className={`${scrolled ? 'block' : 'hidden'}`}
             />
           </Link>
         </div>

@@ -15,6 +15,10 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
+        "sm": "720px",
+        "md": "910px", 
+        "lg": "1024px",
+        "xl": "1280px",
         "2xl": "1400px",
       },
     },
@@ -39,7 +43,7 @@ const config = {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
+        accentColor: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },

@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Woribo',
-  description: 'La forma inteligente de operar tu negocio',
-  themeColor: '#FFFFFF',
+  title: 'woravi',
+  description: 'La inteligencia que tu negocio necesita',
+  themeColor: '#FF0095',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
