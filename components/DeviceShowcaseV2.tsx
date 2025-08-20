@@ -14,7 +14,7 @@ interface DeviceShowcaseProps {
 
 export default function DeviceShowcaseV2({
   title = "Vende desde cualquier dispositivo",
-  subtitle = "Tillia funciona con tu computadora, tablet o celular. Empieza a vender hoy con una cuenta gratis sin invertir en lectores, cajas o licencias costosas.",
+  subtitle = "Woravi funciona con tu computadora, tablet o celular. Empieza a vender hoy con una cuenta gratis sin invertir en lectores, cajas o licencias costosas.",
   ctaText = "Crear cuenta",
   ctaLink = "#",
 }: DeviceShowcaseProps) {
@@ -37,7 +37,7 @@ export default function DeviceShowcaseV2({
         >
           <Image
             src="/assets/ipad.png"
-            alt="Tillia en tablet"
+            alt="Woravi en tablet"
             width={800}
             height={575}
             className="object-contain"
@@ -57,7 +57,7 @@ export default function DeviceShowcaseV2({
         >
           <Image
             src="/assets/iphone.png"
-            alt="Tillia en celular"
+            alt="Woravi en celular"
             width={300}
             height={600}
             className="object-contain"
@@ -70,4 +70,4 @@ export default function DeviceShowcaseV2({
       </div>
     </AnimatedShowcase>
   )
-} 
+}

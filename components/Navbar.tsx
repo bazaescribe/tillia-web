@@ -34,14 +34,14 @@ export default function Navbar() {
           <Link href='/'>
             <Image 
               src="/logo.png?height=24"
-              alt="Tillia logo"
+              alt="Woravi logo"
               width={91}
               height={22}
               className={`${!scrolled ? 'block' : 'hidden'}`}
             />
             <Image 
               src="/logo-white.png?height=24"
-              alt="Tillia logo"
+              alt="Woravi logo"
               width={91}
               height={22}
               className={`${scrolled ? 'block' : 'hidden'}`}

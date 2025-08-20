@@ -6,8 +6,8 @@ import AnimatedShowcase, { AnimatedElement } from "@/components/AnimatedShowcase
 import QuickStartSteps from "@/components/QuickStartSteps"
 import BusinessCategories from "@/components/BusinessCategories"
 import Pricing from "@/components/Pricing"
-import TilliaVision from "@/components/TilliaVision"
-import TilliaFeatures from "@/components/TilliaFeatures"
+import WoraviVision from "@/components/WoraviVision"
+import WoraviFeatures from "@/components/WoraviFeatures"
 import Footer from "@/components/Footer" // Importar el nuevo componente Footer
 import FeatureGrid from "@/components/FeatureGrid"
 import SocialProof from "@/components/SocialProof"
@@ -29,7 +29,7 @@ export default function Home() {
         
         {/* <DynamicFeatureLayout
           title="La forma más fácil de administrar tus ventas."
-          subtitle="Tu negocio crece y woribo te ayuda a llevar control de lo que vendes, lo que tienes en stock y lo que necesitas ajustar."
+          subtitle="Tu negocio crece y woravi te ayuda a llevar control de lo que vendes, lo que tienes en stock y lo que necesitas ajustar."
           imageUrl="/photos/bicycle.jpg" // Asegúrate de tener una imagen grande aquí
         /> */}
 
@@ -49,7 +49,7 @@ export default function Home() {
             >
               <Image
                 src="/shoots/products.png"
-                alt="woribo en tablet"
+                alt="woravi en tablet"
                 width={800}
                 height={575}
                 className="object-contain"
@@ -68,7 +68,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone.png"
-                alt="woribo en celular"
+                alt="woravi en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -83,7 +83,7 @@ export default function Home() {
 
         <AnimatedShowcase
           title="Vende sin fricción"
-          subtitle="Tu punto de venta, pero sin las partes molestas. Registra ventas al instante, sin errores, sin equipo extra. Solo abre woribo y empieza a vender."
+          subtitle="Tu punto de venta, pero sin las partes molestas. Registra ventas al instante, sin errores, sin equipo extra. Solo abre woravi y empieza a vender."
           // ctaText="Crear cuenta"
           // ctaLink="#"
         >
@@ -95,7 +95,7 @@ export default function Home() {
             >
               <Image
                 src="/shoots/pos.png"
-                alt="woribo en tablet"
+                alt="woravi en tablet"
                 width={800}
                 height={575}
                 className="object-contain"
@@ -114,7 +114,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone.png"
-                alt="woribo en celular"
+                alt="woravi en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -129,7 +129,7 @@ export default function Home() {
 
         <AnimatedShowcase
           title="Toma mejores decisiones"
-          subtitle="No más tratar de adivinar qué está funcionando. woribo analiza tus ventas y productos para mostrarte qué hacer y cuándo. Decisiones fáciles, claras y accionables."
+          subtitle="No más tratar de adivinar qué está funcionando. woravi analiza tus ventas y productos para mostrarte qué hacer y cuándo. Decisiones fáciles, claras y accionables."
           // ctaText="Crear cuenta"
           // ctaLink="#"
         >
@@ -141,7 +141,7 @@ export default function Home() {
             >
               <Image
                 src="/shoots/home.png"
-                alt="woribo en tablet"
+                alt="woravi en tablet"
                 width={800}
                 height={575}
                 className="object-contain"
@@ -160,7 +160,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone.png"
-                alt="woribo en celular"
+                alt="woravi en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -186,7 +186,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/laptop-shop.png"
-                alt="Tienda en línea woribo"
+                alt="Tienda en línea woravi"
                 width={900}
                 height={600}
                 className="object-contain"
@@ -203,7 +203,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/iphone-shop.png"
-                alt="Tienda en línea woribo en celular"
+                alt="Tienda en línea woravi en celular"
                 width={300}
                 height={600}
                 className="object-contain"
@@ -216,15 +216,15 @@ export default function Home() {
           </div>
         </AnimatedShowcase> */}
 
-        <TilliaVision />
+        <WoraviVision />
 
         {/* <FeatureGrid
-          title="Simplifica tu día a día con woribo"
-          subtitle="Olvídate de complicaciones. woribo automatiza y optimiza tus ventas, inventario y promociones, para que puedas enfocarte en crecer tu negocio."
+          title="Simplifica tu día a día con woravi"
+          subtitle="Olvídate de complicaciones. woravi automatiza y optimiza tus ventas, inventario y promociones, para que puedas enfocarte en crecer tu negocio."
           features={[
             {
               title: "Ultra simple de usar",
-              description: "woribo fue diseñado para entenderse al primer clic. No necesitas capacitación, cursos ni tutoriales. Entras, lo usas y punto.",
+              description: "woravi fue diseñado para entenderse al primer clic. No necesitas capacitación, cursos ni tutoriales. Entras, lo usas y punto.",
               image: "/photos/tianguis.jpg",
               link: "#"
             },
@@ -265,7 +265,7 @@ export default function Home() {
         <BusinessCategories />
 
         {/* Spanish Features Section - Added below Pricing */}
-        <TilliaFeatures />
+        <WoraviFeatures />
 
         {/* Closing CTA Section */}
         <section className="py-64 bg-gradient-to-b from-white to-[#FAFAFA]">
@@ -300,7 +300,7 @@ export default function Home() {
                   Toma el control total de tu negocio
                 </h2>
                 <p className="text-xl text-white/80 mb-8">
-                  Únete a cientos de emprendedores que ya usan woribo para vender más, preocuparse menos y crecer mejor.
+                  Únete a cientos de emprendedores que ya usan woravi para vender más, preocuparse menos y crecer mejor.
                 </p>
                 <Button size="lg" className="bg-white text-black hover:bg-gray-100"> 
                   <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank">

@@ -63,7 +63,7 @@ export default function Pricing() {
         "Conecta tu tienda en línea",
         "Conecta con apps de delivery",
         "Control de inventario inteligente",
-        "Woribo Vision",
+        "Woravi Vision",
         "Proyecciones de ventas",
         "Soporte prioritario por WhatsApp y correo"
       ],
@@ -139,7 +139,7 @@ export default function Pricing() {
         "Conecta tu tienda en línea",
         "Conecta con apps de delivery",
         "Control de inventario inteligente",
-        "Woribo Vision",
+        "Woravi Vision",
         "Proyecciones de ventas",
         "Soporte prioritario por WhatsApp y correo"
       ],
@@ -198,8 +198,8 @@ export default function Pricing() {
             overtext={isInMexico ? "Precios" : "Pricing"}
             title={isInMexico ? "Empieza gratis, escala al infinito" : "Start free, scale to infinity"}
             subtitle={isInMexico 
-              ? "Woribo crece con tu negocio. Comienza con una cuenta gratuita, sin compromisos, y mejora tu plan sólo cuando lo necesites."
-              : "Woribo grows with your business. Start with a free account, no commitments, and upgrade your plan only when you need it."
+              ? "Woravi crece con tu negocio. Comienza con una cuenta gratuita, sin compromisos, y mejora tu plan sólo cuando lo necesites."
+              : "Woravi grows with your business. Start with a free account, no commitments, and upgrade your plan only when you need it."
             }
           />
           

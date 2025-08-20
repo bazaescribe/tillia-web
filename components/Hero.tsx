@@ -504,7 +504,7 @@ function HeroWrapper({ children }: { children: React.ReactNode }) {
 export default function Hero({
   title = "Opera tu negocio desde aquí",
   description = "Punto de venta, inventario y reportes en un solo lugar. Fácil, rápido y hecho para crecer contigo.",
-  imageSrc = "/shoots/ss.png", // Actualizada la ruta de la imagen
+  imageSrc = "/shoots/product-shot.png", // Actualizada la ruta de la imagen
   imageAlt = "woravi punto de venta", // Actualizado el alt text
   ctas = [
     {

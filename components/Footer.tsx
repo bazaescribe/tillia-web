@@ -12,7 +12,7 @@ export default function Footer() {
               <Link href='/'>
                 <Image 
                   src="/logo.png?height=24"
-                  alt="Woribo logo"
+                  alt="Woravi logo"
                   width={91}
                   height={22}
                 />

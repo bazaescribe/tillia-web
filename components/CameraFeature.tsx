@@ -14,7 +14,7 @@ const VisionComponent = () => {
     <div className="bg-[#0C0F12] min-h-screen text-white font-sans py-40">
       {/* Sección Superior */}
       <div className="max-w-4xl mx-auto px-4 py-40 pt-32 text-center md:text-left">
-        <p className="text-lg mb-2 bg-gradient-to-r from-[#F800AD] to-[#B3FFF9] bg-clip-text text-transparent">Tillia Vision</p>
+        <p className="text-lg mb-2 bg-gradient-to-r from-[#F800AD] to-[#B3FFF9] bg-clip-text text-transparent">Woravi Vision</p>
         <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-8">
           Tu cámara. Tu negocio. Bajo control.
         </h1>
@@ -60,7 +60,7 @@ const VisionComponent = () => {
             >
               <Image
                 src="/assets/ipad.png"
-                alt="Tillia en tablet"
+                alt="Woravi en tablet"
                 width={800}
                 height={575}
                 className="object-contain"
@@ -83,7 +83,7 @@ const VisionComponent = () => {
             >
               <Image
                 src="/assets/iphone.png"
-                alt="Tillia en celular"
+                alt="Woravi en celular"
                 width={300}
                 height={600}
                 className="object-contain"

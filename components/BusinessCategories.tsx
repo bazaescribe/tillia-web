@@ -29,7 +29,7 @@ export default function BusinessCategories() {
         <SectionTitle
           overtext="Productos"
           title="Una experiencia distinta para cada negocio"
-          subtitle="Pensado para ajustarse, no para encajar a la fuerza. Woribo entiende lo que necesitas, cuando lo necesitas."
+          subtitle="Pensado para ajustarse, no para encajar a la fuerza. Woravi entiende lo que necesitas, cuando lo necesitas."
         />
 
         <div className="grid grid-cols-2 mt-16 sm:grid-cols-3 md:grid-cols-5 gap-8">
