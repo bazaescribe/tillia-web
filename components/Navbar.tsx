@@ -28,23 +28,15 @@ export default function Navbar() {
   }, [scrolled])
 
   return (
-    <nav className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-[#FF0095] shadow-lg backdrop-blur-lg' : ''}`}>
-      <div className="container flex h-14 items-center justify-between">
+    <nav className={`sticky bg-white  top-0 z-40 w-full transition-all duration-200`}>
+      <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href='/'>
             <Image 
               src="/logo.png?height=24"
               alt="Woravi logo"
-              width={91}
+              width={111}
               height={22}
-              className={`${!scrolled ? 'block' : 'hidden'}`}
-            />
-            <Image 
-              src="/logo-white.png?height=24"
-              alt="Woravi logo"
-              width={91}
-              height={22}
-              className={`${scrolled ? 'block' : 'hidden'}`}
             />
           </Link>
         </div>

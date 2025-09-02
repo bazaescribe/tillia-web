@@ -8,23 +8,68 @@ import BusinessCategories from "@/components/BusinessCategories"
 import Pricing from "@/components/Pricing"
 import WoraviVision from "@/components/WoraviVision"
 import WoraviFeatures from "@/components/WoraviFeatures"
-import Footer from "@/components/Footer" // Importar el nuevo componente Footer
-import FeatureGrid from "@/components/FeatureGrid"
+import Footer from "@/components/Footer"
 import SocialProof from "@/components/SocialProof"
 import Testimonials from "@/components/Testimonials"
-import SectionTitle from "@/components/SectionTitle"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import NewHero from "@/components/NewHero"
+import WordArt from "@/components/WordArt"
+import Service from "@/components/Service"
 
 export default function Home() {
+
+  const services = [
+    {
+      title: "Control sin esfuerzo",
+      subtitle: "ni dolores de cabeza",
+      overtext: "Control de inventario",
+      price: "Desde $0.00",
+      cta: "Comprar 1",
+      description: "Gestiona existencias con precisión absoluta. Tu negocio siempre sabe qué entra, qué sale y qué falta, sin hojas de cálculo ni dolores de cabeza.",
+      image: "product-report.png",
+    },
+    {
+      title: "Servicio 1",
+      subtitle: "Subtítulo 1",
+      overtext: "Servicio 1",
+      price: "Precio 1",
+      cta: "Comprar 1",
+      description: "Descripción del servicio 1",
+      image: "pos.png",
+    },
+    {
+      title: "Servicio 1",
+      subtitle: "Subtítulo 1",
+      overtext: "Servicio 1",
+      price: "Precio 1",
+      cta: "Comprar 1",
+      description: "Descripción del servicio 1",
+      image: "pos.png",
+    },
+  ]
   return (
     <div className="flex min-h-screen flex-col">
       {/* Navigation */}
       <Navbar />
 
       <main className="flex-1">
-        <Hero />
-        
+        <NewHero />
+        <WordArt />
+
+        {services.map((service, index) => (
+          <Service 
+            key={index}
+            title={service.title}
+            subtitle={service.subtitle}
+            overtext={service.overtext}
+            price={service.price}
+            cta={service.cta}
+            description={service.description}
+            image={service.image}
+          />
+        ))}
+
         <SocialProof />
         
         {/* <DynamicFeatureLayout
