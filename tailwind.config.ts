@@ -13,7 +13,7 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "sm": "720px",
         "md": "910px", 

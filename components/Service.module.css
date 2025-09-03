@@ -71,4 +71,13 @@
     height: fit-content;
     justify-content: flex-start;
   }
+
+  .image {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .image img {
+    width: 50%;
+  }
 }

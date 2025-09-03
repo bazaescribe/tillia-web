@@ -53,6 +53,15 @@ export default function Home() {
       image: "store.png",
     },
     {
+      title: "Vende en todos lados",
+      subtitle: "sin esfuerzo extra",
+      overtext: "Ventas omnicanal",
+      price: "Próximamente",
+      cta: "Explorar",
+      description: "Tu catálogo conectado a apps de delivery, marketplaces y redes sociales con un solo clic. Todo desde el mismo inventario centralizado.",
+      image: "delivery.png",
+    },
+    {
       title: "Restaurantes sin fricción",
       subtitle: "del pedido a la mesa",
       overtext: "Restaurantes",
@@ -71,13 +80,11 @@ export default function Home() {
       description:
         "Organiza citas, reservas y espacios sin complicaciones. Tus clientes encuentran el momento perfecto y tú mantienes todo bajo control, sin llamadas ni confusión.",
       image: "reservation.png",
-    }
-
+    },
   ];
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Navigation */}
       <Navbar />
 
       <main className="flex-1">
@@ -98,7 +105,7 @@ export default function Home() {
           />
         ))}
         <QuickStartSteps />
-        <PaperlessSection />
+        {/* <PaperlessSection /> */}
         <Testimonials />
         <CallToAction />
       </main>

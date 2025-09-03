@@ -1,264 +1,178 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import clsx from "clsx";
-import { Button } from "@/components/ui/button";
+import { useRef } from "react";
+import Image from "next/image";
+import { Leaf, Smartphone, Zap, CheckCircle, TreePine, Recycle } from "lucide-react";
 import SectionTitle from "./SectionTitle";
+import { Card } from "./ui/card";
 
-interface PaperlessSectionProps {
-  className?: string;
-  eyebrow?: string;
-  title?: string;
-  subtitle?: string;
-  primaryCtaLabel?: string;
-  secondaryCtaLabel?: string;
-  onPrimaryClick?: () => void;
-  onSecondaryClick?: () => void;
-  stats?: {
-    label: string;
-    value: string;
-  }[];
-  dark?: boolean; // toggles dark/contrast variant
-}
+const paperlessFeatures = [
+  {
+    icon: Smartphone,
+    title: "100% Digital",
+    description: "Todo en tu dispositivo: ventas, inventario y reportes sin papel.",
+    illustration: "/illustrations/pos.png"
+  },
+  {
+    icon: Zap,
+    title: "Instantáneo",
+    description: "Procesos más rápidos sin impresoras lentas o tickets que se atascan.",
+    illustration: "/illustrations/online.png"
+  },
+  {
+    icon: TreePine,
+    title: "Eco-friendly",
+    description: "Reduce tu huella de carbono y contribuye al cuidado del planeta.",
+    illustration: "/illustrations/notebook.png"
+  }
+];
 
-export default function PaperlessSection({
-  className,
-  eyebrow = "Comprometidos con el medio ambiente",
-  title = "Cero papeleo, todo digital",
-  subtitle =
-    "Olvídate de impresoras, tickets y pilas de papel. Todo es digital: rápido, claro y sustentable.",
-  primaryCtaLabel = "Comienza gratis",
-  secondaryCtaLabel = "Ver cómo funciona",
-  onPrimaryClick,
-  onSecondaryClick,
-  stats = [
-    { label: "Tickets en papel ahorrados", value: "+12,000" },
-    { label: "Ahorro en insumos", value: "−35%" },
-    { label: "Tiempo de espera", value: "−28%" },
-  ],
-  dark = false,
-}: PaperlessSectionProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { amount: 0.2, once: true, margin: "-80px" });
+const benefits = [
+  "Sin costos de papel ni tinta",
+  "Cero mantenimiento de impresoras",
+  "Acceso instantáneo al historial",
+  "Respaldos automáticos en la nube",
+  "Búsqueda rápida de transacciones",
+  "Reportes siempre disponibles"
+];
 
-  const bg = dark
-    ? "bg-[#0C0F12] text-white"
-    : "bg-white text-[#0C0F12]";
+export default function PaperlessSection() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
 
   return (
-    <section
-      ref={ref}
-      className='container'
-    >
-      {/* subtle gradient blob */}
-      <div
-        aria-hidden
-        className={clsx(
-          "pointer-events-none absolute inset-x-0 -top-24 h-72 blur-3xl",
-          dark ? "bg-white/5" : "bg-[#B8EBD0]/10"
-        )}
-      />
+    <section className="py-24 bg-gradient-to-b from-white to-green-50/30" ref={sectionRef}>
+      <div className="container mx-auto px-4">
+        <SectionTitle 
+          title="100% Digital" 
+          subtitle="Olvídate de impresoras, tickets y pilas de papel. Todo es digital: rápido, claro y sustentable." 
+          overtext="Ecología"
+          align="center"
+        />
 
-      <div className="py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Copy */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="space-y-6"
+        {/* Hero Visual */}
+        <motion.div 
+          className="relative max-w-4xl mx-auto mb-20 mt-16"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.div 
+            className="relative bg-gradient-to-br from-green-100 to-blue-100 rounded-3xl p-12 overflow-hidden"
+            variants={itemVariants}
           >
-            <SectionTitle 
-              overtext={eyebrow}
-              title={title} 
-              subtitle={subtitle} 
-            />
+            {/* Floating elements */}
+            <motion.div 
+              className="absolute top-8 right-8 w-16 h-16 bg-green-200 rounded-full flex items-center justify-center"
+              variants={floatingVariants}
+              animate="animate"
+            >
+              <Leaf className="w-8 h-8 text-green-600" />
+            </motion.div>
+            
+            <motion.div 
+              className="absolute bottom-8 left-8 w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center"
+              variants={floatingVariants}
+              animate="animate"
+              style={{ animationDelay: "2s" }}
+            >
+              <Recycle className="w-6 h-6 text-blue-600" />
+            </motion.div>
 
-            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {[
-                "Tickets y facturas digitales",
-                "Firma en pantalla y envíos por WhatsApp / email",
-                "Sin impresoras, sin rollos, sin dolores de cabeza",
-                "Todo queda guardado y auditable",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 rounded-xl border px-3 py-2 text-sm border-black/10 dark:border-white/15"
-                >
-                  <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-black/5 dark:bg-white/10">
-                    <span className="i-lucide-check h-3.5 w-3.5" aria-hidden />
-                  </span>
-                  <span className="text-black/80 dark:text-white/85">{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Button
-                onClick={onPrimaryClick}
-                className="rounded-2xl px-5 py-5 text-base shadow-sm bg-[#FF0095] hover:opacity-90"
+            <div className="text-center relative z-10">
+              <motion.div 
+                className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6"
+                variants={itemVariants}
               >
-                {primaryCtaLabel}
-              </Button>
-              <Button
-                variant="secondary"
-                onClick={onSecondaryClick}
-                className={clsx(
-                  "rounded-2xl px-5 py-5 text-base backdrop-blur-md",
-                  dark
-                    ? "bg-white/10 hover:bg-white/15"
-                    : "bg-black/5 hover:bg-black/10"
-                )}
+                <TreePine className="w-5 h-5 text-green-600" />
+                <span className="text-sm font-medium text-green-800">Cero papel, máximo impacto</span>
+              </motion.div>
+              
+              <motion.h3 
+                className="text-2xl md:text-3xl font-bold text-gray-800 mb-4"
+                variants={itemVariants}
               >
-                {secondaryCtaLabel}
-              </Button>
+                Cada venta digital salva el planeta
+              </motion.h3>
+              
+              <motion.p 
+                className="text-lg text-gray-600 max-w-2xl mx-auto"
+                variants={itemVariants}
+              >
+                Con Tillia, cada transacción es una decisión consciente por el medio ambiente
+              </motion.p>
             </div>
-
-            {/* Stats */}
-            {stats?.length ? (
-              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {stats.map((s) => (
-                  <div
-                    key={s.label}
-                    className="rounded-2xl border p-4 text-center border-black/10 dark:border-white/15"
-                  >
-                    <div className="text-2xl font-semibold">{s.value}</div>
-                    <div className="text-xs text-black/60 dark:text-white/60">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            ) : null}
           </motion.div>
+        </motion.div>
 
-          {/* Visual */}
-          <div className="relative">
-            <PhoneMockup inView={inView} dark={!!dark} />
-          </div>
-        </div>
+        {/* Benefits List */}
+        <motion.div 
+          className="max-w-3xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.div 
+            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+            variants={itemVariants}
+          >
+            <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">
+              Beneficios del proceso paperless
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {benefits.map((benefit, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-green-50 transition-colors duration-200"
+                  variants={itemVariants}
+                  custom={index}
+                >
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                  </div>
+                  <span className="text-gray-700">{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
-  );
-}
-
-function PhoneMockup({ inView, dark }: { inView: boolean; dark: boolean }) {
-  return (
-    <div className="relative mx-auto h-[520px] w-[280px] sm:h-[560px] sm:w-[300px]">
-      {/* phone body */}
-      <motion.div
-        initial={{ opacity: 0, y: 20, rotate: -2 }}
-        animate={inView ? { opacity: 1, y: 0, rotate: -2 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={clsx(
-          "absolute inset-0 rounded-[42px] border p-2 shadow-xl",
-          dark
-            ? "border-white/15 bg-white/5"
-            : "border-black/10 bg-white"
-        )}
-        style={{ boxShadow: dark ? "0 10px 40px rgba(0,0,0,.35)" : "0 10px 40px rgba(0,0,0,.12)" }}
-      >
-        <div
-          className={clsx(
-            "h-full w-full rounded-[32px] p-3",
-            dark ? "bg-[#0D1013]" : "bg-[#B8EBD0]"
-          )}
-        >
-          {/* "screen" header */}
-          <div className="mb-3 flex items-center justify-between">
-            <div className="h-2 w-12 rounded-full bg-black/10 dark:bg-white/15" />
-            <div className="h-2 w-6 rounded-full bg-black/10 dark:bg-white/15" />
-          </div>
-
-          {/* digital receipt card */}
-          <div className="space-y-3">
-            <div className="rounded-2xl bg-white p-4 shadow-sm dark:bg-white/5">
-              <div className="mb-2 flex items-center justify-between text-sm">
-                <span className="font-medium">Ticket #A-5271</span>
-                <span className="text-black/60 dark:text-white/60">$245.00</span>
-              </div>
-              <div className="mb-2 h-px bg-black/10 dark:bg-white/10" />
-              <div className="space-y-1 text-xs">
-                <Row label="Concha vainilla" value="$45.00" />
-                <Row label="Pan de elote" value="$68.00" />
-                <Row label="Café americano" value="$32.00" />
-                <Row label="Galletas surtidas" value="$100.00" />
-              </div>
-              <div className="mt-3 flex items-center justify-between text-sm font-medium">
-                <span>Total</span>
-                <span>$245.00</span>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-3 text-xs shadow-sm dark:bg-white/5">
-              <div className="mb-2 flex items-center gap-2">
-                <span className="i-lucide-send h-4 w-4" />
-                Enviar ticket a: WhatsApp • Email
-              </div>
-              <div className="flex gap-2">
-                <div className="h-8 flex-1 rounded-xl bg-black/5 dark:bg-white/10" />
-                <div className="h-8 w-20 rounded-xl bg-black/10 dark:bg-white/20" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* floating eco badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        className={clsx(
-          "absolute -right-8 top-6 select-none rounded-2xl px-3 py-2 text-xs font-medium shadow-lg",
-          dark ? "bg-white/10" : "bg-white"
-        )}
-      >
-        <div className="flex items-center gap-2">
-          <span className="i-lucide-printer h-4 w-4 opacity-60" />
-          Sin impresora
-        </div>
-      </motion.div>
-
-      {/* floating WhatsApp bubble */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0.35, duration: 0.5 }}
-        className={clsx(
-          "absolute -left-10 bottom-12 select-none rounded-2xl px-3 py-2 text-xs font-medium shadow-lg",
-          dark ? "bg-white/10" : "bg-white"
-        )}
-      >
-        <div className="flex items-center gap-2">
-          <span className="i-lucide-message-circle h-4 w-4 opacity-60" />
-          Ticket enviado ✓
-        </div>
-      </motion.div>
-
-      {/* floating recycle badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        className={clsx(
-          "absolute -right-6 bottom-4 select-none rounded-2xl px-3 py-2 text-xs font-medium shadow-lg",
-          dark ? "bg-white/10" : "bg-white"
-        )}
-      >
-        <div className="flex items-center gap-2">
-          <span className="i-lucide-recycle h-4 w-4 opacity-60" />
-          Menos papel, menos CO₂
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between">
-      <span className="text-black/70 dark:text-white/70">{label}</span>
-      <span className="font-medium">{value}</span>
-    </div>
   );
 }
