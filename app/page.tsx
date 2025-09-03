@@ -1,16 +1,13 @@
 import Navbar from "@/components/Navbar"
 import QuickStartSteps from "@/components/QuickStartSteps"
-import BusinessCategories from "@/components/BusinessCategories"
-import WoraviFeatures from "@/components/WoraviFeatures"
 import Footer from "@/components/Footer"
 import SocialProof from "@/components/SocialProof"
 import Testimonials from "@/components/Testimonials"
-import { Button } from "@/components/ui/button"
 import NewHero from "@/components/NewHero"
 import WordArt from "@/components/WordArt"
 import Service from "@/components/Service"
-import FeatureGrid from "@/components/FeatureGrid"
 import CallToAction from '@/components/CallToAction'
+import PaperlessSection from "@/components/PaperlessSection"
 
 export default function Home() {
 
@@ -101,6 +98,7 @@ export default function Home() {
           />
         ))}
         <QuickStartSteps />
+        <PaperlessSection />
         <Testimonials />
         <CallToAction />
       </main>
