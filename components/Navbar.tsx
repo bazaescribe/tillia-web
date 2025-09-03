@@ -41,8 +41,8 @@ export default function Navbar() {
           </Link>
         </div>
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="#features" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
-            Beneficios
+          <Link href="#services" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
+            Servicios
           </Link>
           <Link href="#how-it-works" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
             ¿Cómo funciona?
@@ -50,9 +50,6 @@ export default function Navbar() {
           
           <Link href="#testimonials" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
             Historias de éxito
-          </Link>
-          <Link href="#pricing" className="text-sm font-medium text-black/40 hover:text-black transition-colors">
-            Precios
           </Link>
         </nav>
         <div className="flex items-center gap-4">

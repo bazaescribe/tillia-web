@@ -91,7 +91,7 @@ export default function Home() {
         <NewHero />
         <SocialProof />
         <WordArt />
-
+        <div id="services">
         {services.map((service, index) => (
           <Service 
             key={index}
@@ -104,6 +104,7 @@ export default function Home() {
             image={service.image}
           />
         ))}
+        </div>
         <QuickStartSteps />
         {/* <PaperlessSection /> */}
         <Testimonials />
