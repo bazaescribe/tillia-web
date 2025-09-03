@@ -42,7 +42,7 @@ export default function CallToAction({
       className={`py-24 bg-gradient-to-br from-white to-[#FAFAFA] ${className}`}
       aria-label="Llamados a la acción"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <motion.div
           ref={containerRef}
           className={`grid gap-8 ${
