@@ -27,7 +27,7 @@ export default function NewHero() {
           }}
           className={styles.card}
         >
-          <h1 className="text-6xl mb-2 text-white">Administra tu negocio fácilmente</h1>
+          <h1 className="text-4xl font-bold mb-2 text-white md:text-6xl">Administra tu negocio fácilmente</h1>
           <p className="text-xl text-white mb-6">
             Controla tus ventas, stock y operaciones sin complicaciones.
           </p>

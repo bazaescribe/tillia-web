@@ -35,8 +35,8 @@ export default function Navbar() {
             <Image 
               src="/logo.png?height=24"
               alt="Woravi logo"
-              width={111}
-              height={22}
+              width={112}
+              height={24}
             />
           </Link>
         </div>

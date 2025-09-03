@@ -2,7 +2,7 @@
   display: flex;
   gap: 2rem;
   min-height: 80dvh;
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .info, .image, .description {
@@ -12,6 +12,11 @@
 .image {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  filter: drop-shadow(0 0 32px rgba(0, 0, 0, 0.16));
 }
 
 .description {
@@ -30,6 +35,11 @@
   line-height: 1.2;
 }
 
+.title {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
 .follow {
   color: #aaaaaa;
 }
@@ -42,6 +52,7 @@
 
 .description {
   font-size: 1.25rem;
+  color: #aaaaaa;
 }
 
 @media screen and (max-width: 768px) {

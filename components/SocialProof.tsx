@@ -2,12 +2,9 @@ import Image from "next/image"
 
 export default function SocialProof() {
   return (
-    <section className="pt-40 bg-white">
-      <div className="container">
+    <section className="bg-white">
+      <div className="py-12 container">
         <div>
-          <p className="text-sm text-center text-gray-500 mb-6 font-medium">
-            Impulsados por gigantes. Trabajamos para todos.
-          </p>
           <div className="flex items-center justify-center flex-wrap gap-8">
             <div className="flex items-center">
               <Image

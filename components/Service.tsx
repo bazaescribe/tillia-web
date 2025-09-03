@@ -89,7 +89,7 @@ export default function Service({
         >
           <p className={styles.overtext}>{overtext}</p>
           <h1>
-            <span className={styles.title}>{title}</span> <span className={styles.follow}>{subtitle}</span>
+            <span className={styles.title}>{title}</span>  <span className={styles.follow}>{subtitle}</span>
           </h1>
           <h2 className={styles.price}>
             {price}
@@ -108,8 +108,8 @@ export default function Service({
           <Image
             src={imageURL}
             alt="Service"
-            width={360}
-            height={770}
+            width={300}
+            height={618}
           />
         </motion.div>
         <motion.div 

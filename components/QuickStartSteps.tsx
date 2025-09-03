@@ -87,7 +87,7 @@ export default function QuickStartSteps() {
             >
               <div className="mb-6 rounded-3xl overflow-hidden shadow-sm w-full relative"
                 style={{
-                  aspectRatio: '10/14'
+                  aspectRatio: '12/10'
                 }}
               >
                 <Image
