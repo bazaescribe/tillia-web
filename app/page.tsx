@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from "react"
+
 import Navbar from "@/components/Navbar"
 import QuickStartSteps from "@/components/QuickStartSteps"
 import Footer from "@/components/Footer"
@@ -6,11 +10,13 @@ import Testimonials from "@/components/Testimonials"
 import NewHero from "@/components/NewHero"
 import WordArt from "@/components/WordArt"
 import Service from "@/components/Service"
+import CompetitorComparison from "@/components/CompetitorComparison"
 import CallToAction from '@/components/CallToAction'
 import PaperlessSection from "@/components/PaperlessSection"
 
 import CardStepsSection from "@/components/CardStepsSection"
 import { steps } from "framer-motion"
+import ComparisonUpgrade from "@/components/ComparisonUpgrade"
 
 export default function Home() {
 
@@ -169,7 +175,6 @@ export default function Home() {
           subtitle="Haz que tu negocio esté donde están tus clientes: en tu tienda, en línea o en las apps que ya conoces, siempre con la misma facilidad."
           items={salesFeatures}
         />
-        <Testimonials />
         <CallToAction />
       </main>
 

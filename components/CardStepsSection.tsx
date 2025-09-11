@@ -109,7 +109,7 @@ export default function CardStepsSection({
             >
               <div className="mb-4 overflow-hidden shadow-lg w-full relative flex items-end justify-center"
                 style={{
-                  aspectRatio: '10/12',
+                  aspectRatio: '10/13',
                   borderRadius: '28px',
                   background: `url(${item.background})`,
                   backgroundSize: 'cover',
@@ -132,6 +132,7 @@ export default function CardStepsSection({
                     style={{ 
                       objectFit: "contain",
                       objectPosition: "bottom",
+                      filter: 'drop-shadow(0px -2px 32px rgba(0, 0, 0, 0.16))',
                     }}
                     sizes="80%"
                     priority={index === 0}
