@@ -22,7 +22,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   return (
     <div className={`flex flex-col gap-2 mb-4 ${alignmentMap[align]}`}>  
       {overtext && (
-        <span className="tracking-widest text-md text-[#000000]/50 font-light mb-1">
+        <span className="tracking-widest text-md text-[#FF0095] font-light mb-1">
           {overtext}
         </span>
       )}

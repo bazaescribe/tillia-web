@@ -33,14 +33,14 @@ export default function NewHero() {
     transition: 'opacity 0.3s ease-in-out'
   }
 
-  // Animation variants
+  // Animation variants for content
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3 // Wait for background to fade in
+        delayChildren: 0.3
       }
     }
   }
@@ -68,14 +68,28 @@ export default function NewHero() {
       }
     }
   }
+
+  // Animation variants for card - slides from bottom to top after content
+  const cardVariants = {
+    hidden: { 
+      y: 100, 
+      opacity: 0 
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 1.2 // Wait for content animation to complete
+      }
+    }
+  }
   
   return (
     <div className={styles.wrapper}>
       <div className="container">
-        <div 
-          style={backgroundStyle}
-          className={styles.card}
-        >
+        <div className={styles.content}>
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -84,16 +98,16 @@ export default function NewHero() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl font-bold mb-2 text-white md:text-6xl"
+              className="text-4xl font-black mb-3 md:text-7xl"
             >
               Administra tu negocio fácilmente
             </motion.h1>
             
             <motion.p 
               variants={itemVariants}
-              className="text-xl text-white mb-6"
+              className="text-xl mb-6"
             >
-              Controla tus ventas, stock y operaciones sin complicaciones.
+              Controla tus ventas, gastos, operaciones y más, <br /> todo desde un mismo lugar.
             </motion.p>
             
             <motion.div 
@@ -104,7 +118,7 @@ export default function NewHero() {
               <motion.div variants={buttonVariants}>
                 <Button
                   variant="secondary"
-                  className="bg-black/30 text-white backdrop-blur-md hover:backdrop-blur-xl hover:bg-black/40"
+                  className="bg-transparent text-gray-70 hover:bg-black/10"
                 >
                   Ingresar
                 </Button>
@@ -121,6 +135,13 @@ export default function NewHero() {
             </motion.div>
           </motion.div>
         </div>
+        <motion.div 
+          variants={cardVariants}
+          initial="hidden"
+          animate={isLoaded ? "visible" : "hidden"}
+          style={backgroundStyle}
+          className={styles.card}
+        />
       </div>
     </div>
   );
