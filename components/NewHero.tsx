@@ -16,15 +16,6 @@ type Testimonial = {
 };
 
 export default function NewHero() {
-  const imageCollection = [
-    "/photos/bakery.png",
-    "/photos/clothing.png",
-    "/photos/garden.png",
-    "/photos/bicycle.jpg",
-    "/photos/store.jpg",
-    "/photos/artist.jpg",
-    "/photos/barber.jpg",
-  ]
 
   const testimonials: Testimonial[] = [
   {
@@ -163,16 +154,19 @@ export default function NewHero() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl font-black mb-3 md:text-7xl"
+              className="text-5xl font-black mb-5 md:text-7xl"
             >
               Administra tu negocio fácilmente
             </motion.h1>
             
             <motion.p 
               variants={itemVariants}
-              className="text-xl mb-6"
+              className="text-lg mb-6"
+              style={{
+                maxWidth: '560px',
+              }}
             >
-              Controla tus ventas, gastos, operaciones y más, <br /> todo desde un mismo lugar.
+              Controla tus ventas, gastos, operaciones y más, todo desde un mismo lugar.
             </motion.p>
             
             <motion.div 
@@ -180,19 +174,19 @@ export default function NewHero() {
               className="flex gap-4"
             >
               {/* Botón secundario */}
-              <motion.div variants={buttonVariants}>
+              {/* <motion.div variants={buttonVariants}>
                 <Button
                   variant="secondary"
                   className="bg-transparent text-gray-70 hover:bg-black/10"
                 >
                   Ingresar
                 </Button>
-              </motion.div>
+              </motion.div> */}
 
               {/* Botón principal */}
               <motion.div variants={buttonVariants}>
                 <Button
-                  className="bg-[#FF0095] text-white hover:opacity-80 hover:bg-[#FF0095]"
+                  className="bg-[#FF0095] px-10 text-white hover:opacity-80 hover:bg-[#FF0095] rounded-full" 
                 >
                   Comienza gratis
                 </Button>
@@ -205,7 +199,7 @@ export default function NewHero() {
           initial="hidden"
           animate={isLoaded ? "visible" : "hidden"}
           style={backgroundStyle}
-          className={styles.card}
+          className={styles.card + " shadow-xl"}
         >
           {currentTestimonial && (
             <motion.div
@@ -218,7 +212,6 @@ export default function NewHero() {
                 background: 'rgba(0, 0, 0, 0.5)',
                 backdropFilter: 'blur(64px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
-                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                 width: '100%',
                 maxWidth: '400px',
                 borderRadius: '14px',
