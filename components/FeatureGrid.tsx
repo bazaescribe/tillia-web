@@ -18,14 +18,14 @@ export default function FeatureGrid({ title, subtitle, features }: FeatureGridPr
   return (
     <section className="py-24 bg-gradient-to-b from-white to-[#FAFAFA]">
       <div className="container mx-auto px-8">
-        <div className="text-center mb-12">
+        <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{title}</h2>
           {subtitle && <p className="text-xl text-gray-600 max-w-2xl mx-auto">{subtitle}</p>}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col ">
-              <div className="w-full aspect-[16/10] relative rounded-xl overflow-hidden shadow-sm mb-6">
+              <div className="w-full aspect-[20/10] relative rounded-xl overflow-hidden shadow-sm mb-6">
                 <Image 
                   src={feature.image} 
                   alt={feature.title}

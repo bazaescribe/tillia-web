@@ -161,8 +161,8 @@ export default function Home() {
 
       <main className="flex-1">
         <NewHero />
-        <SocialProof />
-        <WordArt />
+        {/* <SocialProof /> */}
+        {/* <WordArt /> */}
         <CardStepsSection 
           overtext="Operaciones"
           title="El poder de tu negocio, en la palma de tu mano."

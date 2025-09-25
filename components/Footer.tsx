@@ -4,21 +4,21 @@ import { Facebook, Twitter, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#fafafa] text-gray-900 py-12">
+    <footer className="bg-[#202020] text-white py-12">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Link href='/'>
                 <Image 
-                  src="/logo.png?height=24"
+                  src="/logo-white.png?height=24"
                   alt="Woravi logo"
                   width={112}
                   height={24}
                 />
               </Link>
             </div>
-            <p className="text-gray-600 mb-4">Todo lo que tu negocio necesita para vender mejor, tomar decisiones con datos y crecer.</p>
+            <p className="text-white mb-4">Todo lo que tu negocio necesita para vender mejor, tomar decisiones con datos y crecer.</p>
             <div className="flex gap-4">
               {[
                 { name: "Twitter", url: "https://x.com/mithrandir_ai", icon: <Twitter className="w-5 h-5" /> },
@@ -30,7 +30,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-gray-900"
+                  className="text-white/50 hover:text-white"
                 >
                   {social.icon}
                 </Link>
@@ -53,11 +53,11 @@ export default function Footer() {
             },
           ].map((column, index) => (
             <div key={index}>
-              <h3 className="font-bold mb-4">{column.title}</h3>
+              <p className="mb-4 opacity-50 text-white">{column.title}</p>
               <ul className="space-y-2">
                 {column.links.map((link, i) => (
                   <li key={i}>
-                    <Link href="#" className="text-gray-600 hover:text-gray-900">
+                    <Link href="#" className="text-white hover:text-white/70">
                       {link}
                     </Link>
                   </li>
@@ -67,18 +67,16 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Removed Startup Programs Section */}
-
-        <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center mt-12">
-          <p className="text-gray-600 text-sm">© 2025 RB Technologies. Todos los derechos reservados.</p>
+        <div className="border-t border-white/10 pt-8 pb-12 flex flex-col md:flex-row justify-between items-center mt-12">
+          <p className="text-white text-sm">© 2025 RB Technologies. Todos los derechos reservados.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
+            <Link href="#" className="text-white/50 hover:text-white text-sm">
               Política de Privacidad
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
+            <Link href="#" className="text-white/50 hover:text-white text-sm">
               Términos de Servicio
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
+            <Link href="#" className="text-white/50 hover:text-white text-sm">
               Política de Cookies
             </Link>
           </div>

@@ -150,11 +150,11 @@ export default function NewHero() {
             variants={containerVariants}
             initial="hidden"
             animate={isLoaded ? "visible" : "hidden"}
-            className="flex flex-col items-center justify-center h-full"
+            className="flex flex-col h-full"
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl font-black mb-5 md:text-7xl"
+              className="text-4xl mb-5 md:text-5xl"
             >
               Administra tu negocio fácilmente
             </motion.h1>
@@ -173,20 +173,9 @@ export default function NewHero() {
               variants={itemVariants}
               className="flex gap-4"
             >
-              {/* Botón secundario */}
-              {/* <motion.div variants={buttonVariants}>
-                <Button
-                  variant="secondary"
-                  className="bg-transparent text-gray-70 hover:bg-black/10"
-                >
-                  Ingresar
-                </Button>
-              </motion.div> */}
-
-              {/* Botón principal */}
               <motion.div variants={buttonVariants}>
                 <Button
-                  className="bg-[#FF0095] px-10 text-white hover:opacity-80 hover:bg-[#FF0095] rounded-full" 
+                  className="bg-[#202020] px-10 text-white hover:opacity-80 hover:opacity-90 rounded-full" 
                 >
                   Comienza gratis
                 </Button>
@@ -194,66 +183,73 @@ export default function NewHero() {
             </motion.div>
           </motion.div>
         </div>
-        <motion.div 
-          variants={cardVariants}
-          initial="hidden"
-          animate={isLoaded ? "visible" : "hidden"}
-          style={backgroundStyle}
-          className={styles.card + " shadow-xl"}
-        >
-          {currentTestimonial && (
-            <motion.div
-              variants={testimonialVariants}
-              initial="hidden"
-              animate={isLoaded ? "visible" : "hidden"}
-              className="flex flex-col justify-end h-full text-white"
-            >
-              <div style={{
-                background: 'rgba(0, 0, 0, 0.5)',
-                backdropFilter: 'blur(64px)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                width: '100%',
-                maxWidth: '400px',
-                borderRadius: '14px',
-                padding: '20px',
-              }}>
-                {/* Stars */}
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className={`w-5 h-5 ${i < currentTestimonial.stars ? 'text-yellow-400' : 'text-gray-300'}`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                
-                {/* Quote */}
-                <blockquote className="text-md md:text-md font-medium mb-6 leading-relaxed">
-                  "{currentTestimonial.quote}"
-                </blockquote>
-                
-                {/* Author info */}
-                <div className="flex items-center gap-4">
-                  {currentTestimonial.logo && (
-                    <img 
-                      src={currentTestimonial.logo} 
-                      alt={`${currentTestimonial.business} logo`}
-                      className="w-12 h-12 rounded-full object-cover bg-white p-1"
-                    />
-                  )}
-                  <div className="text-left">
-                    <div className="font-semibold text-lg">{currentTestimonial.name}</div>
-                    <div className="text-sm opacity-90">{currentTestimonial.business}</div>
-                  </div>
+        {/* Card container with relative positioning for glow effect */}
+        <div className="relative">
+          {/* Glow effect - blurred copy of the image */}
+          <motion.div 
+            variants={cardVariants}
+            initial="hidden"
+            animate={isLoaded ? "visible" : "hidden"}
+            style={{
+              ...backgroundStyle,
+              position: 'absolute',
+              top: '10px',
+              left: '0',
+              right: '0',
+              zIndex: 0,
+              filter: 'blur(48px)',
+              opacity: 0.99,
+              transform: 'scale(0.95)',
+            }}
+            className={styles.card + " shadow-xl"}
+          />
+          {/* Main card - now empty of testimonial content */}
+          <motion.div 
+            variants={cardVariants}
+            initial="hidden"
+            animate={isLoaded ? "visible" : "hidden"}
+            style={{
+              ...backgroundStyle,
+              position: 'relative',
+              zIndex: 1,
+            }}
+            className={styles.card + " shadow-xl"}
+          >
+          </motion.div>
+        </div>
+        
+        {/* Testimonial content moved below the card */}
+        {currentTestimonial && (
+          <motion.div
+            variants={testimonialVariants}
+            initial="hidden"
+            animate={isLoaded ? "visible" : "hidden"}
+            className="mt-8"
+          >
+            <div className={styles.testimonial}>
+              
+              {/* Author info */}
+              <div className={styles.author}>
+                {currentTestimonial.logo && (
+                  <img 
+                    src={currentTestimonial.logo} 
+                    alt={`${currentTestimonial.business} logo`}
+                    className="w-12 h-12 rounded-full object-cover bg-white p-1"
+                  />
+                )}
+                <div className="text-left">
+                  <div className="font-semibold text-lg">{currentTestimonial.name}</div>
+                  <div className="text-sm opacity-90">{currentTestimonial.business}</div>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </motion.div>
+
+              {/* Quote */}
+              <blockquote className={styles.quote}>
+                "{currentTestimonial.quote}"
+              </blockquote>
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );

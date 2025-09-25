@@ -22,15 +22,15 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   return (
     <div className={`flex flex-col gap-2 mb-4 ${alignmentMap[align]}`}>  
       {overtext && (
-        <span className="tracking-widest text-md text-[#FF0095] font-light mb-1">
+        <span className="tracking-widest text-md text-[#FB0069] font-light mb-1">
           {overtext}
         </span>
       )}
-      <h2 className="text-3xl md:text-5xl font-bold text-foreground max-w-2xl">
+      <h2 className="text-4xl md:text-4xl text-foreground max-w-2xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-xl text-muted-foreground max-w-2xl">
+        <p className="text-lg text-foreground/50 max-w-2xl">
           {subtitle}
         </p>
       )}

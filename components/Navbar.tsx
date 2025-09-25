@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`sticky bg-white  top-0 z-40 w-full transition-all duration-200`}>
+      <nav className={`sticky bg-[#FAFAFA]/90 backdrop-blur-md top-0 z-40 w-full transition-all duration-200`}>
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href='/'>
@@ -85,16 +85,17 @@ export default function Navbar() {
         <div className="container flex items-center justify-center py-4">
           <div className="flex items-center gap-3 p-2 pl-6 rounded-full shadow-lg"
             style={{
-              background: 'rgba(0, 0, 0, 0.8)',
-              backdropFilter: 'blur(10px)',
+              background: 'rgba(0, 0, 0, 0.7)',
+              backdropFilter: 'blur(24px)',
               border: '1px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 0px 0px 1px rgba(0, 0, 0, 0.12)',
             }}
           >
             <span className="text-sm font-medium text-white">
               Comienza gratis hoy mismo
             </span>
             <Button 
-              className="bg-[#FF0095] text-white transition-colors rounded-full"
+              className="bg-[#FB0069] text-white transition-colors rounded-full"
               asChild
             >
               <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank">
