@@ -51,7 +51,7 @@ export default function CallToAction({
         priority
       />
       <h2 className='text-4xl text-white mb-6'>
-        ¡Haz que suceda!
+        ¡Al infinito y más allá!
       </h2>
       <button className='bg-[#FB0069] text-white mb-6 px-6 py-2 rounded-full hover:opacity-90'>
         Comenzar ahora
