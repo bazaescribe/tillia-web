@@ -4,7 +4,7 @@ import { Facebook, Twitter, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#202020] text-white py-12">
+    <footer className="bg-[#000] text-white py-12">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -18,7 +18,7 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            <p className="text-white mb-4">Todo lo que tu negocio necesita para vender mejor, tomar decisiones con datos y crecer.</p>
+            <p className="text-white/50 text-sm mb-4">Todo lo que tu negocio necesita para vender mejor, tomar decisiones con datos y crecer.</p> 
             <div className="flex gap-4">
               {[
                 { name: "Twitter", url: "https://x.com/mithrandir_ai", icon: <Twitter className="w-5 h-5" /> },

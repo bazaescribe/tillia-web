@@ -1,0 +1,15 @@
+.perforated {
+  background-color: transparent;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.5) 2px, #fff 2px);
+  background-size: 28px 28px;
+}
+
+/* .perforated {
+  background-color: transparent;
+  background: 
+    radial-gradient(circle, transparent 20%, #fff 20%, #fff 80%, transparent 80%, transparent), 
+    radial-gradient(circle, transparent 20%, #fff 20%, #fff 80%, transparent 80%, transparent) 10px 10px, 
+    linear-gradient(transparent 0.8px, transparent 0.8px) 0 -0.4px, 
+    linear-gradient(90deg, transparent 0.8px, transparent 0.8px) -0.4px 0;
+  background-size: 16px 16px, 16px 16px, 10px 10px, 10px 10px;
+} */

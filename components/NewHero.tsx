@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import styles from "./NewHero.module.css"
 import { Button } from "./ui/button";
+import Section from "./atoms/section";
 
 // Define the testimonial type
 type Testimonial = {
@@ -53,19 +54,78 @@ export default function NewHero() {
     stars: 5,
     photo: "/photos/bicycle.jpg",
     logo: "/logos/monkis.png",
-  }  
+  },
+  {
+    "name": "Carlos Méndez",
+    "business": "Café El Roble, CDMX",
+    "quote": "Antes tenía que cerrar cada día revisando ticket por ticket. Ahora Woravi me dice en segundos qué productos vendí más, cuánta leche se fue y hasta me sugiere cuándo hacer pedidos. Me siento libre de la caja registradora.",
+    "stars": 5,
+    "photo": "/photos/coffee.jpg",
+    "logo": "/logos/el-roble.png"
+  },
+  {
+    "name": "Dra. Mariana López",
+    "business": "Clínica Dental López, Guadalajara",
+    "quote": "Woravi me quitó de encima todo el estrés de la agenda, cobros y stock de materiales. Tengo más tiempo para mis pacientes y menos para perseguir papeles. Es como tener una asistente que nunca se cansa.",
+    "stars": 5,
+    "photo": "/photos/dentist.jpg",
+    "logo": "/logos/dental.png"
+  }
+
 ]
 
   // Initialize with proper typing to allow null or Testimonial
   const [heroImage, setHeroImage] = useState("")
   const [currentTestimonial, setCurrentTestimonial] = useState<Testimonial | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const testimonial = testimonials[Math.floor(Math.random() * testimonials.length)]
     setHeroImage(testimonial.photo)
     setCurrentTestimonial(testimonial)
     setIsLoaded(true)
+  }, [])
+
+  // Pointer-follow effect (shadow opposite, card translates toward cursor)
+  useEffect(() => {
+    const el = rootRef.current
+    if (!el) return
+
+    let raf = 0
+    const state = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 }
+
+    const onMove = (e: PointerEvent) => {
+      const rect = el.getBoundingClientRect()
+      state.tx = (e.clientX - rect.left) / rect.width
+      state.ty = (e.clientY - rect.top) / rect.height
+    }
+
+    const tick = () => {
+      state.x += (state.tx - state.x) * 0.06
+      state.y += (state.ty - state.y) * 0.06
+
+      const maxShadow = 40
+      const offsetX = (0.5 - state.x) * maxShadow
+      const offsetY = (0.5 - state.y) * maxShadow
+      el.style.setProperty('--shadow-x', `${offsetX}px`)
+      el.style.setProperty('--shadow-y', `${offsetY}px`)
+
+      const maxTranslate = 16
+      const imgX = (state.x - 0.5) * maxTranslate
+      const imgY = (state.y - 0.5) * maxTranslate
+      el.style.setProperty('--img-x', `${imgX}px`)
+      el.style.setProperty('--img-y', `${imgY}px`)
+
+      raf = requestAnimationFrame(tick)
+    }
+
+    el.addEventListener('pointermove', onMove)
+    raf = requestAnimationFrame(tick)
+    return () => {
+      el.removeEventListener('pointermove', onMove)
+      cancelAnimationFrame(raf)
+    }
   }, [])
 
   // Add a smooth transition
@@ -143,8 +203,8 @@ export default function NewHero() {
   }
   
   return (
-    <div className={styles.wrapper}>
-      <div className="container">
+    <Section>
+      <div>
         <div className={styles.content}>
           <motion.div
             variants={containerVariants}
@@ -154,19 +214,19 @@ export default function NewHero() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl mb-5 md:text-5xl"
+              className="text-3xl mb-2 md:text-3xl text-bold"
             >
-              Administra tu negocio fácilmente
+              Tu negocio en modo crecimiento
             </motion.h1>
             
             <motion.p 
               variants={itemVariants}
-              className="text-lg mb-6"
+              className="text-md text-black/50 mb-6"
               style={{
                 maxWidth: '560px',
               }}
             >
-              Controla tus ventas, gastos, operaciones y más, todo desde un mismo lugar.
+              Lanza, administra y escala tu negocio sin necesidad de ser experto.
             </motion.p>
             
             <motion.div 
@@ -175,7 +235,7 @@ export default function NewHero() {
             >
               <motion.div variants={buttonVariants}>
                 <Button
-                  className="bg-[#202020] px-10 text-white hover:opacity-80 hover:opacity-90 rounded-full" 
+                  className="bg-[#000000] px-10 text-white hover:opacity-80 hover:opacity-90 rounded-full" 
                 >
                   Comienza gratis
                 </Button>
@@ -245,12 +305,12 @@ export default function NewHero() {
 
               {/* Quote */}
               <blockquote className={styles.quote}>
-                "{currentTestimonial.quote}"
+                {currentTestimonial.quote}
               </blockquote>
             </div>
           </motion.div>
         )}
       </div>
-    </div>
+    </Section>
   );
 }

@@ -6,6 +6,7 @@ import styles from './CallToAction.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Tag, Timer, Smartphone, Tablet, Monitor, Earth, Fingerprint } from 'lucide-react'
+import Section from './atoms/section'
 
 interface CallToActionProps {
   showHardwareSales?: boolean
@@ -38,11 +39,20 @@ export default function CallToAction({
   }
 
   return (
-    <section
-      className={styles.wrapper}
+    <Section
+      variant="dark"
       aria-label="Llamados a la acción"
     >
-      <Image
+      <div
+        style={{
+          padding: '128px 0',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Image
         src="/narwhal.png"
         width={99}
         height={64}
@@ -53,12 +63,10 @@ export default function CallToAction({
       <h2 className='text-4xl text-white mb-6'>
         ¡Al infinito y más allá!
       </h2>
-      <button className='bg-[#FB0069] text-white mb-6 px-6 py-2 rounded-full hover:opacity-90'>
+      <button className='bg-[#6E0EFF] text-white mb-6 px-6 py-2 rounded-full hover:opacity-90'>
         Comenzar ahora
       </button>
-      <Link href="/pricing" className='text-white/50'>
-        Ver planes
-      </Link>
-    </section>
+      </div>
+    </Section>
   )
 }

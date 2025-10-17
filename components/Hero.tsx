@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useId, useState } from "react"
 import React from "react"
+import Section from "@/components/atoms/section"
 
 // Tipos para las props del componente
 interface CTA {
@@ -491,12 +492,9 @@ function HeroContent({
 // Subcomponente: Wrapper principal
 function HeroWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <section className="relative w-full min-h-[10vh] md:h-[720px]">
-      {/* <HeroWaves /> */}
-      <div className="relative container mx-auto px-4 md:px-6">
-        {children}
-      </div>
-    </section>
+    <Section>
+      {children}
+    </Section>
   )
 }
 

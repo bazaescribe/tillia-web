@@ -2,9 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Woravi | Administra tu negocio fácilmente',
-  description: 'Administra tu negocio con facilidad y precisión',
-  themeColor: '#FF0095',
+  title: 'Bliqu | Administra tu negocio fácilmente',
+  description: 'Administra todo tu negocio desde un mismo lugar.',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',

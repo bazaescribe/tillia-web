@@ -1,0 +1,30 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background: red;
+  padding-bottom: 56px;
+}
+
+.bumper {
+  width: 100%;
+  height: 56px;
+  background: blue;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 39;
+}
+
+.light, .light .bumper {
+  background: #fff;
+}
+
+.dark, .dark .bumper {
+  background: #000;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
