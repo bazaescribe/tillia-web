@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import SectionTitle from "./SectionTitle"
+import Section from "./atoms/section"
 
 interface StepItem {
   title: string
@@ -83,11 +84,11 @@ export default function CardStepsSection({
   }
 
   return (
-    <section 
-      className={`py-40 bg-gradient-to-b from-white to-[#FAFAFA] ${className}`} 
+    <Section 
       id={sectionId}
+      variant="light"
     >
-      <div className="container max-w-8xl mx-auto">
+      <div className="container max-w-8xl mx-auto mt-12">
         <SectionTitle
           overtext={overtext}
           title={title}
@@ -96,7 +97,7 @@ export default function CardStepsSection({
 
         <motion.div 
           ref={containerRef}
-          className="grid mt-14 grid-cols-1 md:grid-cols-3 gap-12"
+          className="grid mt-24 grid-cols-1 md:grid-cols-3 gap-12"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -147,6 +148,6 @@ export default function CardStepsSection({
           ))}
         </motion.div>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import styles from "./NewHero.module.css"
 import { Button } from "./ui/button";
 import Section from "./atoms/section";
+import SectionTitle from "./SectionTitle";
 
 // Define the testimonial type
 type Testimonial = {

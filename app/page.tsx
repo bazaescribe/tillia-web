@@ -9,7 +9,6 @@ import CallToAction from '@/components/CallToAction'
 import CardStepsSection from "@/components/CardStepsSection"
 import Logos from "@/components/logos"
 import FeatureGrid from "@/components/FeatureTable"
-import DecisionHero from "@/components/DecisionHero"
 import PricingPlan from "@/components/PricingPlan"
 import PerforatedHero from "@/components/PerforatedHero"
 
@@ -75,7 +74,7 @@ export default function Home() {
         title: "Vende en todos lados",
         description: "Conecta tu tienda a los grandes marketplaces y a las apps de delivery.",
         image: "/shoots/delivery.png",
-        background: '/photos/service-bg-delivery.png',
+        background: '/photos/payments.png',
         imageAlt: "Alt text for image 2"
       },
     ]
@@ -92,8 +91,6 @@ export default function Home() {
         <FeatureGrid />
 
         <PerforatedHero />
-
-        {/* <DecisionHero /> */}
 
         <PricingPlan />
 

@@ -67,12 +67,11 @@ export default function PricingPlan() {
   return (
     <Section variant="dark">
       {/* Desktop / Tablet: Table with sticky header */}
-      <div className="py-24">
+      <div className="py-24 pb-14">
         <SectionTitle 
           title="Planes para todo tipo de negocios" 
           subtitle="Empieza gratis y escala cuando tu negocio lo necesite. Sin comisiones raras, ni cobros sorpresa."
           overtext="Precios y paquetes"
-          align="center"
           variant="dark" 
         />
       </div>
