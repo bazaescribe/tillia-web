@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon.png',
     apple: '/apple-touch-icon.png',
   },
+  themeColor: '#ffffff', // initial value; will be updated by Section on scroll
 }
-
 
 export default function RootLayout({
   children,
