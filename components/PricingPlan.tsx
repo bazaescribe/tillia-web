@@ -2,6 +2,8 @@
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Section from "./atoms/section"
+import SectionTitle from "./SectionTitle"
 
 type Plan = {
   name: string
@@ -9,7 +11,10 @@ type Plan = {
   note?: string
   description?: string
   cta?: string
+  main?: boolean
 }
+
+
 
 const plans: Plan[] = [
   {
@@ -25,6 +30,7 @@ const plans: Plan[] = [
     note: "al mes por sucursal",
     description: "Para empresas que ya la están rompiendo.",
     cta: "Contáctanos",
+    main: true,
   },
   {
     name: "Advance",
@@ -59,52 +65,61 @@ const rows: FeatureRow[] = [
 
 export default function PricingPlan() {
   return (
-    <section className="w-full">
+    <Section variant="dark">
       {/* Desktop / Tablet: Table with sticky header */}
+      <div className="py-24">
+        <SectionTitle 
+          title="Planes para todo tipo de negocios" 
+          subtitle="Empieza gratis y escala cuando tu negocio lo necesite. Sin comisiones raras, ni cobros sorpresa."
+          overtext="Precios y paquetes"
+          align="center"
+          variant="dark" 
+        />
+      </div>
       <div className="hidden md:block">
-        <div className="rounded-2xl border border-neutral-800 bg-black text-white">
-          {/* The scroll container; header stays sticky at top */}
-          <div className="max-h-[540px] overflow-y-auto">
-            <table className="w-full border-separate border-spacing-0">
-              <thead className="sticky top-0 z-10 bg-black">
-                <tr className="border-b border-neutral-800">
-                  <th className="text-left py-4 px-4 w-[220px] text-sm font-medium text-gray-300">
-                    Elige tu plan
-                  </th>
-                  {plans.map((plan) => (
-                    <th key={plan.name} className="text-left py-6 px-4 min-w-[240px]">
-                      <div className="text-sm font-medium text-gray-300">{plan.name}</div>
-                      <div className="text-3xl md:text-4xl font-black">{plan.price}</div>
-                      {plan.note && (
-                        <div className="text-xs md:text-sm text-gray-400 mt-1">{plan.note}</div>
-                      )}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-
-              <tbody>
-                {rows.map((row, i) => (
-                  <tr
-                    key={row.label}
-                    className={`border-t border-neutral-800 ${i % 2 === 0 ? "bg-black" : "bg-[#0B0B0B]"}`}
-                  >
-                    <td className="py-3 px-4 text-sm text-gray-300 align-top">
-                      {row.label}
-                    </td>
-                    {row.values.map((val, idx) => (
-                      <td key={`${row.label}-${idx}`} className="py-3 px-4 text-sm text-white/90 align-top">
-                        {val}
-                      </td>
-                    ))}
-                  </tr>
+        <div className="border-neutral-800 bg-black text-white">
+          <div className="overflow-y-auto">
+            {/* Grid header (sticky) */}
+            <div className="sticky top-12 z-10 bg-black">
+              <div className="grid grid-cols-4 border-b border-neutral-800">
+                <div className="text-left py-4 px-4 text-sm font-medium text-gray-300">
+                  Elige tu plan
+                </div>
+                {plans.map((plan) => (
+                  <div key={plan.name} className="text-left py-6 px-4">
+                    <div className="text-sm font-medium text-gray-300">{plan.name}</div>
+                    <div className={`text-3xl md:text-4xl font-black ${plan.main ? "text-[#9D5CFF]" : "text-white"}`}>{plan.price}</div>
+                    {plan.note && (
+                      <div className="text-xs md:text-sm text-gray-400 mt-1">{plan.note}</div>
+                    )}
+                  </div>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            </div>
+
+            {/* Features grid rows */}
+            <div>
+              {rows.map((row, i) => (
+                <div
+                  key={row.label}
+                  className={`grid grid-cols-4 border-t border-neutral-800 ${i % 2 === 0 ? "bg-black" : "bg-[#0B0B0B]"}`}
+                >
+                  <div className="py-3 px-4 text-sm text-gray-300">
+                    {row.label}
+                  </div>
+                  {row.values.map((val, idx) => (
+                    <div key={`${row.label}-${idx}`} className="py-3 px-4 text-sm text-white/90">
+                      {val}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Footer actions (optional) */}
-          <div className="grid grid-cols-3 gap-6 p-4 border-t border-neutral-800">
+          {/* CTA buttons */}
+          <div className="grid grid-cols-4 gap-6 p-4 border-t border-neutral-800">
+            <div></div>
             {plans.map((plan) => (
               <div key={plan.name} className="flex items-center">
                 <Button
@@ -165,6 +180,6 @@ export default function PricingPlan() {
           </Card>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }

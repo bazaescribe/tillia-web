@@ -95,6 +95,7 @@ export default function PerforatedHero() {
             subtitle="Pregúntale a Bliqu cualquier cosa sobre tu negocio para obtener información inmediata y tomar decisiones informadas fácilmente."
             overtext="Bliqu AI"
             align="center"
+            underline="Próximamente."
           />
 
           {/* Imagen superior con slide in y crossfade */}
