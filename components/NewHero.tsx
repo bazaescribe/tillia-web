@@ -24,7 +24,7 @@ export default function NewHero() {
     name: "Iván Ramírez",
     business: "Panadería La Espiga, Guadalajara",
     quote:
-      "woravi nos ayudó a entender qué productos se venden más por horario y ajustar nuestros precios. Ahora vendemos más pan antes del mediodía que nunca.",
+      "bliqu nos ayudó a entender qué productos se venden más por horario y ajustar nuestros precios. Ahora vendemos más pan antes del mediodía que nunca.",
     stars: 5,
     photo: "/photos/bakery.png",
     logo: "/logos/espiga.png",
@@ -33,7 +33,7 @@ export default function NewHero() {
     name: "Sofía Torres",
     business: "Verde Vivo, CDMX",
     quote:
-      "Con woravi puedo ver qué plantas tienen más rotación y cuáles no se están vendiendo. Me ayudó a decidir qué dejar de pedir y qué promocionar.",
+      "Con bliqu puedo ver qué plantas tienen más rotación y cuáles no se están vendiendo. Me ayudó a decidir qué dejar de pedir y qué promocionar.",
     stars: 5,
     photo: "/photos/garden.png",
     logo: "/logos/verde.png",
@@ -42,7 +42,7 @@ export default function NewHero() {
     name: "Renata Cordero",
     business: "Boutique Aurora, Mérida",
     quote:
-      "No soy experta en tecnología, pero woravi es facilísima de usar. Mis ventas subieron desde que empecé a seguir sus sugerencias de precio y stock.",
+      "No soy experta en tecnología, pero bliqu es facilísima de usar. Mis ventas subieron desde que empecé a seguir sus sugerencias de precio y stock.",
     stars: 4,
     photo: "/photos/clothing.png",
     logo: "/logos/aurora.png",
@@ -51,7 +51,7 @@ export default function NewHero() {
     name: "Susana Salazar",
     business: "Monkis Chop, Monterrey",
     quote:
-      "Con woravi ya no tengo que estar anotando en la libreta qué se vende y qué no. Ahora todo se actualiza solo y me dice qué modelos pedir. Parece que tengo un gerente en mi celular.",
+      "Con bliqu ya no tengo que estar anotando en la libreta qué se vende y qué no. Ahora todo se actualiza solo y me dice qué modelos pedir. Parece que tengo un gerente en mi celular.",
     stars: 5,
     photo: "/photos/bicycle.jpg",
     logo: "/logos/monkis.png",
@@ -59,7 +59,7 @@ export default function NewHero() {
   {
     "name": "Carlos Méndez",
     "business": "Café El Roble, CDMX",
-    "quote": "Antes tenía que cerrar cada día revisando ticket por ticket. Ahora Woravi me dice en segundos qué productos vendí más, cuánta leche se fue y hasta me sugiere cuándo hacer pedidos. Me siento libre de la caja registradora.",
+    "quote": "Antes tenía que cerrar cada día revisando ticket por ticket. Ahora bliqu me dice en segundos qué productos vendí más, cuánta leche se fue y hasta me sugiere cuándo hacer pedidos. Me siento libre de la caja registradora.",
     "stars": 5,
     "photo": "/photos/coffee.jpg",
     "logo": "/logos/el-roble.png"
@@ -67,7 +67,7 @@ export default function NewHero() {
   {
     "name": "Dra. Mariana López",
     "business": "Clínica Dental López, Guadalajara",
-    "quote": "Woravi me quitó de encima todo el estrés de la agenda, cobros y stock de materiales. Tengo más tiempo para mis pacientes y menos para perseguir papeles. Es como tener una asistente que nunca se cansa.",
+    "quote": "bliqu me quitó de encima todo el estrés de la agenda, cobros y stock de materiales. Tengo más tiempo para mis pacientes y menos para perseguir papeles. Es como tener una asistente que nunca se cansa.",
     "stars": 5,
     "photo": "/photos/dentist.jpg",
     "logo": "/logos/dental.png"
