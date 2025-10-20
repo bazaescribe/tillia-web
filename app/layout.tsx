@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Bliqu | Administra tu negocio fácilmente',
+  title: 'Bliqu • Administra tu negocio fácilmente',
   description: 'Administra todo tu negocio desde un mismo lugar.',
   icons: {
     icon: '/favicon.png',
