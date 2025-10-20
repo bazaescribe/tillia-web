@@ -213,22 +213,14 @@ export default function NewHero() {
             animate={isLoaded ? "visible" : "hidden"}
             className="flex flex-col h-full"
           >
-            <motion.h1 
-              variants={itemVariants}
-              className="text-3xl mb-2 md:text-3xl text-bold"
-            >
-              Tu negocio en modo crecimiento
-            </motion.h1>
-            
-            <motion.p 
-              variants={itemVariants}
-              className="text-md text-black/50 mb-6"
-              style={{
-                maxWidth: '560px',
-              }}
-            >
-              Lanza, administra y escala tu negocio sin necesidad de ser experto.
-            </motion.p>
+            <h1 className="max-w-2xl mb-6">
+              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-3xl text-bold mr-2">
+                Haz crecer tu negocio sin complicaciones.
+              </motion.span>  
+              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-3xl text-bold text-black/30">
+                 Lanza, organiza y opera como un pro, sin serlo.
+              </motion.span>
+            </h1>
             
             <motion.div 
               variants={itemVariants}
@@ -237,7 +229,7 @@ export default function NewHero() {
               <motion.div variants={buttonVariants}>
                 <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank" rel="noopener noreferrer">
                   <Button
-                    className="bg-[#000000] px-6 text-white rounded-full transition-all duration-300 hover:opacity-90 hover:gap-4"
+                    className="bg-[#000000] px-6 text-white text-sm rounded-full transition-all duration-300 hover:opacity-90 hover:gap-4"
                   >
                     Comienza gratis
                     <ArrowRight size={16}/>
