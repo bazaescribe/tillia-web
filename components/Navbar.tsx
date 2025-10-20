@@ -32,9 +32,11 @@ export default function Navbar() {
           <Image src="/logo.svg" alt="logo" width={86} height={24} />
         </div>
         <div>
-          <Button>
-            Comenzar ahora
-          </Button>
+          <a href="https://p54.mx" target="_blank" rel="noopener noreferrer">
+            <Button className="rounded-3xl">
+              <ArrowRight size={32} />
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -58,7 +60,7 @@ export default function Navbar() {
               Comienza gratis hoy mismo
             </span>
             <Button className="bg-[#6E0EFF] text-white transition-colors rounded-full" asChild>
-              <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank">
+              <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank" rel="noopener noreferrer">
                 <ArrowRight size={32} />
               </a>
             </Button>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import styles from "./NewHero.module.css"
 import { Button } from "./ui/button";
 import Section from "./atoms/section";
-import SectionTitle from "./SectionTitle";
+import { ArrowRight } from "lucide-react";
 
 // Define the testimonial type
 type Testimonial = {
@@ -235,11 +235,14 @@ export default function NewHero() {
               className="flex gap-4"
             >
               <motion.div variants={buttonVariants}>
-                <Button
-                  className="bg-[#000000] px-10 text-white hover:opacity-80 hover:opacity-90 rounded-full" 
-                >
-                  Comienza gratis
-                </Button>
+                <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    className="bg-[#000000] px-6 text-white rounded-full transition-all duration-300 hover:opacity-90 hover:gap-4"
+                  >
+                    Comienza gratis
+                    <ArrowRight size={16}/>
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>
