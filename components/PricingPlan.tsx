@@ -47,7 +47,10 @@ type FeatureRow = {
 }
 
 const rows: FeatureRow[] = [
-  { label: "Usuarios", values: ["1", "5 *", "Ilimitados"] },
+  { label: "Administradores", values: ["1", "1", "1"] },
+  { label: "Administrador adicional", values: ["NA", "$120", "$150"] },
+  { label: "Operadores", values: ["0", "1", "1"] },
+  { label: "Operador adicional", values: ["NA", "$99", "$99"] },
   { label: "Productos", values: ["30", "Ilimitados", "Ilimitados"] },
   { label: "Registro de ventas", values: ["90 días", "Hasta 2 años", "Hasta 5 años"] },
   { label: "Finanzas", values: ["Básicas", "Avanzadas", "Personalizado"] },
