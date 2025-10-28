@@ -218,7 +218,7 @@ export default function NewHero() {
                 Haz crecer tu negocio sin complicaciones.
               </motion.span>  
               <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-3xl text-bold text-black/30">
-                 Lanza, organiza y opera como un pro, sin serlo.
+                 Lanza, organiza y opera como un pro.
               </motion.span>
             </h1>
             
