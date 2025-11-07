@@ -6,6 +6,7 @@ import styles from "./NewHero.module.css"
 import { Button } from "./ui/button";
 import Section from "./atoms/section";
 import { ArrowRight } from "lucide-react";
+import CustomerTestimonial from "./CustomerTestimonial"
 
 // Define the testimonial type
 type Testimonial = {
@@ -19,62 +20,6 @@ type Testimonial = {
 
 export default function NewHero() {
 
-  const testimonials: Testimonial[] = [
-  {
-    name: "Iván Ramírez",
-    business: "Panadería La Espiga, Guadalajara",
-    quote:
-      "bliqu nos ayudó a entender qué productos se venden más por horario y ajustar nuestros precios. Ahora vendemos más pan antes del mediodía que nunca.",
-    stars: 5,
-    photo: "/photos/bakery.png",
-    logo: "/logos/espiga.png",
-  },
-  {
-    name: "Sofía Torres",
-    business: "Verde Vivo, CDMX",
-    quote:
-      "Con bliqu puedo ver qué plantas tienen más rotación y cuáles no se están vendiendo. Me ayudó a decidir qué dejar de pedir y qué promocionar.",
-    stars: 5,
-    photo: "/photos/garden.png",
-    logo: "/logos/verde.png",
-  },
-  {
-    name: "Renata Cordero",
-    business: "Boutique Aurora, Mérida",
-    quote:
-      "No soy experta en tecnología, pero bliqu es facilísima de usar. Mis ventas subieron desde que empecé a seguir sus sugerencias de precio y stock.",
-    stars: 4,
-    photo: "/photos/clothing.png",
-    logo: "/logos/aurora.png",
-  },
-  {
-    name: "Susana Salazar",
-    business: "Monkis Chop, Monterrey",
-    quote:
-      "Con bliqu ya no tengo que estar anotando en la libreta qué se vende y qué no. Ahora todo se actualiza solo y me dice qué modelos pedir. Parece que tengo un gerente en mi celular.",
-    stars: 5,
-    photo: "/photos/bicycle.jpg",
-    logo: "/logos/monkis.png",
-  },
-  {
-    "name": "Carlos Méndez",
-    "business": "Café El Roble, CDMX",
-    "quote": "Antes tenía que cerrar cada día revisando ticket por ticket. Ahora bliqu me dice en segundos qué productos vendí más, cuánta leche se fue y hasta me sugiere cuándo hacer pedidos. Me siento libre de la caja registradora.",
-    "stars": 5,
-    "photo": "/photos/coffee.jpg",
-    "logo": "/logos/el-roble.png"
-  },
-  {
-    "name": "Dra. Mariana López",
-    "business": "Clínica Dental López, Guadalajara",
-    "quote": "bliqu me quitó de encima todo el estrés de la agenda, cobros y stock de materiales. Tengo más tiempo para mis pacientes y menos para perseguir papeles. Es como tener una asistente que nunca se cansa.",
-    "stars": 5,
-    "photo": "/photos/dentist.jpg",
-    "logo": "/logos/dental.png"
-  }
-
-]
-
   // Initialize with proper typing to allow null or Testimonial
   const [heroImage, setHeroImage] = useState("")
   const [currentTestimonial, setCurrentTestimonial] = useState<Testimonial | null>(null)
@@ -82,9 +27,6 @@ export default function NewHero() {
   const rootRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const testimonial = testimonials[Math.floor(Math.random() * testimonials.length)]
-    setHeroImage(testimonial.photo)
-    setCurrentTestimonial(testimonial)
     setIsLoaded(true)
   }, [])
 
@@ -214,11 +156,11 @@ export default function NewHero() {
             className="flex flex-col h-full"
           >
             <h1 className="max-w-2xl mb-6">
-              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-3xl text-bold mr-2">
-                Haz crecer tu negocio sin complicaciones.
+              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-2xl text-bold mr-2">
+                Crea, conecta y automatiza tu negocio desde un solo lugar,
               </motion.span>  
-              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-3xl text-bold text-black/30">
-                 Lanza, organiza y opera como un pro.
+              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-2xl text-bold text-black/30">
+                sin necesidad de un equipo técnico.
               </motion.span>
             </h1>
             
@@ -239,73 +181,20 @@ export default function NewHero() {
             </motion.div>
           </motion.div>
         </div>
-        {/* Card container with relative positioning for glow effect */}
-        <div className="relative">
-          {/* Glow effect - blurred copy of the image */}
-          <motion.div 
-            variants={cardVariants}
-            initial="hidden"
-            animate={isLoaded ? "visible" : "hidden"}
-            style={{
-              ...backgroundStyle,
-              position: 'absolute',
-              top: '10px',
-              left: '0',
-              right: '0',
-              zIndex: 0,
-              filter: 'blur(48px)',
-              opacity: 0.99,
-              transform: 'scale(0.95)',
-            }}
-            className={styles.card + " shadow-xl"}
-          />
-          {/* Main card - now empty of testimonial content */}
-          <motion.div 
-            variants={cardVariants}
-            initial="hidden"
-            animate={isLoaded ? "visible" : "hidden"}
-            style={{
-              ...backgroundStyle,
-              position: 'relative',
-              zIndex: 1,
-            }}
-            className={styles.card + " shadow-xl"}
-          >
-          </motion.div>
+      </div>
+      <div 
+        className={styles.photo} 
+        ref={rootRef}
+      >
+        {/* Main front frame */}
+        <div className={`${styles.frame} ${styles.frameA}`}>
+          <img src="/photos/shot-payments.jpg" alt="Demo: Pagos" className={styles.frameImg} />
         </div>
         
-        {/* Testimonial content moved below the card */}
-        {currentTestimonial && (
-          <motion.div
-            variants={testimonialVariants}
-            initial="hidden"
-            animate={isLoaded ? "visible" : "hidden"}
-            className="mt-8"
-          >
-            <div className={styles.testimonial}>
-              
-              {/* Author info */}
-              <div className={styles.author}>
-                {currentTestimonial.logo && (
-                  <img 
-                    src={currentTestimonial.logo} 
-                    alt={`${currentTestimonial.business} logo`}
-                    className="w-12 h-12 rounded-full object-cover bg-white p-1"
-                  />
-                )}
-                <div className="text-left">
-                  <div className="font-semibold text-lg">{currentTestimonial.name}</div>
-                  <div className="text-sm opacity-90">{currentTestimonial.business}</div>
-                </div>
-              </div>
-
-              {/* Quote */}
-              <blockquote className={styles.quote}>
-                {currentTestimonial.quote}
-              </blockquote>
-            </div>
-          </motion.div>
-        )}
+        {/* Secondary back frame */}
+        <div className={`${styles.frame} ${styles.frameB}`}>
+          <img src="/photos/shot-finance.jpg" alt="Panel de métricas" className={styles.frameImg} />
+        </div>
       </div>
     </Section>
   );

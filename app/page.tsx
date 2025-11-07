@@ -12,6 +12,7 @@ import FeatureGrid from "@/components/FeatureTable"
 import PricingPlan from "@/components/PricingPlan"
 import PerforatedHero from "@/components/PerforatedHero"
 
+import CustomerTestimonial from "@/components/CustomerTestimonial"
 
 
 export default function Home() {
@@ -91,6 +92,8 @@ export default function Home() {
         <FeatureGrid />
 
         <PerforatedHero />
+
+        <CustomerTestimonial />
 
         <PricingPlan />
 

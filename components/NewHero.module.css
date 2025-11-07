@@ -31,7 +31,7 @@
 
 .content {
   width: 100%;
-  margin-bottom: calc(1rem + 56px);
+  margin-bottom: 2rem;
   margin-top: 1rem;
 }
 
@@ -65,4 +65,73 @@
     gap: 1rem;
     padding: 0 1rem;
   }
+}
+
+.photo {
+  background: url('/photos/paradise.png');
+  background-size: cover;
+  width: 100%;
+  aspect-ratio: 17 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  user-select: none;
+  position: relative; /* allow absolute frames inside */
+}
+
+/* Base frame styles */
+.frame {
+  position: absolute;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(24px);
+  padding: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-x, 0px) var(--shadow-y, 0px) 40px rgba(0, 0, 0, 0.16);
+  transform: translate(calc(var(--img-x, 0px) * 0.8), calc(var(--img-y, 0px) * 0.8));
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  will-change: transform, box-shadow;
+}
+
+/* Main front frame (bigger) */
+.frameA {
+  top: 10%;
+  left: 8%;
+  width: 56%;
+  aspect-ratio: 16 / 10;
+}
+
+/* Secondary back frame (smaller and offset) */
+.frameB {
+  bottom: 10%;
+  right: 8%;
+  width: 45%;
+  aspect-ratio: 16 / 10;
+  transform: translate(calc(var(--img-x, 0px) * 0.4), calc(var(--img-y, 0px) * 0.6)); /* slower parallax for depth */
+}
+
+@media screen and (max-width: 768px) {
+  .photo {
+    aspect-ratio: 1 / 1;
+  }
+  .frameA {
+    top: 20%;
+    left: 10%;
+    width: 60%;
+  }
+
+  .frameB {
+    bottom: 20%;
+    right: 10%;
+    width: 50%;
+  }
+}
+
+/* Image filling the frame */
+.frameImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
