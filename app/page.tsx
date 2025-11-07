@@ -13,6 +13,7 @@ import PricingPlan from "@/components/PricingPlan"
 import PerforatedHero from "@/components/PerforatedHero"
 
 import CustomerTestimonial from "@/components/CustomerTestimonial"
+import SolutionSection from "@/components/SolutionSection"
 
 
 export default function Home() {
@@ -89,9 +90,7 @@ export default function Home() {
 
         <Logos />
 
-        <FeatureGrid />
-
-        <PerforatedHero />
+        <SolutionSection />
 
         <CustomerTestimonial />
 

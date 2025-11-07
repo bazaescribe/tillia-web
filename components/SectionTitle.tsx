@@ -27,15 +27,15 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   return (
     <div className={`flex flex-col gap-2 mb-4 ${alignmentMap[align]}`}>  
       {overtext && (
-        <span className="tracking-widest text-md text-[#9D5CFF] font-bold mb-1">
+        <span className="tracking-widest text-sm text-[#9D5CFF]">
           {overtext}
         </span>
       )}
-      <h2 className={`text-3xl md:text-4xl ${textColor} max-w-2xl`}>
+      <h2 className={`text-2xl md:text-2xl ${textColor} max-w-2xl`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-md md:text-lg ${textColor}/50 max-w-2xl`}>
+        <p className={`text-md md:text-md ${textColor}/50 max-w-2xl`}>
           {subtitle}
         </p>
       )}

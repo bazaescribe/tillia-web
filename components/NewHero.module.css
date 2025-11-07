@@ -68,6 +68,7 @@
 }
 
 .photo {
+  background-color: #fefefe;
   background: url('/photos/paradise.png');
   background-size: cover;
   width: 100%;
@@ -82,9 +83,9 @@
 .frame {
   position: absolute;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(24px);
+  backdrop-filter: blur(32px);
   padding: 4px;
   overflow: hidden;
   box-shadow: var(--shadow-x, 0px) var(--shadow-y, 0px) 40px rgba(0, 0, 0, 0.16);
@@ -113,6 +114,10 @@
 @media screen and (max-width: 768px) {
   .photo {
     aspect-ratio: 1 / 1;
+  }
+
+  .frame {
+    padding: 2px;
   }
   .frameA {
     top: 20%;
