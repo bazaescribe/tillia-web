@@ -64,7 +64,7 @@ const PricingCards: React.FC = () => {
       title: 'Pro',
       main: true,
       price: '$299/mes',
-      featuresTitle: 'Tode en Basic, mas:',
+      featuresTitle: 'Todo en Basic, mas:',
       features: [
         'Tablas ilimitadas.',
         'Registros ilimitados.',
@@ -79,7 +79,7 @@ const PricingCards: React.FC = () => {
       title: 'Advance',
       main: false,
       price: '$449/mes',
-      featuresTitle: 'Tode en Pro, mas:',
+      featuresTitle: 'Todo en Pro, mas:',
       features: [
         'Invita a tu equipo.',
         'Integración con servicios externos.',
