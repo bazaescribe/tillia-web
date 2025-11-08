@@ -11,47 +11,73 @@ export default function Logos() {
     "/logos/maxehual.png",
     "/logos/careme.png",
   ];
+  const marqueeLogos = [...logos, ...logos];
+
   return (
     <Section>
-      <div className="content">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-          {logos.map((src, i) => {
-            const isFirstColMobile = i % 2 === 0;
-            const isFirstRowMobile = i < 2;
-            const isFirstColMd = i % 4 === 0;
-            const isFirstRowMd = i < 4;
+      <div className="marquee">
+        <div className="marquee__track">
+          {marqueeLogos.map((src, i) => (
+            <div key={`${src}-${i}`} className="flex items-center justify-center px-6">
+              <img src={src} alt="logo" style={{ height: "144px", width: "auto" }} />
+            </div>
+          ))}
+        </div>
 
-            const borderClasses = [
-              // base (mobile) interior borders
-              !isFirstColMobile ? "border-l" : "",
-              !isFirstRowMobile ? "border-t" : "",
-              // remove mobile top border on desktop when item becomes first row
-              isFirstRowMd && !isFirstRowMobile ? "md:border-t-0" : "",
-              // desktop interior borders
-              !isFirstColMd ? "md:border-l" : "",
-              !isFirstRowMd ? "md:border-t" : "",
-              // safety: remove mobile left border on desktop if it becomes first col
-              isFirstColMd && !isFirstColMobile ? "md:border-l-0" : "",
-              "border-gray-200",
-            ]
-              .filter(Boolean)
-              .join(" ");
-
-            return (
-              <div
-                key={src}
-                className={`flex items-center justify-center p-4 ${borderClasses}`}
-              >
-                <img
-                  src={src}
-                  alt="logo"
-                  style={{ height: "144px", width: 'auto'}}
-                />
-              </div>
-            );
-          })}
+        <div className="marquee__track marquee__track--2" aria-hidden="true">
+          {marqueeLogos.map((src, i) => (
+            <div key={`${src}-dup-${i}`} className="flex items-center justify-center px-6">
+              <img src={src} alt="" style={{ height: "144px", width: "auto" }} />
+            </div>
+          ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .marquee {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          /* Optional soft edge mask (comment out if not desired) */
+          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee__track {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          /* Smooth infinite scroll */
+          animation: marquee 100s linear infinite;
+          will-change: transform;
+          /* Ensure the track is only as wide as its contents */
+          width: max-content;
+        }
+        .marquee__track--2 {
+          position: absolute;
+          top: 0;
+          left: 0;
+          animation-name: marquee2;
+          animation-duration: 100s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        @keyframes marquee2 {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </Section>
   );
 }

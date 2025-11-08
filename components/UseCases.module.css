@@ -1,0 +1,65 @@
+.card {
+  aspect-ratio: 1 / 1.3;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border-radius: 6px;
+  transition: transform 0.3s ease-in-out;
+  user-select: none;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.content {
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.prompt, .result {
+  height: 100%;
+}
+
+.prompt {
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.result {
+  padding: 2rem;
+}
+
+.shot {
+  padding: 2rem;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.shot img {
+  user-select: none;
+}
+
+.button {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.active .content {
+  transform: translateY(-100%);
+}
+
+.active .button {
+  transform: rotate(540deg);
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(32px);
+}
