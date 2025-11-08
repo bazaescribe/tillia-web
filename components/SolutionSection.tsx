@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from './atoms/section';
 import SectionTitle from './SectionTitle';
+import { motion } from 'framer-motion';
 
 const Card: React.FC<{
   title: string;
@@ -11,9 +12,9 @@ const Card: React.FC<{
 }> = ({ title, description, image, background, imageAlt }) => {
   return (
     <div 
-      className="bg-[#FEFEFE] rounded-md" 
+      className=" rounded-md shadow-[var(--shadow-card)]" 
       style={{ 
-        border: '1px solid rgba(0, 0, 0, 0.08)',
+        boxShadow: 'var(--shadow-card)',
         aspectRatio: '1 / 1.3',
       }}
     >
@@ -59,6 +60,19 @@ const SolutionSection: React.FC = () => {
     }
   ]
 
+  // Variants para el contenedor y cada tarjeta (fade + slide-up)
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <Section>
       <SectionTitle
@@ -66,14 +80,25 @@ const SolutionSection: React.FC = () => {
         subtitle="Bliqu entiende tu operación, conecta tus tablas automáticamente y las transforma en apps funcionales sin que tengas que programar nada."
         overtext="Soluciones"
       />
-
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {cards.map((card, index) => (
-          <Card key={index} {...card} />
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <Card {...card} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
-};
+}
 
 export default SolutionSection;

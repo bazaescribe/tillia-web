@@ -25,7 +25,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 }) => {
   const textColor = variant === "light" ? "text-foreground" : "text-white";
   return (
-    <div className={`flex flex-col gap-2 mb-4 ${alignmentMap[align]}`}>  
+    <div className={`flex flex-col gap-2 ${alignmentMap[align]}`}>  
       {overtext && (
         <span className="tracking-widest text-sm text-[#9D5CFF]">
           {overtext}

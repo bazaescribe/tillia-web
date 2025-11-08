@@ -8,12 +8,13 @@ import NewHero from "@/components/NewHero"
 import CallToAction from '@/components/CallToAction'
 import CardStepsSection from "@/components/CardStepsSection"
 import Logos from "@/components/logos"
-import FeatureGrid from "@/components/FeatureTable"
 import PricingPlan from "@/components/PricingPlan"
-import PerforatedHero from "@/components/PerforatedHero"
+
 
 import CustomerTestimonial from "@/components/CustomerTestimonial"
 import SolutionSection from "@/components/SolutionSection"
+import AI from "@/components/AI"
+import PricingCards from "@/components/PricingCards"
 
 
 export default function Home() {
@@ -87,14 +88,11 @@ export default function Home() {
 
       <main className="flex-1">
         <NewHero />
-
         <Logos />
-
         <SolutionSection />
-
+        <AI />
         <CustomerTestimonial />
-
-        <PricingPlan />
+        <PricingCards />
 
         <CardStepsSection 
           overtext="Operaciones"

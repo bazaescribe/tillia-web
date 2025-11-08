@@ -106,7 +106,6 @@ export default function CustomerTestimonial() {
         variants={testimonialVariants}
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
-        className="mt-8"
       >
         <div className={styles.header}>
           <div className={styles.testimonial}>

@@ -94,6 +94,10 @@
   will-change: transform, box-shadow;
 }
 
+.frame img {
+  border-radius: 4px;
+}
+
 /* Main front frame (bigger) */
 .frameA {
   top: 10%;

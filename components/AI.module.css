@@ -1,0 +1,44 @@
+.photo {
+  width: 100%;
+  aspect-ratio: 17 / 9;
+  background-color: #fafafa;
+  background-image: url("/photos/aurora.png");
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.shotWrap {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.shot {
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(32px);
+  width: 100%;
+  aspect-ratio: 15 / 9;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}
+
+.shot img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* @media screen and (max-width: 768px) {
+  .photo {
+    aspect-ratio: 1 / 1;
+  }
+} */
