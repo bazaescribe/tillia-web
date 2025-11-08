@@ -57,21 +57,21 @@ const useCases = [
     prompt: "Quiero vender mis productos.",
     title: "Punto de venta",
     subtitle: "Registra ventas, maneja inventario y conecta tus pagos en segundos.",
-    color: "#F49FBC",
+    color: "#FF0E6E",
     image: '/shoots/shot-pos.png'
   },
   {
     prompt: "Quiero organizar mi inventario.",
     title: "Control de inventario",
     subtitle: "Administra tus productos, lotes y existencias automáticamente.",
-    color: "#A0CED9",
+    color: "#FF7A0E",
     image: '/shoots/shot-inventory.png'
   },
   {
     prompt: "Quiero saber cuánto estoy ganando.",
     title: "Dashboard financiero",
     subtitle: "Analiza tus ingresos, márgenes y flujo de efectivo en tiempo real.",
-    color: "#FFB6B9",
+    color: "#008F1F",
     image: '/shoots/shot-report.png'
   },
   // {
