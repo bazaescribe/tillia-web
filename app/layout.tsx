@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import GoogleAnalytics from '@/components/track/GoogleAnalytics'
 
 export const metadata: Metadata = {
   title: 'Bliqu • Administra tu negocio fácilmente',
@@ -19,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-R200DBBDKQ" />
       <body>{children}</body>
     </html>
   )
