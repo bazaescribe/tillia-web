@@ -132,3 +132,14 @@
 .contentWrapSlow { animation: spinCounter 58s linear infinite reverse; }
 /* Contrarrotación para la órbita exterior */
 .contentWrapOuter { animation: spinCounter 76s linear infinite; }
+
+/* Safari-only override:
+   - Make ring2 and the middle spin layer rotate clockwise (no reverse)
+   - Adjust the contentWrapSlow to counterclockwise (no reverse) so text stays horizontal
+   This avoids Safari issues with reverse + composed transforms.
+*/
+@supports (-webkit-touch-callout: none) {
+  .ring2 { animation: spin 52s linear infinite; }
+  .spinSlow { animation: spin 58s linear infinite; }
+  .contentWrapSlow { animation: spinCounter 58s linear infinite; }
+}
