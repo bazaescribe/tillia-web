@@ -45,11 +45,11 @@ export default function CallToAction({
     >
       <div
         style={{
-          padding: '128px 0',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
+          minHeight: '100dvh',
         }}
       >
         <Image
@@ -61,10 +61,10 @@ export default function CallToAction({
         priority
       />
       <h2 className='text-4xl text-white mb-6'>
-        ¡Al infinito y más allá!
+        ¡Prueba Bliqu ahora!
       </h2>
       <button className='bg-[#6E0EFF] text-white mb-6 px-6 py-2 rounded-full hover:opacity-90'>
-        Comenzar ahora
+        Comienza gratis
       </button>
       </div>
     </Section>

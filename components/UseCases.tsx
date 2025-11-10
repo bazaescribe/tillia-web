@@ -38,8 +38,8 @@ const Card: React.FC<CardProps> = ({ title, subtitle, prompt, color, image }) =>
           {prompt}
         </div>
         <div className={styles.result} style={{ backgroundColor: color }}>
-          <h3 className='text-2xl font-bold mb-1'>{title}</h3>
-          <p className='text-2xl opacity-70'>{subtitle}</p>
+          <h3 className='text-2xl font-bold'>{title}</h3>
+          <p className='text-xl opacity-70 mb-8'>{subtitle}</p>
           <div className={styles.shot}>
             <img src={image} alt={title} />
           </div>

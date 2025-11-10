@@ -1,3 +1,4 @@
+// imports de la página
 'use client'
 
 import { useState } from "react"
@@ -7,13 +8,12 @@ import Footer from "@/components/Footer"
 import NewHero from "@/components/NewHero"
 import CallToAction from '@/components/CallToAction'
 import Logos from "@/components/logos"
-
-
 import CustomerTestimonial from "@/components/CustomerTestimonial"
 import SolutionSection from "@/components/SolutionSection"
 import AI from "@/components/AI"
 import PricingCards from "@/components/PricingCards"
 import UseCases from "@/components/UseCases"
+import AgentIntegration from "@/components/AgentIntegration"
 
 
 export default function Home() {
@@ -28,6 +28,8 @@ export default function Home() {
         <Logos />
         <SolutionSection />
         <AI />
+        <AgentIntegration />
+        {/* resto de secciones */}
         <CustomerTestimonial />
         <PricingCards />
         <UseCases />

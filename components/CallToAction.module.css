@@ -1,6 +1,6 @@
 .wrapper {
-  background: #202020;
-  min-height: 100dvh;
+  background: #f00;
+  min-height: 120dvh;
   display: flex;
   align-items: center;
   justify-content: center;
