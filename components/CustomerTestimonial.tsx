@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import styles from "./CustomerTestimonial.module.css"
 import Section from "./atoms/section"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import SectionTitle from "./SectionTitle"
 
 type Testimonial = {
   name: string
@@ -102,30 +103,33 @@ export default function CustomerTestimonial() {
 
   return (
     <Section>
+      <SectionTitle
+        overtext="Testimonios"
+        title="Historias de Transformación"
+        subtitle="Lo que dicen nuestros clientes sobre cómo Bliqu se adaptó a su operación y potenció sus resultados."
+      />
       <motion.div
         variants={testimonialVariants}
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
       >
+        <div className={styles.photo}>
+          <img src={testimonial.photo} alt={testimonial.name} />
+        </div>
         <div className={styles.header}>
           <div className={styles.testimonial}>
             <blockquote className={styles.quote}>{testimonial.quote}</blockquote>
             <div className="font-semibold text-md">{testimonial.name}</div>
             <div className="text-xs opacity-90">{testimonial.business}</div>        
           </div>
-          <div className="mt-4 flex gap-2">
-            <button onClick={prev} className="px-3 py-3 rounded-full hover:bg-zinc-100">
+          <div className="flex gap-3">
+            <button onClick={prev} className="px-3 py-3 rounded-full bg-zinc-300/20  hover:bg-zinc-200">
               <ChevronLeft size={16}/>
             </button>
-            <button onClick={next} className="px-3 py-1 rounded-full hover:bg-zinc-100">
+            <button onClick={next} className="px-3 py-3 rounded-full bg-zinc-300/20  hover:bg-zinc-200">
               <ChevronRight size={16} />
             </button>
           </div>
-        </div>
-        
-
-        <div className={styles.photo}>
-          <img src={testimonial.photo} alt="" />
         </div>
       </motion.div>
     </Section>

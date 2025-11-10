@@ -29,7 +29,6 @@ export default function Home() {
         <SolutionSection />
         <AI />
         <AgentIntegration />
-        {/* resto de secciones */}
         <CustomerTestimonial />
         <PricingCards />
         <UseCases />
