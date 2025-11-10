@@ -242,7 +242,7 @@ const UseCases: React.FC = () => {
       </div>
       {/* UseCases component content goes here */}
       <div className={styles.container}>
-        <div ref={sectionTitleRef} style={{ marginBottom: '2rem' }}>
+        <div ref={sectionTitleRef} style={{ marginBottom: '1rem' }}>
           <SectionTitle 
             overtext="Casos de Uso"
             title="Lo que Bliqu puede hacer por ti." 
