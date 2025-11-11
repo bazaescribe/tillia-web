@@ -52,6 +52,33 @@
   width: 300px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  background: #fafafa;
+}
+/* Dark overlay only when card has background image */
+.withBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transition: backdrop-filter 0.4s ease-in-out;
+}
+
+.card:hover {
+  background-size: 120%;
+}
+
+.withBg:hover::before {
+  backdrop-filter: blur(24px);
+}
+
+
+.content {
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  color: white;
+  position: relative; /* ensure content above overlay */
+  z-index: 1;
 }
 
 .card:hover {
@@ -99,6 +126,9 @@
   bottom: 1rem;
   transition: transform 0.3s ease-in-out;
   color: white;
+  z-index: 2; /* ensure button above overlay */
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(24px);
 }
 
 .active .content {

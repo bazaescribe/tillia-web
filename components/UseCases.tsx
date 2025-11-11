@@ -17,14 +17,17 @@ interface CardProps {
   prompt: string;
   color: string;
   image?: string;
+  backgroundSrc?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, subtitle, prompt, color, image }) => {
+// Card component
+const Card: React.FC<CardProps> = ({ title, subtitle, prompt, color, image, backgroundSrc }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div 
-      className={`${styles.card} ${showDetails ? styles.active : ''}`}
+      className={`${styles.card} ${showDetails ? styles.active : ''} ${backgroundSrc ? styles.withBg : ''}`}
+      style={{ backgroundImage: backgroundSrc ? `url(${backgroundSrc})` : undefined, backgroundSize: 'cover', backgroundPosition: 'center' }}
       onClick={() => setShowDetails((prev) => !prev)}
       role="button"
       tabIndex={0}
@@ -36,7 +39,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, prompt, color, image }) =>
       }}
     >
       <div className={styles.content}>
-        <div className={styles.prompt} style={{ color: color }}>
+        <div className={styles.prompt} >
           {prompt}
         </div>
         <div className={styles.result} style={{ backgroundColor: color }}>
@@ -47,7 +50,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, prompt, color, image }) =>
           </div>
         </div>
       </div>
-      <div className={styles.button} style={{ background: color }}>
+      <div className={styles.button}>
         <ArrowUp size={24} />
       </div>
     </div>
@@ -60,48 +63,56 @@ const useCases = [
     title: "Punto de venta",
     subtitle: "Registra ventas, maneja inventario y conecta tus pagos en segundos.",
     color: "#FF0E6E",
-    image: '/shoots/shot-pos.png'
+    image: '/shoots/shot-pos.png',
+    backgroundSrc: '/photos/bg-market.jpg'
   },
   {
     prompt: "Quiero organizar mi inventario.",
     title: "Control de inventario",
     subtitle: "Administra tus productos, lotes y existencias automáticamente.",
     color: "#FF7A0E",
-    image: '/shoots/shot-inventory.png'
+    image: '/shoots/shot-inventory.png',
+    backgroundSrc: '/photos/pastries.png'
   },
   {
     prompt: "Quiero saber cuánto estoy ganando.",
     title: "Dashboard financiero",
     subtitle: "Analiza tus ingresos, márgenes y flujo de efectivo en tiempo real.",
     color: "#008F1F",
-    image: '/shoots/shot-report.png'
+    image: '/shoots/shot-report.png',
+    backgroundSrc: '/photos/green.jpg'
   },
   {
     prompt: "Quiero tener todo mi equipo alineado.",
     title: "Gestión de equipo",
     subtitle: "Crea tareas, asigna responsables y haz seguimiento de objetivos.",
     color: "#A855F7",
-    image: '/shoots/pos.png'
+    image: '/shoots/pos.png',
+    backgroundSrc: '/photos/sweaters.jpg'
   },
   {
     prompt: "Quiero entender por qué bajaron mis ventas.",
     title: "Análisis de ventas",
     subtitle: "Detecta patrones, compara periodos y encuentra oportunidades ocultas.",
-    color: "#F59E0B",
-    image: '/shoots/pos.png'
+    color: "#8ACB88",
+    image: '/shoots/pos.png',
+    backgroundSrc: '/photos/keyboard.jpg'
   },
   {
     prompt: "Quiero automatizar recordatorios de pago.",
     title: "Cobranza inteligente",
     subtitle: "Envía recordatorios automáticos y mejora tu flujo de efectivo.",
-    color: "#10B981",
-    image: '/shoots/pos.png'
+    color: "#177E89",
+    image: '/shoots/pos.png',
+    backgroundSrc: '/photos/cactus.jpg'
   },
   {
     prompt: "Quiero integrar con servicios externos.",
     title: "Integraciones",
     subtitle: "Conecta herramientas como WhatsApp, Shopify o Google Sheets en un clic.",
-    color: "#FB923C"
+    color: "#FB923C",
+    image: '/shoots/pos.png',
+    backgroundSrc: '/photos/chocolate.jpg'
   },
   // {
   //   prompt: "Quiero crear agentes inteligentes.",
