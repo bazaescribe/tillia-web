@@ -300,6 +300,7 @@ const UseCases: React.FC = () => {
           display: 'flex',
           alignItems: 'flex-end',
           marginBottom: '3rem',
+          padding: '0 1rem',
         }}
       >
         <div className='flex gap-3'>
