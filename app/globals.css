@@ -15,7 +15,7 @@ body {
 }
 
 :root {
-  --shadow-card: rgba(0, 0, 0, 0.04) 0px 1px 4px 0px, rgba(27, 31, 35, 0.08) 0px 0px 0px 1px;
+  --shadow-card: rgba(0, 0, 0, 0.04) 0px 1px 24px 0px, rgba(27, 31, 35, 0.08) 0px 0px 0px 1px;
 }
 
 @layer base {
