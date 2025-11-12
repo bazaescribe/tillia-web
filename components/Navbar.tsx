@@ -41,36 +41,30 @@ export default function Navbar() {
       </div>
 
       {/* Floating Bar */}
-      <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank" rel="noopener noreferrer">
+      
         <div
           className={`fixed bottom-0 left-0 right-0 z-50 transition-transform duration-800 ease-in-out ${
             showFloatingBar ? 'translate-y-0' : 'translate-y-[300%]'
           }`}
-          style={{
-            cursor: 'pointer',
-          }}
         >
-          <div className="container flex items-center justify-center py-4">
-            
-            <div
-              className="flex items-center gap-3 px-5 py-3 rounded-full shadow-lg"
-              style={{
-                background: 'black',
-              }}
-            >
-              <div className="">
-                <Image src="/whale.svg" alt="logo" width={24} height={14} />
-              </div>
-              <span className="text-sm font-medium text-white">
-                Comienza gratis
-              </span>
-              <div>
-                <ArrowRight size={18} className="text-white"/>
-              </div>
+            <div className="container flex items-center justify-center py-4">
+              <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank" rel="noopener noreferrer">
+                <div
+                  className={styles.floatingButton}
+                >
+                  <div className="">
+                    <Image src="/whale.svg" alt="logo" width={24} height={14} />
+                  </div>
+                  <span className="text-sm font-medium text-white">
+                    Comienza gratis
+                  </span>
+                  <div>
+                    <ArrowRight size={18} className="text-white"/>
+                  </div>
+                </div>
+              </a>
             </div>
-          </div>
         </div>
-      </a>
     </>
   )
 }
