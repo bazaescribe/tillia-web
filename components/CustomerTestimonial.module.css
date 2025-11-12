@@ -21,7 +21,7 @@
 .photo {
   width: 100%;
   aspect-ratio: 17 / 9;
-  border-radius: 6px;
+  border-radius: 0.5rem;
   overflow: hidden;
   user-select: none;
   border: 1px solid rgba(0, 0, 0, 0.1);

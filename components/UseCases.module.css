@@ -46,7 +46,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  border-radius: 6px;
+  border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out;
   user-select: none;
   width: 300px;

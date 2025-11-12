@@ -187,7 +187,7 @@ export default function AgentIntegration() {
         <div className="w-full flex justify-center"
           style={{
             overflow:'hidden',
-            borderRadius: '6px',
+            borderRadius: '0.5rem',
             background: '#FDFDFD',
             boxShadow: 'var(--shadow-card)'
           }}

@@ -15,7 +15,7 @@ const Card: React.FC<{
 }> = ({ title, main, price, featuresTitle, features, cta, onClick}) => {
   return (
     <div 
-      className="rounded-md p-8 flex flex-col gap-4" 
+      className="rounded-lg p-8 flex flex-col gap-4" 
       style={{ 
         boxShadow: 'var(--shadow-card)',
         aspectRatio: '1 / 1.2',
