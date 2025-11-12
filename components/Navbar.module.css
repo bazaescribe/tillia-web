@@ -38,6 +38,7 @@
 .floatingButton:hover {
   gap: 1.2rem;
   padding: 12px 24px;
+  /* transform: scale(1.03); */
 }
 
 .floatingButton::before {
@@ -62,6 +63,7 @@
   width: 110%;
   height: 100%;
   filter: blur(24px);
+  z-index: -2;
 }
 
 @keyframes gradientShift {
