@@ -27,11 +27,11 @@ export default function Home() {
         <NewHero />
         <Logos />
         <SolutionSection />
+        <UseCases />
         <AI />
         <AgentIntegration />
         <CustomerTestimonial />
         <PricingCards />
-        <UseCases />
         <CallToAction />
       </main>
 

@@ -244,11 +244,7 @@ const UseCases: React.FC = () => {
   }
 
   return (
-    <div
-      style={{
-        paddingBottom: '64px',
-      }}
-    >
+    <div>
       <div className={styles.bumper}>
       </div>
       {/* UseCases component content goes here */}
@@ -257,7 +253,7 @@ const UseCases: React.FC = () => {
           <SectionTitle 
             overtext="Casos de Uso"
             title="Lo que Bliqu puede hacer por ti." 
-            subtitle='Bliqu crea automáticamente las apps y vistas que necesitas para vender, analizar o administrar sin que tengas que construir nada.'
+            subtitle='Bliqu crea automáticamente las apps internas y vistas que necesitas para vender, analizar o administrar sin que tengas que construir nada.'
           />
         </div>
       </div>
