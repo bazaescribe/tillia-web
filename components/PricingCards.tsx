@@ -9,16 +9,19 @@ const Card: React.FC<{
   price: string;
   featuresTitle: string;
   features: string[];
+  addOns?: string[];
   cta: string;
   onClick: () => void;
  
-}> = ({ title, main, price, featuresTitle, features, cta, onClick}) => {
+}> = ({ title, main, price, featuresTitle, features, addOns, cta, onClick}) => {
   return (
     <div 
-      className="rounded-lg p-8 flex flex-col gap-4" 
+      className="rounded-lg p-8 flex flex-col gap-7" 
       style={{ 
         boxShadow: 'var(--shadow-card)',
-        aspectRatio: '1 / 1.2',
+        // aspectRatio: '1 / 1.2',
+        minHeight: '420px',
+        height: '100%',
       }}
     >
       <div>
@@ -29,13 +32,20 @@ const Card: React.FC<{
         <h3 className="text-3xl text-zinc-400/70">{price}</h3>
       </div>
       <div className='flex flex-col gap-2 flex-1'>
-        <div className="text-black/40 text-sm mt-4">{featuresTitle}</div>
+        <div className="text-black/40 text-sm">{featuresTitle}</div>
         <div className="list-disc list-inside">
           {features.map((feature) => (
             <p key={feature} className="text-black/60 text-md">{feature}</p>
           ))}
         </div>
       </div>
+      {addOns && (
+          <div className="list-disc list-inside">
+            {addOns.map((addOn) => (
+              <p key={addOn} className="text-black/40 text-xs">{addOn}</p>
+            ))}
+          </div>
+        )}
       <div className='flex'>
         <button 
           className={`p-2 px-4 rounded-full transition-colors duration-300 ${main ? 'bg-black hover:bg-black/60 text-white' : 'bg-black/10 hover:bg-black/20'}`}
@@ -54,23 +64,30 @@ const PricingCards: React.FC = () => {
     {
       title: 'Basic',
       main: false,
-      price: '$99 / mes',
+      price: '$79 / mes',
       featuresTitle: 'Incluye',
-      features: ['Hasta 3 tablas', '200 registros por tablas', 'AI limitada'],
+      features: [
+        '1 administrador.',
+        '10 colecciones.',
+        '1,000 registros por colección',
+      ],
       cta: 'Comenzar',
       onClick: () => console.log('Comenzar'),
     },
     {
       title: 'Pro',
       main: true,
-      price: '$299 / mes',
+      price: '$279 / mes',
       featuresTitle: 'Todo en Basic, mas:',
       features: [
-        'Tablas ilimitadas.',
-        'Registros ilimitados.',
-        'Integración de AI extendida.',
+        '1 administrador.',
+        '100 colecciones.',
+        '10,000 registros por colección.',
         'Tablas inteligentes.',
         'Automatizaciones básicas.',
+      ],
+      addOns: [
+        'Administrador adicional: $199 / mes',
       ],
       cta: 'Comenzar',
       onClick: () => console.log('Comenzar'),
@@ -78,15 +95,21 @@ const PricingCards: React.FC = () => {
     {
       title: 'Advance',
       main: false,
-      price: '$449 / mes',
+      price: '$579 / mes',
       featuresTitle: 'Todo en Pro, mas:',
       features: [
-        'Invita a tu equipo.',
+        '1 administrador.',
+        '1 operador.',
+        '1,000 colecciones.',
+        '100,000 registros por colección.',
         'Integración con servicios externos.',
         'Creación de agentes inteligentes.',
         'Reportes automáticos.',
-        'Apps internas de tu negocio.',
-        '4x de uso de AI.',
+        'Constructor de Apps automáticas.',
+      ],
+      addOns: [
+        'Administrador adicional: $179 / mes',
+        'Operador adicional: $79 / mes',
       ],
       cta: 'Comenzar',
       onClick: () => console.log('Comenzar'),
@@ -133,6 +156,13 @@ const PricingCards: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      <div>
+        <h4>¿Necesitas una solución a la medida?</h4>
+        <p className="text-md text-black/60">
+          Contactanos para discutir tu caso de uso y cómo podemos ayudarte.
+        </p>
+      </div>
     </Section>
   );
 };
