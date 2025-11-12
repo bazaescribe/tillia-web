@@ -5,7 +5,7 @@ import GoogleAnalytics from '@/components/track/GoogleAnalytics'
 export const metadata: Metadata = {
   title: 'Bliqu • El sistema de tu negocio',
   description: 'Bliqu entiende tu operación y construye tu sistema de gestión sin que tengas que programar nada.',
-  keywords: ['ERP', 'AI', 'PyMES', 'Software de Gestión', 'Automatización','Sistema de Gestión', 'Punto de Venta', 'Agentes', 'Notion'],
+  keywords: ['ERP', 'AI', 'PyMES', 'Software de Gestión', 'Automatización','Sistema de Gestión', 'Punto de Venta', 'Agentes', 'Notion', 'POS'],
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
