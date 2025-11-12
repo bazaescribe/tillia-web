@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Serif:ital@0;1&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -101,7 +104,7 @@ body {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Geist', Arial, Helvetica, sans-serif;
+    font-family: 'Stack Sans Text', -apple-system, BlinkMacSystemFont, 'Geist', Arial, Helvetica, sans-serif;
     letter-spacing: -1.2%;
   }
 

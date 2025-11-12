@@ -24,9 +24,9 @@ const Card: React.FC<{
       <div>
         <div className='flex gap-3 mb-1'>
           <h2 className="text-3xl">{title}</h2>
-          {main && <p className="text-3xl text-[#6E0EFF]">Recomendado</p>}
+          {main && <h3 className="text-3xl text-[#6E0EFF]">Recomendado</h3>}
         </div>
-        <p className="text-3xl text-black/40">{price}</p>
+        <h3 className="text-3xl text-zinc-400/70">{price}</h3>
       </div>
       <div className='flex flex-col gap-2 flex-1'>
         <div className="text-black/40 text-sm mt-4">{featuresTitle}</div>
@@ -54,7 +54,7 @@ const PricingCards: React.FC = () => {
     {
       title: 'Basic',
       main: false,
-      price: '$99/mes',
+      price: '$99 / mes',
       featuresTitle: 'Incluye',
       features: ['Hasta 3 tablas', '200 registros por tablas', 'AI limitada'],
       cta: 'Comenzar',
@@ -63,7 +63,7 @@ const PricingCards: React.FC = () => {
     {
       title: 'Pro',
       main: true,
-      price: '$299/mes',
+      price: '$299 / mes',
       featuresTitle: 'Todo en Basic, mas:',
       features: [
         'Tablas ilimitadas.',
@@ -78,7 +78,7 @@ const PricingCards: React.FC = () => {
     {
       title: 'Advance',
       main: false,
-      price: '$449/mes',
+      price: '$449 / mes',
       featuresTitle: 'Todo en Pro, mas:',
       features: [
         'Invita a tu equipo.',

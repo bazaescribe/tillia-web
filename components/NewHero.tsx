@@ -182,9 +182,12 @@ export default function NewHero() {
           </motion.div>
         </div>
       </div>
-      <div 
-        className={styles.photo} 
+      <motion.div
+        className={styles.photo}
         ref={rootRef}
+        variants={cardVariants}
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
       >
         {/* Main front frame */}
         <div className={`${styles.frame} ${styles.frameA}`}>
@@ -195,7 +198,7 @@ export default function NewHero() {
         <div className={`${styles.frame} ${styles.frameB}`}>
           <img src="/photos/shot-finance.jpg" alt="Panel de métricas" className={styles.frameImg} />
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }

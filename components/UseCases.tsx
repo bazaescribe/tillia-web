@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, prompt, color, image, back
     >
       <div className={styles.content}>
         <div className={styles.prompt} >
-          {prompt}
+          <h3>{prompt}</h3>
         </div>
         <div className={styles.result} style={{ backgroundColor: color }}>
           <h3 className='text-lg font-bold'>{title}</h3>
