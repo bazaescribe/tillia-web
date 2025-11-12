@@ -95,7 +95,7 @@ const PricingCards: React.FC = () => {
     {
       title: 'Advance',
       main: false,
-      price: '$579 / mes',
+      price: '$639 / mes',
       featuresTitle: 'Todo en Pro, mas:',
       features: [
         '1 administrador.',
