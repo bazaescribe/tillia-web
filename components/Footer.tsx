@@ -1,11 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Twitter, Linkedin } from "lucide-react"
+import SectionTitle from "./SectionTitle"
+import Section from "./atoms/section"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000] text-white py-12">
-      <div className="container">
+    <Section variant="dark">
+    <footer className="bg-[#000] text-white">
+      <div className="">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -83,5 +86,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </Section>
   )
 }
