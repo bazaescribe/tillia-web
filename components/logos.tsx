@@ -2,10 +2,10 @@ import Section from "./atoms/section";
 
 export default function Logos() {
   const logos = [
-    "/logos/careme.png",
+    "/logos/aliada.png",
     "/logos/microsoft.png",
-    "/logos/google.png",
     "/logos/DEVF.png",
+    "/logos/google.png",
     "/logos/chain.png",
     "/logos/brw.png",
     "/logos/rb.png",
@@ -19,7 +19,7 @@ export default function Logos() {
         <div className="marquee__track">
           {marqueeLogos.map((src, i) => (
             <div key={`${src}-${i}`} className="flex items-center justify-center px-6">
-              <img src={src} alt="logo" style={{ height: "128px", width: "auto" }} />
+              <img src={src} alt="logo" style={{ height: "96px", width: "auto" }} />
             </div>
           ))}
         </div>
@@ -27,7 +27,7 @@ export default function Logos() {
         <div className="marquee__track marquee__track--2" aria-hidden="true">
           {marqueeLogos.map((src, i) => (
             <div key={`${src}-dup-${i}`} className="flex items-center justify-center px-6">
-              <img src={src} alt="" style={{ height: "128px", width: "auto" }} />
+              <img src={src} alt="" style={{ height: "96px", width: "auto" }} />
             </div>
           ))}
         </div>
@@ -45,7 +45,7 @@ export default function Logos() {
         .marquee__track {
           display: flex;
           align-items: center;
-          gap: 2rem;
+          gap: 1rem;
           /* Smooth infinite scroll */
           animation: marquee 80s linear infinite;
           will-change: transform;

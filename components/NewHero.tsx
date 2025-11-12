@@ -159,7 +159,7 @@ export default function NewHero() {
               <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-2xl text-bold mr-2">
                 Crea, conecta y automatiza tu negocio desde un solo lugar,
               </motion.span>  
-              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-2xl text-bold text-black/30">
+              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-2xl text-bold text-zinc-400/70">
                 sin necesidad de un equipo técnico.
               </motion.span>
             </h1>
