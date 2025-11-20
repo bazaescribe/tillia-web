@@ -10,6 +10,7 @@ import { motion, useInView } from 'framer-motion'
 import { ArrowUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Carousel from './Carousel';
 
 interface CardProps {
   title: string;
@@ -25,7 +26,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, prompt, color, image, back
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div 
+    <div
       className={`${styles.card} ${showDetails ? styles.active : ''} ${backgroundSrc ? styles.withBg : ''}`}
       style={{ backgroundImage: backgroundSrc ? `url(${backgroundSrc})` : undefined, backgroundSize: 'cover', backgroundPosition: 'center' }}
       onClick={() => setShowDetails((prev) => !prev)}
@@ -155,93 +156,12 @@ const useCases = [
 
 const UseCases: React.FC = () => {
 
-  // Variants para el contenedor y cada tarjeta (fade + slide-up)
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 },
   };
 
-  const [carouselPaddingLeft, setCarouselPaddingLeft] = useState(0)
   const sectionTitleRef = useRef<HTMLDivElement | null>(null)
-  const carouselRef = useRef<HTMLDivElement | null>(null)
-  const cardsRef = useRef<HTMLDivElement | null>(null)
-  const [scrollStep, setScrollStep] = useState(0)
-
-  useEffect(() => {
-    let rafId = 0
-
-    const measureAndApply = () => {
-      const sectionEl = sectionTitleRef.current
-      const carouselEl = carouselRef.current
-      const cardsEl = cardsRef.current
-      if (!sectionEl || !carouselEl) return
-
-      const rect = sectionEl.getBoundingClientRect()
-      const left = Math.max(0, Math.round(rect.left))
-      setCarouselPaddingLeft(left)
-
-      // Measure first card width and the gap to compute step
-      if (cardsEl) {
-        const firstCard = cardsEl.querySelector(`.${styles.card}`) as HTMLElement | null
-        const stylesComputed = getComputedStyle(cardsEl)
-        const gapPx = parseFloat(stylesComputed.gap) || 0
-        const cardWidth = firstCard?.offsetWidth || 0
-        const step = Math.round(cardWidth + gapPx)
-        if (step > 0) setScrollStep(step)
-      }
-    }
-
-    const scheduleMeasure = () => {
-      cancelAnimationFrame(rafId)
-      rafId = requestAnimationFrame(measureAndApply)
-    }
-
-    // Initial measure
-    scheduleMeasure()
-
-    // Recalculate on scroll/resize
-    window.addEventListener('resize', scheduleMeasure, { passive: true })
-    window.addEventListener('scroll', scheduleMeasure, { passive: true })
-
-    // Recalculate when SectionTitle size/position changes
-    const roTitle = new ResizeObserver(scheduleMeasure)
-    if (sectionTitleRef.current) {
-      roTitle.observe(sectionTitleRef.current)
-    }
-
-    // Recalculate when cards change
-    const roCards = new ResizeObserver(scheduleMeasure)
-    if (cardsRef.current) {
-      roCards.observe(cardsRef.current)
-      const firstCard = cardsRef.current.querySelector(`.${styles.card}`) as HTMLElement | null
-      if (firstCard) roCards.observe(firstCard)
-    }
-
-    return () => {
-      cancelAnimationFrame(rafId)
-      window.removeEventListener('resize', scheduleMeasure)
-      window.removeEventListener('scroll', scheduleMeasure)
-      roTitle.disconnect()
-      roCards.disconnect()
-    }
-  }, [])
-
-  const handlePrev = () => {
-    if (!carouselRef.current || scrollStep <= 0) return
-    carouselRef.current.scrollBy({ left: -scrollStep, behavior: 'smooth' })
-  }
-
-  const handleNext = () => {
-    if (!carouselRef.current || scrollStep <= 0) return
-    carouselRef.current.scrollBy({ left: scrollStep, behavior: 'smooth' })
-  }
 
   return (
     <div>
@@ -250,65 +170,25 @@ const UseCases: React.FC = () => {
       {/* UseCases component content goes here */}
       <div className={styles.container}>
         <div ref={sectionTitleRef} style={{ marginBottom: '1rem' }}>
-          <SectionTitle 
+          <SectionTitle
             overtext="Casos de Uso"
-            title="Lo que Bliqu puede hacer por ti." 
+            title="Lo que Bliqu puede hacer por ti."
             subtitle='Bliqu crea automáticamente las apps internas y vistas que necesitas para vender, analizar o administrar sin que tengas que construir nada.'
           />
         </div>
       </div>
-      
-      <div
-        className={styles.carousel}
-        ref={carouselRef}
-        style={{
-          paddingLeft: carouselPaddingLeft,
-          paddingRight: carouselPaddingLeft,
-          scrollSnapType: 'x mandatory',
-          scrollPaddingLeft: carouselPaddingLeft,
-          scrollPaddingRight: carouselPaddingLeft,
-          scrollBehavior: 'smooth',
-        }}
-      >
-        <motion.div
-          className={styles.cards}
-          ref={cardsRef}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {useCases.map((card, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-            >
-              <Card {...card} />
-            </motion.div>
-          ))}
-          <div className={styles.ghostCard}></div>
-        </motion.div>
-      </div>
 
-      <div className={styles.container}
-        style={{
-          display: 'flex',
-          alignItems: 'flex-end',
-          marginBottom: '3rem',
-          padding: '0 1rem',
-        }}
-      >
-        <div className='flex gap-3'>
-          <button onClick={handlePrev} className="px-3 py-3 rounded-full bg-zinc-300/20  hover:bg-zinc-200">
-            <ChevronLeft size={16} />
-          </button>
-          <button onClick={handleNext} className="px-3 py-3 rounded-full bg-zinc-300/20  hover:bg-zinc-200">
-            <ChevronRight size={16} />
-          </button>
-        </div>
-        
-      </div>
+      <Carousel alignToRef={sectionTitleRef}>
+        {useCases.map((card, index) => (
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <Card {...card} />
+          </motion.div>
+        ))}
+      </Carousel>
 
     </div>
   );

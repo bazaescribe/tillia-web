@@ -10,6 +10,7 @@ export default function Logos() {
     "/logos/brw.png",
     "/logos/rb.png",
     "/logos/maxehual.png",
+    "/logos/p54.png",
   ];
   const marqueeLogos = [...logos, ...logos];
 
