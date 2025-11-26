@@ -32,7 +32,7 @@ export default function Navbar() {
           <Image src="/logo.svg" alt="logo" width={100} height={28} />
         </div>
         <div>
-          <a href="https://p54.mx" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.bliqu.com" target="_blank" rel="noopener noreferrer">
             <Button className="rounded-3xl font-light">
               Ya tengo cuenta
             </Button>
