@@ -14,6 +14,7 @@ import AI from "@/components/AI"
 import PricingCards from "@/components/PricingCards"
 import UseCases from "@/components/UseCases"
 import AgentIntegration from "@/components/AgentIntegration"
+import SystemVisualizer from "@/components/SystemVisualizer"
 
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <NewHero />
         <Logos />
         <SolutionSection />
+        <SystemVisualizer />
         <UseCases />
         <AI />
         <AgentIntegration />

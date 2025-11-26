@@ -11,15 +11,15 @@ const Card: React.FC<{
   imageAlt: string;
 }> = ({ title, description, image, background, imageAlt }) => {
   return (
-    <div 
-      className=" rounded-md shadow-[var(--shadow-card)]" 
-      style={{ 
+    <div
+      className=" rounded-md shadow-[var(--shadow-card)]"
+      style={{
         boxShadow: 'var(--shadow-card)',
         aspectRatio: '1 / 1.3',
       }}
     >
       <div
-        className="w-full" 
+        className="w-full"
         style={{
           aspectRatio: '1 / 1',
         }}
@@ -38,22 +38,22 @@ const SolutionSection: React.FC = () => {
 
   const cards = [
     {
-      title: "Crea",
-      description: "la base de tu negocio, sin hojas de cálculo ni plantillas complicadas.",
+      title: "Crea tu base operativa,",
+      description: "registra clientes, productos, alumnos, pedidos, lo que sea.",
       image: "/shoots/ui-items.png",
       background: '/photos/service-bg-stock.png',
       imageAlt: "Alt text for image 1"
     },
     {
-      title: "Organiza",
-      description: " tu operación en un solo lugar, con permisos claros y apps compartidas.",
+      title: "Relaciona tu información, ",
+      description: "de manera automática, bliqu entiende tu negocio.",
       image: "/shoots/ui-apps.png",
       background: '/photos/service-bg-nails.png',
       imageAlt: "Alt text for image 2"
     },
     {
       title: "Automatiza",
-      description: "lo que nadie quiere hacer, sin escribir una línea de código.",
+      description: "Obtén formularios, dashboards y flujos listos para usar. Sin programar nada.",
       image: "/shoots/ui-automations.png",
       background: '/photos/service-bg-manufacture.png',
       imageAlt: "Alt text for image 2"
@@ -76,9 +76,9 @@ const SolutionSection: React.FC = () => {
   return (
     <Section>
       <SectionTitle
-        title="Un sistema moderno que se adapta a tu forma de trabajar."
-        subtitle="Bliqu entiende tu operación, conecta tus tablas automáticamente y las transforma en apps funcionales sin que tengas que programar nada."
         overtext="Soluciones"
+        title="Rápido, flexible y hecho para ti."
+        subtitle="Convierte tus datos en herramientas reales para operar tu negocio. Sin integraciones, sin plantillas, sin desarrolladores."
       />
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"

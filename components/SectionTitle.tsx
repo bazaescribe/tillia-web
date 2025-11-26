@@ -25,13 +25,13 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 }) => {
   const textColor = variant === "light" ? "text-foreground" : "text-white";
   return (
-    <div className={`flex flex-col gap-2 ${alignmentMap[align]}`}>  
+    <div className={`flex flex-col gap-2 ${alignmentMap[align]}`}>
       {overtext && (
         <span className="tracking-widest text-sm text-[#9D5CFF]">
           {overtext}
         </span>
       )}
-      <h2 className={`text-2xl md:text-2xl ${textColor} max-w-2xl`}>
+      <h2 className={`text-3xl md:text-3xl font-bold ${textColor} max-w-2xl`}>
         {title}
       </h2>
       {subtitle && (
