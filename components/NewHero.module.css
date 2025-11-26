@@ -24,7 +24,7 @@
   pointer-events: none;
 }
 
-.card > * {
+.card>* {
   position: relative;
   z-index: 1;
 }
@@ -69,7 +69,7 @@
 
 .photo {
   background-color: #fefefe;
-  background: url('/photos/paradise.png');
+  background: url('/photos/fluted-2.jpg');
   background-size: cover;
   width: 100%;
   aspect-ratio: 17 / 9;
@@ -77,7 +77,8 @@
   box-shadow: var(--shadow-card);
   overflow: hidden;
   user-select: none;
-  position: relative; /* allow absolute frames inside */
+  position: relative;
+  /* allow absolute frames inside */
 }
 
 /* Base frame styles */
@@ -113,7 +114,8 @@
   right: 8%;
   width: 45%;
   aspect-ratio: 16 / 10;
-  transform: translate(calc(var(--img-x, 0px) * 0.4), calc(var(--img-y, 0px) * 0.6)); /* slower parallax for depth */
+  transform: translate(calc(var(--img-x, 0px) * 0.4), calc(var(--img-y, 0px) * 0.6));
+  /* slower parallax for depth */
 }
 
 @media screen and (max-width: 768px) {
@@ -124,6 +126,7 @@
   .frame {
     padding: 2px;
   }
+
   .frameA {
     top: 20%;
     left: 10%;

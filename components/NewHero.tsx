@@ -116,9 +116,9 @@ export default function NewHero() {
 
   // Animation variants for card - slides from bottom to top after content
   const cardVariants = {
-    hidden: { 
-      y: 100, 
-      opacity: 0 
+    hidden: {
+      y: 100,
+      opacity: 0
     },
     visible: {
       y: 0,
@@ -144,10 +144,10 @@ export default function NewHero() {
       }
     }
   }
-  
+
   return (
     <Section>
-      <div>
+      <div className="pt-8 pb-12">
         <div className={styles.content}>
           <motion.div
             variants={containerVariants}
@@ -155,18 +155,16 @@ export default function NewHero() {
             animate={isLoaded ? "visible" : "hidden"}
             className="flex flex-col h-full"
           >
-            <h1 className="max-w-2xl mb-6">
-              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-2xl text-bold mr-2">
-                Opera como por arte de magia.
-              </motion.span>  
-              <motion.span variants={itemVariants} className="text-3xl mb-2 md:text-2xl text-bold text-zinc-400/80">
-                Administra, conecta y automatiza tu negocio facilmente.
-              </motion.span>
-            </h1>
-            
-            <motion.div 
+            <motion.h1 variants={itemVariants} className="max-w-2xl mb-3 text-5xl font-bold mx-auto text-center">
+              Tu negocio fluyendo
+            </motion.h1>
+            <motion.p variants={itemVariants} className="max-w-2xl mb-8 text-lg mx-auto text-center text-black/40">
+              Administra, conecta y automatiza tu operación facilmente.
+            </motion.p>
+
+            <motion.div
               variants={itemVariants}
-              className="flex gap-4"
+              className="flex gap-12 mx-auto"
             >
               <motion.div variants={buttonVariants}>
                 <a href="https://1a2toy77zgg.typeform.com/to/K5rhk9Mb" target="_blank" rel="noopener noreferrer">
@@ -174,7 +172,7 @@ export default function NewHero() {
                     className="bg-[#000000] px-6 text-white text-sm rounded-full transition-all duration-300 hover:opacity-90 hover:gap-4"
                   >
                     Comienza gratis
-                    <ArrowRight size={16}/>
+                    <ArrowRight size={16} />
                   </Button>
                 </a>
               </motion.div>
@@ -193,7 +191,7 @@ export default function NewHero() {
         <div className={`${styles.frame} ${styles.frameA}`}>
           <img src="/photos/shot-payments.jpg" alt="Demo: Pagos" className={styles.frameImg} />
         </div>
-        
+
         {/* Secondary back frame */}
         <div className={`${styles.frame} ${styles.frameB}`}>
           <img src="/photos/shot-finance.jpg" alt="Panel de métricas" className={styles.frameImg} />
