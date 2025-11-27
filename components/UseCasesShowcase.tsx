@@ -308,8 +308,8 @@ export default function UseCasesShowcase({ items = DEFAULT_USE_CASES, className 
 
           {/* Right Column: Sticky Image Panel */}
           <div className="hidden lg:block w-full lg:w-1/2 relative">
-            <div className="sticky top-0 h-screen flex items-center justify-center pt-16 pb-12">
-              <div className="relative w-full aspect-[1/1.3] max-w-xl">
+            <div className="sticky top-0 h-screen flex items-center justify-center pt-16 pb-6">
+              <div className="relative w-full h-full max-w-xl">
                 {items.map((item, index) => (
                   <StickyImage
                     key={index}
