@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, DoorOpen } from "lucide-react"
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -27,19 +27,21 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={styles.content}>
-        <div className={styles.p}>
-          <Image src="/logo.svg" alt="logo" width={100} height={28} />
-        </div>
-        <div>
-          <a href="https://app.bliqu.com" target="_blank" rel="noopener noreferrer">
-            <Button className="rounded-3xl font-light">
-              Ya tengo cuenta
-            </Button>
+      <nav className="sticky top-0 left-0 right-0 z-50 bg-white">
+        <div className={styles.content}>
+          <a href="#">
+            <Image src="/logo.svg" alt="logo" width={100} height={28} />
           </a>
+          <div>
+            <a href="https://app.bliqu.com" target="_blank" rel="noopener noreferrer">
+              <Button className="rounded-3xl bg-slate-100 text-gray-700 hover:bg-slate-200 hover:text-black">
+                <DoorOpen size={16} />
+                Ya tengo cuenta
+              </Button>
+            </a>
+          </div>
         </div>
-      </div>
-
+      </nav>
       {/* Floating Bar */}
 
       <div

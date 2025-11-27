@@ -75,7 +75,6 @@ export default function Section({ children, variant = 'light', ...rest }: Sectio
 
   return (
     <section ref={ref} className={`${styles.wrapper} ${variant === 'light' ? styles.light : styles.dark}`} {...rest}>
-      <div className={styles.bumper}/>
       <div className={styles.content}>
         {children}
       </div>

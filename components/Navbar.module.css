@@ -3,13 +3,9 @@
 .content {
   width: 86px;
   height: 64px;
-  font-weight: bold;
-  color: white;
-  mix-blend-mode: difference;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  position: sticky;
   top: 0;
   z-index: 40;
   display: flex;
@@ -28,10 +24,11 @@
   position: relative;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
   transition: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-   transition: 
+  transition:
     360ms cubic-bezier(0.175, 8.88, 0.32, 1.275) padding,
     320ms cubic-bezier(0.175, 8.88, 0.32, 1.275) gap,
-    300ms ease-out box-shadow; /* Puedes dejar otros como ease-out si solo quieres el rebote en padding/gap */
+    300ms ease-out box-shadow;
+  /* Puedes dejar otros como ease-out si solo quieres el rebote en padding/gap */
 }
 
 
@@ -69,13 +66,12 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
-
-
-

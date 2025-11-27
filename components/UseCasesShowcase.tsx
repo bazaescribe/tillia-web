@@ -29,7 +29,7 @@ interface UseCasesShowcaseProps {
 
 const FeatureItem = ({ feature }: { feature: Feature }) => {
   return (
-    <div className="flex flex-col gap-2 border-l-2 border-slate-200 pl-4 transition-colors hover:border-indigo-500">
+    <div className="flex flex-col gap-2 border-l-2 border-gray-200 pl-4 transition-colors hover:border-indigo-500">
       <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wide">
         {feature.title}
       </h4>
@@ -98,7 +98,7 @@ const UseCaseItem = ({
       )}
     >
       {/* Mobile Image (Visible only on small screens) */}
-      <div className="lg:hidden w-full aspect-[15/10] relative rounded-lg overflow-hidden shadow-lg mb-6">
+      <div className="lg:hidden w-full aspect-video relative rounded-lg overflow-hidden shadow-lg mb-2">
         <Image
           src={useCase.image}
           alt={`Illustration for ${useCase.industry}`}
@@ -131,125 +131,151 @@ const UseCaseItem = ({
 const DEFAULT_USE_CASES: UseCase[] = [
   {
     industry: "Retail",
-    headline: "Convierte tu operación en una máquina precisa",
+    headline: "Control absoluto sin mover un dedo extra",
     description:
-      "Organiza tu inventario, automatiza reposiciones, conecta ventas con proveedores y entiende tu negocio en tiempo real. Todo desde un solo panel que se arma solo.",
-    image:
-      "/photos/grocery.jpg",
+      "Administra inventario, conecta ventas con proveedores y entiende tu operación en tiempo real. Un panel que se arma solo y te deja respirar.",
+    image: "/photos/picture-retail.jpg",
     features: [
       {
         title: "Inventario Vivo",
         description:
-          "Registra productos, lotes y existencias. Blikku calcula stock total, costos promedios y alertas inteligentes."
+          "Registra productos, lotes y existencias. Blikku calcula stock, costos promedios y genera alertas que sí sirven."
       },
       {
         title: "Catálogo Conectado",
         description:
-          "Todos tus productos como entidades vivas que pueden relacionarse con ventas, proveedores y promociones."
+          "Cada producto vive dentro del sistema y se relaciona con ventas, proveedores y promociones."
       },
       {
         title: "Flujos de Venta",
         description:
-          "Captura ventas rápido, actualiza inventario automáticamente y gatilla reportes diarios sin hacer nada."
+          "Registra ventas rápido, actualiza inventario al momento y genera reportes diarios automáticos."
       },
       {
         title: "Seguimiento de Proveedores",
         description:
-          "Crea órdenes de reposición y deja que el sistema te avise cuando toca volver a surtir."
+          "Crea órdenes de reposición y deja que el sistema te avise cuando toca surtir."
       }
     ]
   },
   {
     industry: "Servicios",
-    headline: "Estandariza tu operación y deja de apagar incendios",
+    headline: "Estandariza tu operación y respira tranquilo",
     description:
-      "Define procesos repetibles, registra clientes, asigna tareas recurrentes y automatiza seguimientos sin perder control.",
-    image:
-      "/photos/barber.jpg",
+      "Define procesos repetibles, gestiona clientes y automatiza tareas sin perder claridad ni control.",
+    image: "/photos/picture-service.jpg",
     features: [
       {
         title: "Gestión de Clientes",
         description:
-          "Guarda historial de servicios, notas, archivos y próximos pasos. Todo ordenado por entidad."
+          "Historial, archivos, próximos pasos y notas. Todo viviendo en una sola entidad."
       },
       {
         title: "Flujos Automáticos",
         description:
-          "Programas tareas recurrentes como recordatorios, visitas o renovaciones y el sistema las dispara solo."
+          "Tareas recurrentes, recordatorios y visitas programadas que el sistema ejecuta sin que tengas que perseguir a nadie."
       },
       {
         title: "Panel Operativo",
         description:
-          "Tu equipo ve exactamente qué hacer hoy, qué está pendiente y qué viene mañana."
+          "Tu equipo ve qué hacer hoy, qué está pendiente y qué viene mañana."
       },
       {
         title: "Tickets y Seguimiento",
         description:
-          "Registra incidentes y deja que el proceso avance solo con reglas simples."
+          "Registra incidentes y deja que el proceso avance solo con reglas claras."
       }
     ]
   },
   {
     industry: "Restaurantes",
-    headline: "Controla la cocina, el inventario y las ventas sin caos",
+    headline: "Controla cocina, inventario y ventas sin caos",
     description:
-      "Modela tus recetas, gestiona insumos, recibe alertas de bajo stock y conecta ventas con merma sin cargar con otro POS.",
-    image:
-      "/photos/chocolate.jpg",
+      "Arma recetas, gestiona insumos, recibe alertas de bajo stock y conecta ventas con merma sin sumar otro POS.",
+    image: "/photos/picture-restaurant.jpg",
     features: [
       {
         title: "Recetas Inteligentes",
         description:
-          "Cada platillo se conecta a sus insumos. Cada venta descuenta inventario automáticamente."
+          "Cada platillo se conecta con sus insumos. Cada venta descuenta inventario automáticamente."
       },
       {
         title: "Control de Merma",
         description:
-          "Registra pérdidas y ajusta inventario sin estrés. Todo transparente."
+          "Registra pérdidas y ajusta inventario sin drama. Todo transparente."
       },
       {
         title: "Ventas Integradas",
         description:
-          "Registra ventas desde una UI sencilla y deja que todo se actualice debajo del agua."
+          "Registra ventas desde una UI sencilla y deja que el sistema haga el resto."
       },
       {
         title: "Alertas de Insumos",
         description:
-          "El sistema te dice cuándo se te está acabando algo antes de que lo notes."
+          "El sistema te avisa cuando algo está por agotarse antes de que te afecte."
       }
     ]
   },
   {
     industry: "Consultoría",
-    headline: "Entrega proyectos con procesos claros y sin retrasos",
+    headline: "Proyectos claros, entregas a tiempo y cero caos",
     description:
-      "Administra clientes, fases, entregables, contratos y facturación interna desde un espacio modular que se adapta solo.",
-    image:
-      "/photos/woman-ipad.jpg",
+      "Administra clientes, etapas, entregables y facturación interna desde un espacio modular que trabaja contigo.",
+    image: "/photos/picture-consulting.jpg",
     features: [
       {
         title: "Pipeline de Proyectos",
         description:
-          "Organiza proyectos por etapas y avanza con un click mientras el sistema genera las tareas siguientes."
+          "Organiza etapas y avanza con un click mientras el sistema genera las tareas siguientes."
       },
       {
         title: "Control de Entregables",
         description:
-          "Archivos, revisiones, fechas límite y responsables en un solo lugar."
+          "Archivos, revisiones, deadlines y responsables en un lugar que no se pierde."
       },
       {
         title: "Clientes y Contratos",
         description:
-          "Cada cliente tiene su espacio con contratos, acuerdos y notas."
+          "Cada cliente con su propio espacio, contratos, notas y acuerdos claros."
       },
       {
         title: "Reportes Operativos",
         description:
-          "Visualiza cargas de trabajo, avances y qué proyecto está atorado."
+          "Carga de trabajo, avances y dónde está atorado cada proyecto."
+      }
+    ]
+  },
+  {
+    industry: "Producción Ligera",
+    headline: "Coordina insumos, procesos y entregas sin planillas eternas",
+    description:
+      "Ideal para talleres, empaquetado, ensamble, laboratorios y producción artesanal. Controla insumos, procesos, lotes y entregas desde un espacio visual y flexible.",
+    image: "/photos/picture-production.jpg",
+    features: [
+      {
+        title: "Control de Insumos",
+        description:
+          "Registra materiales, lotes y costos para mantener precisión en cada orden."
+      },
+      {
+        title: "Órdenes de Producción",
+        description:
+          "Define etapas, responsables y cantidades. El sistema avanza contigo."
+      },
+      {
+        title: "Trazabilidad Simple",
+        description:
+          "Sigue cada producción desde materia prima hasta producto final."
+      },
+      {
+        title: "Alertas y Reposiciones",
+        description:
+          "Evita pausas. Blikku te avisa cuando falta material para la siguiente tanda."
       }
     ]
   }
 ];
+
 
 
 export default function UseCasesShowcase({ items = DEFAULT_USE_CASES, className }: UseCasesShowcaseProps) {
@@ -286,7 +312,7 @@ export default function UseCasesShowcase({ items = DEFAULT_USE_CASES, className 
 
   return (
     <section className={cn("w-full bg-slate-50 py-16", className)}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
+      <div className="mx-auto px-4 sm:px-6 lg:px-6" style={{ maxWidth: "1200px" }}>
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
 
           {/* Left Column: Scrollable Content */}

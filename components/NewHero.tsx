@@ -147,7 +147,7 @@ export default function NewHero() {
 
   return (
     <Section>
-      <div className="pt-8 pb-12">
+      <div className="pt-6 pb-20">
         <div className={styles.content}>
           <motion.div
             variants={containerVariants}

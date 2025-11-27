@@ -15,6 +15,7 @@ import PricingCards from "@/components/PricingCards"
 import AgentIntegration from "@/components/AgentIntegration"
 import SystemVisualizer from "@/components/SystemVisualizer"
 import UseCasesShowcase from "@/components/UseCasesShowcase"
+import AIFeatures from "@/components/AIFeatures"
 
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
         <SolutionSection />
         {/* <SystemVisualizer /> */}
         <UseCasesShowcase />
+        <AIFeatures />
         <AI />
         <AgentIntegration />
         <CustomerTestimonial />

@@ -15,18 +15,20 @@
   z-index: 39;
 }
 
-.light, .light .bumper {
+.light,
+.light .bumper {
   background: #fff;
 }
 
-.dark, .dark .bumper {
+.dark,
+.dark .bumper {
   background: #000;
 }
 
 .content {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 6rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
