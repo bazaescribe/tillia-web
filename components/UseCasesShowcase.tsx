@@ -98,7 +98,7 @@ const UseCaseItem = ({
       )}
     >
       {/* Mobile Image (Visible only on small screens) */}
-      <div className="lg:hidden w-full aspect-video relative rounded-xl overflow-hidden shadow-lg mb-6">
+      <div className="lg:hidden w-full aspect-[15/10] relative rounded-lg overflow-hidden shadow-lg mb-6">
         <Image
           src={useCase.image}
           alt={`Illustration for ${useCase.industry}`}
@@ -309,7 +309,7 @@ export default function UseCasesShowcase({ items = DEFAULT_USE_CASES, className 
           {/* Right Column: Sticky Image Panel */}
           <div className="hidden lg:block w-full lg:w-1/2 relative">
             <div className="sticky top-0 h-screen flex items-center justify-center pt-16 pb-6">
-              <div className="relative w-full h-full max-w-xl">
+              <div className="relative w-full h-[85%] max-w-xl">
                 {items.map((item, index) => (
                   <StickyImage
                     key={index}
