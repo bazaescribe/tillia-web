@@ -12,7 +12,7 @@ const Card: React.FC<{
 }> = ({ title, description, image, background, imageAlt }) => {
   return (
     <div
-      className=" rounded-md shadow-[var(--shadow-card)]"
+      className=" rounded-lg shadow-[var(--shadow-card)]"
       style={{
         boxShadow: 'var(--shadow-card)',
         aspectRatio: '1 / 1.3',

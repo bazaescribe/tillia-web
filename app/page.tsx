@@ -12,9 +12,9 @@ import CustomerTestimonial from "@/components/CustomerTestimonial"
 import SolutionSection from "@/components/SolutionSection"
 import AI from "@/components/AI"
 import PricingCards from "@/components/PricingCards"
-import UseCases from "@/components/UseCases"
 import AgentIntegration from "@/components/AgentIntegration"
 import SystemVisualizer from "@/components/SystemVisualizer"
+import UseCasesShowcase from "@/components/UseCasesShowcase"
 
 
 export default function Home() {
@@ -28,8 +28,8 @@ export default function Home() {
         <NewHero />
         <Logos />
         <SolutionSection />
-        <SystemVisualizer />
-        <UseCases />
+        {/* <SystemVisualizer /> */}
+        <UseCasesShowcase />
         <AI />
         <AgentIntegration />
         <CustomerTestimonial />
