@@ -63,7 +63,7 @@ export default function IndustryTabs() {
 
 
         {/* Content Area */}
-        <div className="flex flex-col gap-4 items-start min-h-[500px]">
+        <div className="flex flex-col gap-6 items-start min-h-[500px]">
 
           {/* Tabs Row */}
           <div className="flex flex-wrap items-center gap-2">
