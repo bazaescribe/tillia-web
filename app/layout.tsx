@@ -1,17 +1,20 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import GoogleAnalytics from '@/components/track/GoogleAnalytics'
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+}
 
 export const metadata: Metadata = {
   title: 'Bliqu • El sistema de tu negocio',
   description: 'Bliqu entiende tu operación y construye tu sistema de gestión sin que tengas que programar nada.',
-  keywords: ['ERP', 'AI', 'PyMES', 'Software de Gestión', 'Automatización','Sistema de Gestión', 'Punto de Venta', 'Agentes', 'Notion', 'POS'],
+  keywords: ['ERP', 'AI', 'PyMES', 'Software de Gestión', 'Automatización', 'Sistema de Gestión', 'Punto de Venta', 'Agentes', 'Notion', 'POS'],
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/apple-touch-icon.png',
   },
-  themeColor: '#ffffff', // initial value; will be updated by Section on scroll
 
   openGraph: {
     title: 'Bliqu • El sistema operativo de tu negocio.',
