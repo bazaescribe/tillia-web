@@ -7,8 +7,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Bliqu • El sistema de tu negocio',
-  description: 'Bliqu entiende tu operación y construye tu sistema de gestión sin que tengas que programar nada.',
+  title: 'Mithry • El sistema de tu negocio',
+  description: 'Mithry entiende tu operación y construye tu sistema de gestión sin que tengas que programar nada.',
   keywords: ['ERP', 'AI', 'PyMES', 'Software de Gestión', 'Automatización', 'Sistema de Gestión', 'Punto de Venta', 'Agentes', 'Notion', 'POS'],
   icons: {
     icon: '/favicon.png',
@@ -17,16 +17,16 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Bliqu • El sistema operativo de tu negocio.',
-    description: 'Bliqu entiende tu operación y construye tu sistema de gestión sin que tengas que programar nada.',
-    url: 'https://www.bliqu.com',
-    siteName: 'Bliqu',
+    title: 'Mithry • El sistema operativo de tu negocio.',
+    description: 'Mithry entiende tu operación y construye tu sistema de gestión sin que tengas que programar nada.',
+    url: 'https://www.mithry.com',
+    siteName: 'Mithry',
     images: [
       {
-        url: 'https://www.bliqu.com/images/bliqu-og-image.jpg', // ¡Asegúrate de que esta imagen exista!
+        url: 'https://www.mithry.com/images/mithry-og-image.jpg', // ¡Asegúrate de que esta imagen exista!
         width: 1200,
         height: 630,
-        alt: 'Bliqu: Soluciones inteligentes para PyMES en crecimiento',
+        alt: 'Mithry: Soluciones inteligentes para PyMES en crecimiento',
       },
     ],
     locale: 'es_LA',
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image', // Usa 'summary_large_image' para que la foto destaque
-    title: 'Bliqu | El ERP que se construye solo con IA',
-    description: 'Sistema de gestión inteligente y fácil de usar para automatizar tu PyME sin código.',
-    siteId: 'https://x.com/bliqu_?s=21&t=0JGxMxwRU1O6J29lCdaNHA', // Opcional
-    creator: '@bliqu_', // Opcional
+    title: 'Mithry • El sistema operativo de tu negocio.',
+    description: 'Mithry entiende tu operación y construye tu sistema de gestión sin que tengas que programar nada.',
+    siteId: 'https://x.com/mithry_?s=21&t=0JGxMxwRU1O6J29lCdaNHA', // Opcional
+    creator: '@mithry_', // Opcional
     creatorId: '1645242432528281600', // Opcional
-    images: ['https://www.bliqu.com/images/bliqu-og-image.jpg'], // Misma imagen
+    images: ['https://www.mithry.com/images/mithry-og-image.jpg'], // Misma imagen
   },
 
 }
