@@ -30,7 +30,7 @@ export default function Navbar() {
       <nav className="sticky top-0 left-0 right-0 z-50 bg-white">
         <div className={styles.content}>
           <a href="#">
-            <Image src="/logo.svg" alt="logo" width={100} height={28} />
+            <Image src="/logo.svg" alt="logo" width={104.1} height={24.78} />
           </a>
           <div>
             <a href="https://app.bliqu.com" target="_blank" rel="noopener noreferrer">

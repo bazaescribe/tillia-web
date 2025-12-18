@@ -7,15 +7,17 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import NewHero from "@/components/NewHero"
 import CallToAction from '@/components/CallToAction'
-import Logos from "@/components/logos"
 import CustomerTestimonial from "@/components/CustomerTestimonial"
 import SolutionSection from "@/components/SolutionSection"
+import FeaturesGrid from "@/components/FeaturesGrid"
 import AI from "@/components/AI"
 import PricingCards from "@/components/PricingCards"
 import AgentIntegration from "@/components/AgentIntegration"
 import SystemVisualizer from "@/components/SystemVisualizer"
 import UseCasesShowcase from "@/components/UseCasesShowcase"
 import AIFeatures from "@/components/AIFeatures"
+import IndustryTabs from "@/components/IndustryTabs"
+
 
 
 export default function Home() {
@@ -24,16 +26,16 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-
-      <main className="flex-1">
+      <main className="flex-1 flex flex-col gap-32">
         <NewHero />
-        <Logos />
-        <SolutionSection />
+        <FeaturesGrid />
+        <IndustryTabs />
+        {/* <SolutionSection /> */}
         {/* <SystemVisualizer /> */}
-        <UseCasesShowcase />
-        <AIFeatures />
-        <AI />
-        <AgentIntegration />
+        {/* <UseCasesShowcase /> */}
+        {/* <AIFeatures /> */}
+        {/* <AI /> */}
+        {/* <AgentIntegration /> */}
         <CustomerTestimonial />
         <PricingCards />
         <CallToAction />
