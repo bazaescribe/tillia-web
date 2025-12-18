@@ -17,6 +17,7 @@ import SystemVisualizer from "@/components/SystemVisualizer"
 import UseCasesShowcase from "@/components/UseCasesShowcase"
 import AIFeatures from "@/components/AIFeatures"
 import IndustryTabs from "@/components/IndustryTabs"
+import GrowthStories from "@/components/GrowthStories"
 
 
 
@@ -30,13 +31,14 @@ export default function Home() {
         <NewHero />
         <FeaturesGrid />
         <IndustryTabs />
+        <GrowthStories />
         {/* <SolutionSection /> */}
         {/* <SystemVisualizer /> */}
         {/* <UseCasesShowcase /> */}
         {/* <AIFeatures /> */}
         {/* <AI /> */}
         {/* <AgentIntegration /> */}
-        <CustomerTestimonial />
+        {/* <CustomerTestimonial /> */}
         <PricingCards />
         <CallToAction />
       </main>
